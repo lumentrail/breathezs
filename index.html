@@ -47,13 +47,13 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:17px}
-body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.65;font-weight:400}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.65;font-weight:400;overflow-x:hidden}
 img{max-width:100%}
 a{color:inherit;text-decoration:none}
 h1,h2,h3,h4{line-height:1.12;letter-spacing:-.01em;font-weight:800}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 32px}
-section{padding:104px 0}
-@media(max-width:640px){html{font-size:16px}section{padding:72px 0}.container{padding:0 22px}}
+section{padding:88px 0}
+@media(max-width:640px){html{font-size:16px}section{padding:60px 0}.container{padding:0 22px}}
 
 /* ---------- buttons ---------- */
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font);font-weight:700;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;padding:16px 32px;border-radius:10px;border:2px solid transparent;cursor:pointer;transition:.25s}
@@ -127,7 +127,8 @@ h2.title .accent{color:var(--purple)}
 
 /* ---------- about ---------- */
 .about{position:relative;overflow:hidden}
-.about .emblem-bg{position:absolute;right:-90px;top:50%;transform:translateY(-50%);width:min(460px,42vw);opacity:.08;pointer-events:none;filter:saturate(1.1)}
+.about .emblem-bg{position:absolute;right:clamp(16px,3vw,56px);top:50%;transform:translateY(-50%);width:min(380px,32vw);opacity:.08;pointer-events:none;filter:saturate(1.1)}
+@media(max-width:640px){.about .emblem-bg{width:180px;right:8px;opacity:.06}}
 .about .container{position:relative;z-index:1}
 
 /* ---------- feature cards ---------- */
@@ -210,7 +211,7 @@ h2.title .accent{color:var(--purple)}
 
 /* ---------- collection ---------- */
 .collection{background:var(--white)}
-.products{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:56px}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,400px));gap:34px;margin-top:56px;justify-content:center}
 .product{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--cream);display:flex;flex-direction:column;transition:.25s}
 .product:hover{transform:translateY(-5px);border-color:var(--purple-neon)}
 .product .visual{aspect-ratio:4/5;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
@@ -237,6 +238,15 @@ h2.title .accent{color:var(--purple)}
 .product h3{font-size:1.3rem;font-weight:900;text-transform:uppercase}
 .product p{font-size:.96rem;color:var(--ink-soft);margin:10px 0 22px;min-height:3em}
 .collection .shop-all{text-align:center;margin-top:50px}
+.color-pick{margin:6px 0 22px}
+.color-avail{font-size:.9rem;color:var(--ink-soft);margin-bottom:12px}
+.color-avail .color-name{color:var(--purple);font-weight:700}
+.swatches{display:flex;gap:12px;justify-content:center}
+.swatch{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0;transition:transform .18s,box-shadow .18s,border-color .18s}
+.swatch-white{background:#fff;border-color:#cdc2ec}
+.swatch-black{background:#1b1b1f}
+.swatch:hover{transform:scale(1.1)}
+.swatch.is-active{border-color:var(--purple);box-shadow:0 0 0 3px rgba(124,58,237,.22)}
 
 /* ---------- size guide ---------- */
 .sizing{background:var(--marble)}
@@ -617,34 +627,32 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
     <h2 class="title">Three Ways to <span class="accent">Stay Cool.</span></h2>
     <p class="sub">Launching August 2026 with preorders. Reserve your spot on the waitlist for first access and exclusive first release drops.</p>
     <div class="products">
-      <div class="product">
-        <div class="visual flip">
+      <div class="product" data-color="white">
+        <div class="visual flip"
+             data-front-white="images/product-white.jpg" data-back-white="images/product-white-back.jpg"
+             data-front-black="images/product-black.jpg" data-back-black="images/product-black-back.jpg">
           <span class="tag soft">Classic</span>
-          <img class="face front" src="images/product-white.jpg" alt="BreathEZs Classic White boxer briefs, front">
-          <img class="face back" src="images/product-white-back.jpg" alt="BreathEZs Classic White boxer briefs, open rear airflow">
+          <img class="face front" src="images/product-white.jpg" alt="BreathEZs Classic boxer briefs, front">
+          <img class="face back" src="images/product-white-back.jpg" alt="BreathEZs Classic boxer briefs, open rear airflow">
         </div>
         <div class="info">
-          <h3>Classic White</h3>
-          <p>The clean original. Breathable 100% cotton built for every day, with the open airflow design in its purest form.</p>
+          <h3>Classic</h3>
+          <p>The clean original in breathable 100% cotton, with the open airflow design in its purest form.</p>
+          <div class="color-pick">
+            <p class="color-avail">Available in two colors: <b class="color-name">White</b></p>
+            <div class="swatches" role="group" aria-label="Choose a color">
+              <button type="button" class="swatch swatch-white is-active" data-color="white" data-name="White" aria-label="White" aria-pressed="true"></button>
+              <button type="button" class="swatch swatch-black" data-color="black" data-name="Black" aria-label="Black" aria-pressed="false"></button>
+            </div>
+          </div>
           <a href="#waitlist" class="btn btn-outline">Notify Me</a>
         </div>
       </div>
       <div class="product">
         <div class="visual flip">
-          <span class="tag soft">Classic</span>
-          <img class="face front" src="images/product-black.jpg" alt="BreathEZs Classic Black boxer briefs, front">
-          <img class="face back" src="images/product-black-back.jpg" alt="BreathEZs Classic Black boxer briefs, open rear airflow">
-        </div>
-        <div class="info">
-          <h3>Classic Black</h3>
-          <p>The everyday essential in a bold, go anywhere black. Same premium cotton, same engineered airflow.</p>
-          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
-        </div>
-      </div>
-      <div class="product">
-        <div class="visual">
           <span class="tag">Special Edition</span>
-          <img src="images/product-special.jpg" alt="BreathEZs Special Edition black boxer briefs with the diamond emblem">
+          <img class="face front" src="images/product-special.jpg" alt="BreathEZs Special Edition black boxer briefs with the diamond emblem, front">
+          <img class="face back" src="images/product-special-back.jpg" alt="BreathEZs Special Edition boxer briefs, open rear airflow">
         </div>
         <div class="info">
           <h3>Special Edition Black</h3>
@@ -820,6 +828,31 @@ document.querySelectorAll('.product .visual.flip').forEach(function(v){
   v.appendChild(cue);
   var product = v.closest('.product');
   v.addEventListener('click', function(){ product.classList.toggle('flipped'); });
+});
+
+// Color selector: swap the front and back images for the chosen colorway,
+// keeping whatever face (front or back) is currently showing.
+document.querySelectorAll('.product .swatches').forEach(function(group){
+  var product = group.closest('.product');
+  var visual = product.querySelector('.visual.flip');
+  var front = visual.querySelector('.face.front');
+  var back = visual.querySelector('.face.back');
+  var nameEl = product.querySelector('.color-name');
+  group.querySelectorAll('.swatch').forEach(function(sw){
+    sw.addEventListener('click', function(){
+      var c = sw.dataset.color;
+      var cap = c.charAt(0).toUpperCase() + c.slice(1);
+      front.src = visual.dataset['front' + cap];
+      back.src  = visual.dataset['back' + cap];
+      product.setAttribute('data-color', c);
+      if (nameEl) nameEl.textContent = sw.dataset.name;
+      group.querySelectorAll('.swatch').forEach(function(s){
+        var on = s === sw;
+        s.classList.toggle('is-active', on);
+        s.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    });
+  });
 });
 
 function joinWaitlist(form){
