@@ -218,8 +218,10 @@ h2.title .accent{color:var(--purple)}
 .product .visual.flip{background:#fff}
 .product .visual.flip .face{position:absolute;inset:0;transition:opacity .5s ease}
 .product .visual.flip .face.back{opacity:0}
-.product:hover .visual.flip .face.front{opacity:0}
-.product:hover .visual.flip .face.back{opacity:1}
+@media(hover:hover){
+  .product:hover .visual.flip .face.front{opacity:0}
+  .product:hover .visual.flip .face.back{opacity:1}
+}
 .product.flipped .visual.flip .face.front{opacity:0}
 .product.flipped .visual.flip .face.back{opacity:1}
 .product .visual.flip{cursor:pointer}
