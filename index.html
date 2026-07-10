@@ -92,6 +92,8 @@ h2.title .accent{color:var(--purple)}
   linear-gradient(90deg,rgba(9,7,14,.95) 0%,rgba(9,7,14,.8) 36%,rgba(26,12,48,.42) 66%,rgba(96,32,168,.16) 100%),
   radial-gradient(135% 105% at 74% 48%,transparent 40%,rgba(6,4,12,.62) 100%)}
 .hero .container{position:relative;z-index:1}
+/* Ultrawide: stop the neon sign from zooming past a sane size, let the dark backdrop fill the extra width */
+@media(min-width:1900px){.hero::before{background-size:1900px auto;background-position:right center}}
 .hero-inner{max-width:37rem}
 .hero h1{font-size:clamp(2.6rem,5.4vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.55)}
 .hero h1 .accent{color:var(--purple-neon)}
