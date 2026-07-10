@@ -204,8 +204,10 @@ h2.title .accent{color:var(--purple)}
 .tagline{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase;color:var(--gold-light);letter-spacing:.02em;margin:6px 0 30px}
 .night .tagline{background:linear-gradient(92deg,#f6d987,#e8c95c 35%,#c9a227 70%,#f2d377);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 14px rgba(201,162,39,.35))}
 /* ---- real 360 product video ---- */
-.rv-wrap{max-width:500px;justify-self:center;position:relative;background:#0d0812;overflow:hidden}
+.rv-wrap{max-width:640px;justify-self:center;position:relative;background:#0d0812;overflow:hidden}
 .rv-wrap video{width:100%;display:block}
+.rv-stage{position:relative;line-height:0}
+.rv-scrim{position:absolute;inset:0 0 auto 0;height:34%;background:linear-gradient(180deg,#0d0812 0%,#0d0812 66%,rgba(13,8,18,0) 100%);pointer-events:none}
 .rv-cap{padding:18px 16px 14px;text-align:center;line-height:1.4}
 .rv-cap .a{display:block;font-size:1rem;font-weight:900;letter-spacing:.24em;color:var(--gold-light);text-transform:uppercase}
 .rv-cap .b{display:block;font-size:.6rem;font-weight:600;letter-spacing:.34em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:6px}
@@ -610,11 +612,14 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <a href="#collection" class="btn btn-primary">Discover More</a>
     </div>
     <div class="photo-frame rv-wrap">
-      <div class="rv-cap"><span class="a">Every Angle. Real Airflow.</span><span class="b">360&deg; product view</span></div>
-      <video autoplay muted loop playsinline aria-label="Real 360 degree view of BreathEZs boxer briefs, rotating to show the front, sides, and open rear">
-        <source src="videos/special-edition-promo.mp4" type="video/mp4">
-        <img src="images/coming-soon.jpg" alt="BreathEZs boxer briefs">
-      </video>
+      <div class="rv-cap"><span class="a">Special Edition</span><span class="b">Limited &middot; Bold &middot; Exclusive</span></div>
+      <div class="rv-stage">
+        <video autoplay muted loop playsinline aria-label="BreathEZs Special Edition promo, the black edition with its emblem and retail box">
+          <source src="videos/special-edition-promo.mp4" type="video/mp4">
+          <img src="images/coming-soon.jpg" alt="BEZ BreathEZs Special Edition">
+        </video>
+        <div class="rv-scrim"></div>
+      </div>
     </div>
   </div>
 </section>
