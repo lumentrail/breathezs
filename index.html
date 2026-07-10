@@ -26,6 +26,7 @@
 @font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/poppins-700.woff2) format('woff2')}
 @font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/poppins-800.woff2) format('woff2')}
 @font-face{font-family:'Poppins';font-style:normal;font-weight:900;font-display:swap;src:url(fonts/poppins-900.woff2) format('woff2')}
+@font-face{font-family:'Great Vibes';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/greatvibes-400.woff2) format('woff2')}
 
 :root{
   --purple:#7c3aed;
@@ -207,10 +208,14 @@ h2.title .accent{color:var(--purple)}
 .rv-wrap{max-width:680px;justify-self:center;position:relative;background:#0d0812;overflow:hidden}
 .rv-wrap video{width:100%;display:block}
 .rv-stage{position:relative;line-height:0}
-.rv-scrim{position:absolute;inset:0 0 auto 0;height:40%;background:linear-gradient(180deg,#0d0812 0%,#0d0812 72%,rgba(13,8,18,.55) 86%,rgba(13,8,18,0) 100%);pointer-events:none}
-.rv-cap{padding:13px 14px 10px;text-align:center;line-height:1.3;display:flex;align-items:baseline;justify-content:center;gap:16px}
-.rv-cap .a{font-size:1.18rem;font-weight:900;letter-spacing:.24em;color:var(--gold-light);text-transform:uppercase}
-.rv-cap .b{font-size:.6rem;font-weight:600;letter-spacing:.3em;color:rgba(255,255,255,.62);text-transform:uppercase}
+.rv-scrim{position:absolute;inset:0 0 auto 0;height:48%;background:linear-gradient(180deg,#0d0812 0%,#0d0812 58%,rgba(13,8,18,.85) 70%,rgba(13,8,18,.5) 82%,rgba(13,8,18,.2) 92%,rgba(13,8,18,0) 100%);pointer-events:none}
+.rv-cap{padding:14px 14px 4px;text-align:center;line-height:1.15}
+.rv-cap .a{display:block;font-family:'Great Vibes',cursive;font-size:clamp(2.3rem,5.5vw,3rem);font-weight:400;text-transform:none;
+  background:linear-gradient(94deg,#f6d987 5%,#e8c95c 38%,#c9a227 68%,#f2d377 95%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
+  filter:drop-shadow(0 0 12px rgba(201,162,39,.35))}
+.rv-cap .b{display:block;font-size:.62rem;font-weight:600;letter-spacing:.34em;color:rgba(255,255,255,.62);text-transform:uppercase;margin-top:4px}
+.rv-logo{position:absolute;right:14px;bottom:12px;width:88px;opacity:.92;filter:drop-shadow(0 2px 8px rgba(0,0,0,.6));pointer-events:none}
 @media(max-width:940px){.night-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- collection ---------- */
@@ -619,6 +624,8 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
           <img src="images/coming-soon.jpg" alt="BEZ BreathEZs Special Edition">
         </video>
         <div class="rv-scrim"></div>
+        <img class="rv-logo" src="images/logo.png" alt="">
+
       </div>
     </div>
   </div>
