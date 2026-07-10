@@ -96,7 +96,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.92);backdro
 footer .nav-logo{width:150px;filter:drop-shadow(0 0 14px rgba(232,201,92,.15))}
 
 /* ---------- flip cards ---------- */
-.flip{position:relative;height:300px;perspective:1200px;cursor:pointer}
+.flip{position:relative;aspect-ratio:3/4;perspective:1200px;cursor:pointer}
 .flip-inner{position:absolute;inset:0;transition:transform .8s cubic-bezier(.35,.1,.2,1);transform-style:preserve-3d}
 .product:hover .flip-inner,.product:focus-within .flip-inner,.product.flipped .flip-inner{transform:rotateY(180deg)}
 .flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
@@ -115,6 +115,20 @@ footer .nav-logo{width:150px;filter:drop-shadow(0 0 14px rgba(232,201,92,.15))}
 .anat .shot{aspect-ratio:4/5;overflow:hidden}
 .anat .shot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
 .anat:hover .shot img{transform:scale(1.06)}
+.anat .diagram{background:
+  radial-gradient(420px 300px at 50% 20%,rgba(168,85,247,.22),transparent 65%),
+  linear-gradient(165deg,#241338 0%,#161022 55%,#1e1430 100%)}
+.anat .diagram svg{width:100%;height:100%;display:block}
+.airline{stroke-dasharray:7 9;animation:bezflow 1.5s linear infinite}
+.airline.slow{animation-duration:2.2s}
+@keyframes bezflow{to{stroke-dashoffset:-64}}
+.heatwave{animation:bezrise 2.6s ease-in-out infinite}
+.heatwave.d2{animation-delay:.9s}
+.heatwave.d3{animation-delay:1.7s}
+@keyframes bezrise{0%{opacity:0;transform:translateY(6px)}35%{opacity:.9}100%{opacity:0;transform:translateY(-14px)}}
+.pouchglow{animation:bezpulse 3s ease-in-out infinite}
+@keyframes bezpulse{0%,100%{opacity:.55}50%{opacity:1}}
+@media(prefers-reduced-motion:reduce){.airline,.heatwave,.pouchglow{animation:none}}
 .anat .body{padding:24px 26px 30px}
 .anat .num{font-size:.7rem;font-weight:800;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
 .anat h3{font-size:1.05rem;font-weight:900;text-transform:uppercase;margin:6px 0 8px}
@@ -361,7 +375,45 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <p class="sub">Take a closer look at the construction. This isn't a gimmick cut into a cheap pair of shorts — it's a purpose-built ventilation system stitched into premium 100% cotton.</p>
     <div class="anatomy-grid">
       <div class="anat">
-        <div class="shot"><img src="images/classic-white-rear.jpg" alt="Full rear view of the Classic White showing the open airflow vent"></div>
+        <div class="shot diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the open-rear ventilation: cool air flows in through the vent while body heat escapes upward">
+          <defs>
+            <pattern id="mesh1" width="9" height="9" patternUnits="userSpaceOnUse">
+              <circle cx="4.5" cy="4.5" r="1.4" fill="rgba(232,201,92,.45)"/>
+            </pattern>
+            <marker id="arrowP" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 Z" fill="#a855f7"/>
+            </marker>
+          </defs>
+          <text x="200" y="38" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#e8c95c" font-family="Arial">REAR VIEW</text>
+          <!-- heat rising out of the vent -->
+          <g stroke="#f0a86b" stroke-width="3" fill="none" stroke-linecap="round">
+            <path class="heatwave" d="M168 96 q5 -9 0 -18 q-5 -9 0 -18"/>
+            <path class="heatwave d2" d="M200 92 q5 -9 0 -18 q-5 -9 0 -18"/>
+            <path class="heatwave d3" d="M232 96 q5 -9 0 -18 q-5 -9 0 -18"/>
+          </g>
+          <!-- garment rear -->
+          <g>
+            <rect x="72" y="118" width="256" height="34" rx="9" fill="#2c1f42" stroke="#e8c95c" stroke-width="3"/>
+            <path d="M74 152 L64 300 C62 344 108 372 148 375 L172 375 L180 318 C186 300 214 300 220 318 L228 375 L252 375 C292 372 338 344 336 300 L326 152 Z" fill="#2c1f42" stroke="#e8c95c" stroke-width="3" stroke-linejoin="round"/>
+            <!-- vent opening with mesh trim -->
+            <path d="M138 168 L262 168 C252 240 218 272 200 279 C182 272 148 240 138 168 Z" fill="url(#mesh1)" stroke="#a855f7" stroke-width="4" stroke-linejoin="round"/>
+          </g>
+          <!-- air flowing in through vent -->
+          <g stroke="#a855f7" stroke-width="3.5" fill="none" stroke-linecap="round">
+            <path class="airline" marker-end="url(#arrowP)" d="M96 430 C120 380 150 330 178 245"/>
+            <path class="airline slow" marker-end="url(#arrowP)" d="M200 445 C200 390 200 320 200 240"/>
+            <path class="airline" marker-end="url(#arrowP)" d="M304 430 C280 380 250 330 222 245"/>
+          </g>
+          <!-- callouts -->
+          <g font-family="Arial" font-size="12.5" font-weight="700" letter-spacing="1.5">
+            <line x1="262" y1="176" x2="330" y2="200" stroke="rgba(232,201,92,.7)" stroke-width="1.5"/>
+            <text x="336" y="204" fill="#e8c95c" text-anchor="start" transform="rotate(0)" font-size="11">MESH-</text>
+            <text x="336" y="218" fill="#e8c95c" font-size="11">TRIMMED</text>
+            <text x="336" y="232" fill="#e8c95c" font-size="11">VENT</text>
+            <text x="200" y="52" text-anchor="middle" fill="#f0a86b" font-size="11">HEAT OUT</text>
+            <text x="200" y="482" text-anchor="middle" fill="#c084fc" font-size="11">COOL AIR IN — EVERY STEP</text>
+          </g>
+        </svg></div>
         <div class="body">
           <span class="num">01 — The Vent</span>
           <h3>Open-Rear Ventilation</h3>
@@ -369,7 +421,50 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
         </div>
       </div>
       <div class="anat">
-        <div class="shot"><img src="images/detail-support.jpg" alt="Classic White worn on a mannequin, showing the supportive front pouch and fly"></div>
+        <div class="shot diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the full-pouch front: a contoured pouch cradles and supports with a working fly and no straps">
+          <defs>
+            <radialGradient id="pouchG" cx="50%" cy="42%" r="65%">
+              <stop offset="0" stop-color="rgba(232,201,92,.85)"/>
+              <stop offset=".55" stop-color="rgba(201,162,39,.35)"/>
+              <stop offset="1" stop-color="rgba(201,162,39,0)"/>
+            </radialGradient>
+            <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 Z" fill="#e8c95c"/>
+            </marker>
+          </defs>
+          <text x="200" y="38" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#e8c95c" font-family="Arial">FRONT VIEW</text>
+          <!-- garment front -->
+          <rect x="72" y="88" width="256" height="34" rx="9" fill="#2c1f42" stroke="#e8c95c" stroke-width="3"/>
+          <rect x="172" y="94" width="56" height="22" rx="4" fill="#17130d" stroke="#e8c95c" stroke-width="1.5"/>
+          <text x="200" y="110" text-anchor="middle" font-size="13" font-weight="900" font-style="italic" fill="#e8c95c" font-family="Arial">BEZ</text>
+          <path d="M74 122 L64 270 C62 314 108 342 148 345 L172 345 L180 288 C186 270 214 270 220 288 L228 345 L252 345 C292 342 338 314 336 270 L326 122 Z" fill="#2c1f42" stroke="#e8c95c" stroke-width="3" stroke-linejoin="round"/>
+          <!-- pouch glow + contour -->
+          <ellipse class="pouchglow" cx="200" cy="205" rx="72" ry="78" fill="url(#pouchG)"/>
+          <path d="M200 142 C160 148 142 180 145 214 C148 250 172 274 200 277 C228 274 252 250 255 214 C258 180 240 148 200 142 Z" fill="none" stroke="#e8c95c" stroke-width="3.5"/>
+          <!-- fly line -->
+          <path d="M164 160 C150 190 152 236 170 262" fill="none" stroke="#c084fc" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+          <!-- cradle arrows -->
+          <g stroke="#e8c95c" stroke-width="3" fill="none" stroke-linecap="round">
+            <path marker-end="url(#arrowG)" d="M140 320 C150 296 158 280 170 264"/>
+            <path marker-end="url(#arrowG)" d="M260 320 C250 296 242 280 230 264"/>
+          </g>
+          <!-- no straps -->
+          <g>
+            <circle cx="200" cy="415" r="30" fill="none" stroke="#a855f7" stroke-width="3"/>
+            <path d="M186 425 C192 408 208 408 214 405" stroke="#a855f7" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <line x1="179" y1="436" x2="221" y2="394" stroke="#a855f7" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <g font-family="Arial" font-weight="700" letter-spacing="1.5">
+            <line x1="255" y1="200" x2="310" y2="186" stroke="rgba(232,201,92,.7)" stroke-width="1.5"/>
+            <text x="396" y="182" text-anchor="end" fill="#e8c95c" font-size="11">CONTOURED</text>
+            <text x="396" y="196" text-anchor="end" fill="#e8c95c" font-size="11">POUCH</text>
+            <line x1="158" y1="210" x2="86" y2="196" stroke="rgba(192,132,252,.7)" stroke-width="1.5"/>
+            <text x="30" y="182" fill="#c084fc" font-size="11">WORKING</text>
+            <text x="30" y="196" fill="#c084fc" font-size="11">FLY</text>
+            <text x="200" y="372" text-anchor="middle" fill="#e8c95c" font-size="11">LIFT &amp; SUPPORT</text>
+            <text x="200" y="474" text-anchor="middle" fill="#c084fc" font-size="11">NO STRAPS. NO SQUEEZE.</text>
+          </g>
+        </svg></div>
         <div class="body">
           <span class="num">02 — The Support</span>
           <h3>Full-Pouch Front</h3>
@@ -377,7 +472,63 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
         </div>
       </div>
       <div class="anat">
-        <div class="shot"><img src="images/detail-finish.jpg" alt="Full view of the Black Edition with the woven BEZ label on the waistband"></div>
+        <div class="shot diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of premium 100% cotton quality: a cotton boll, tight weave, and ratings for softness, breathability and durability">
+          <defs>
+            <radialGradient id="cottonHalo" cx="50%" cy="50%" r="55%">
+              <stop offset="0" stop-color="rgba(250,247,242,.28)"/>
+              <stop offset="1" stop-color="rgba(250,247,242,0)"/>
+            </radialGradient>
+          </defs>
+          <text x="200" y="38" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#e8c95c" font-family="Arial">THE FABRIC</text>
+          <!-- 100% cotton seal -->
+          <g transform="translate(200 178)">
+            <circle r="118" fill="url(#cottonHalo)"/>
+            <circle r="96" fill="none" stroke="#e8c95c" stroke-width="2.5"/>
+            <circle r="104" fill="none" stroke="rgba(232,201,92,.4)" stroke-width="1.5" stroke-dasharray="4 6"/>
+            <!-- cotton boll: stem, sepals, fluff -->
+            <path d="M0 62 C-4 44 -2 30 0 16" stroke="#8f6d12" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M0 26 L-16 44 M0 26 L16 44 M0 30 L0 50" stroke="#8f6d12" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <g fill="#faf7f2">
+              <circle cx="-26" cy="-8" r="24"/>
+              <circle cx="26" cy="-8" r="24"/>
+              <circle cx="0" cy="-30" r="26"/>
+              <circle cx="0" cy="2" r="24"/>
+            </g>
+            <g fill="none" stroke="rgba(26,21,35,.18)" stroke-width="2">
+              <path d="M-14 -14 C-8 -6 -8 4 -12 12"/>
+              <path d="M14 -14 C8 -6 8 4 12 12"/>
+              <path d="M0 -44 C2 -36 2 -26 0 -18"/>
+            </g>
+            <text y="52" text-anchor="middle" font-size="26" font-weight="900" fill="#e8c95c" font-family="Arial">100%</text>
+            <text y="74" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="5" fill="#faf7f2" font-family="Arial">COTTON</text>
+          </g>
+          <!-- weave swatch -->
+          <g transform="translate(58 320)">
+            <rect x="0" y="0" width="284" height="36" rx="6" fill="#2c1f42" stroke="rgba(232,201,92,.5)" stroke-width="1.5"/>
+            <g stroke="rgba(232,201,92,.55)" stroke-width="2">
+              <path d="M10 6 L10 30 M26 6 L26 30 M42 6 L42 30 M58 6 L58 30 M74 6 L74 30 M90 6 L90 30 M106 6 L106 30 M122 6 L122 30 M138 6 L138 30 M154 6 L154 30 M170 6 L170 30 M186 6 L186 30 M202 6 L202 30 M218 6 L218 30 M234 6 L234 30 M250 6 L250 30 M266 6 L266 30"/>
+            </g>
+            <g stroke="rgba(192,132,252,.55)" stroke-width="2">
+              <path d="M4 12 L280 12 M4 24 L280 24"/>
+            </g>
+            <text x="142" y="52" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="2" fill="rgba(250,247,242,.65)" font-family="Arial">TIGHT COMBED WEAVE — SOFT, STRONG, BREATHABLE</text>
+          </g>
+          <!-- quality meters -->
+          <g font-family="Arial" font-size="11" font-weight="700" letter-spacing="1.5" fill="#faf7f2">
+            <text x="58" y="416">SOFTNESS</text>
+            <g transform="translate(210 408)" fill="#e8c95c">
+              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5"/>
+            </g>
+            <text x="58" y="446">BREATHABILITY</text>
+            <g transform="translate(210 438)" fill="#a855f7">
+              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5"/>
+            </g>
+            <text x="58" y="476">DURABILITY</text>
+            <g transform="translate(210 468)" fill="#e8c95c">
+              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5" fill="rgba(232,201,92,.25)"/>
+            </g>
+          </g>
+        </svg></div>
         <div class="body">
           <span class="num">03 — The Finish</span>
           <h3>Premium Construction</h3>
