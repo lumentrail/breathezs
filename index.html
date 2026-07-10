@@ -210,18 +210,28 @@ h2.title .accent{color:var(--purple)}
 .se-cap{text-align:center}
 .se-cap .a{display:block;font-size:1rem;font-weight:900;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase;line-height:1}
 .se-cap .b{display:block;font-size:.58rem;font-weight:600;letter-spacing:.32em;color:rgba(255,255,255,.68);text-transform:uppercase;margin-top:9px}
-.se-objects{display:flex;align-items:center;justify-content:center;gap:24px;min-height:206px;perspective:900px}
+.se-objects{display:flex;align-items:center;justify-content:center;gap:24px;min-height:216px;perspective:820px;position:relative}
+.se-objects::after{content:"";position:absolute;left:8%;right:8%;bottom:2px;height:30px;
+  background:radial-gradient(50% 100% at 50% 50%,rgba(168,85,247,.4),rgba(168,85,247,.12) 55%,transparent 75%);filter:blur(7px);pointer-events:none}
 .se-foot{font-size:.6rem;font-weight:700;letter-spacing:.34em;color:rgba(255,255,255,.5);text-transform:uppercase}
-@keyframes seSpin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+@keyframes seSpin{from{transform:rotateX(-9deg) rotateY(0)}to{transform:rotateX(-9deg) rotateY(360deg)}}
 @keyframes boxSpin{from{transform:rotateX(-12deg) rotateY(0)}to{transform:rotateX(-12deg) rotateY(360deg)}}
+@keyframes seShade{0%,46%,54%,100%{filter:brightness(1)}22%,28%{filter:brightness(.58)}72%,78%{filter:brightness(.58)}}
+@keyframes seShadeGlow{0%,46%,54%,100%{filter:brightness(1) drop-shadow(0 0 12px rgba(168,85,247,.8))}25%,75%{filter:brightness(.6) drop-shadow(0 0 6px rgba(168,85,247,.5))}}
 .se-spin{transform-style:preserve-3d}
-/* brief flip (front / open-rear) */
-.se-brief{position:relative;width:172px;height:160px;animation:seSpin 11s linear infinite;filter:drop-shadow(0 12px 22px rgba(0,0,0,.55))}
-.se-brief .face{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden}
-.se-brief .b{transform:rotateY(180deg)}
-/* spinning emblem accent */
-.se-emblem{width:78px;animation:seSpin 11s linear infinite;filter:drop-shadow(0 0 16px rgba(168,85,247,.75))}
-.se-emblem img{width:100%;display:block}
+/* volumetric depth slices (built by JS) */
+.se-slice{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:brightness(.26) saturate(.5);pointer-events:none}
+/* brief: real thickness + tilted spin so the rear reads in 3D */
+.se-brief{position:relative;width:176px;height:162px;animation:seSpin 11s linear infinite}
+.se-brief .face{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden;
+  animation:seShade 11s linear infinite;filter:drop-shadow(0 10px 16px rgba(0,0,0,.45))}
+.se-brief .f{transform:translateZ(9px)}
+.se-brief .b{transform:rotateY(180deg) translateZ(9px)}
+/* emblem: extruded slab with glow */
+.se-emblem{position:relative;width:80px;height:96px;animation:seSpin 11s linear infinite}
+.se-emblem .face{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden;animation:seShadeGlow 11s linear infinite}
+.se-emblem .f{transform:translateZ(5px)}
+.se-emblem .b{transform:rotateY(180deg) translateZ(5px)}
 /* rotating collector box */
 .se-box{position:relative;width:116px;height:168px;animation:boxSpin 11s linear infinite}
 .se-box .cf{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box}
@@ -642,11 +652,14 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
     <div class="photo-frame se-scene" aria-label="BreathEZs Special Edition, black boxer briefs with the diamond emblem and collector box, rotating">
       <div class="se-cap"><span class="a">Special Edition</span><span class="b">Black &middot; Emblem &middot; Boxed</span></div>
       <div class="se-objects">
-        <div class="se-spin se-brief">
+        <div class="se-spin se-brief se-3d" data-slice="images/se-front.png" data-depth="18" data-n="7">
           <img class="face f" src="images/se-front.png" alt="Special Edition black boxer briefs, front with emblem">
           <img class="face b" src="images/se-back.png" alt="Special Edition black boxer briefs, open rear">
         </div>
-        <div class="se-emblem"><img src="images/emblem-bg.png" alt=""></div>
+        <div class="se-spin se-emblem se-3d" data-slice="images/emblem-bg.png" data-depth="10" data-n="6">
+          <img class="face f" src="images/emblem-bg.png" alt="">
+          <img class="face b" src="images/emblem-bg.png" alt="">
+        </div>
         <div class="se-spin se-box">
           <span class="cf front"><img src="images/emblem-bg.png" alt=""><em>Special Edition</em></span>
           <span class="cf back"><img src="images/emblem-bg.png" alt=""><em>Special Edition</em></span>
@@ -857,6 +870,24 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 // STORE_URL, and every one of them will point to the store.
 var STORE_URL = "https://breathezs.myshopify.com";
 document.querySelectorAll("a.store-link").forEach(function(a){ a.href = STORE_URL; });
+
+// Build volumetric depth slices for the Special Edition 3D objects, so
+// they keep real thickness (instead of vanishing) when edge-on.
+document.querySelectorAll('.se-3d').forEach(function(el){
+  var src = el.dataset.slice;
+  var depth = parseFloat(el.dataset.depth || 12);
+  var n = parseInt(el.dataset.n || 6, 10);
+  for (var i = 0; i < n; i++){
+    var im = document.createElement('img');
+    im.src = src;
+    im.className = 'se-slice';
+    im.alt = '';
+    im.setAttribute('aria-hidden','true');
+    var z = -depth/2 + depth * (i/(n-1));
+    im.style.transform = 'translateZ(' + z.toFixed(2) + 'px)';
+    el.insertBefore(im, el.firstChild);
+  }
+});
 
 // Tap to flip products between the front and the open-rear view.
 // Works on touch (where hover does not) and as a sticky toggle on desktop.
