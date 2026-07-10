@@ -89,10 +89,11 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.92);backdro
 .brand-lockup{max-width:400px;padding:30px;background:var(--white);line-height:0}
 .brand-lockup img{width:100%;display:block}
 
-/* ---------- woven label logo ---------- */
-.label-chip{display:block;width:132px;transition:transform .25s}
-.label-chip:hover{transform:scale(1.04)}
-.label-chip svg{display:block;width:100%;height:auto;filter:drop-shadow(0 2px 5px rgba(26,21,35,.25))}
+/* ---------- brand logo ---------- */
+.nav-logo{display:block;width:104px;transition:transform .25s}
+.nav-logo:hover{transform:scale(1.05)}
+.nav-logo img{display:block;width:100%;height:auto;filter:drop-shadow(0 1px 3px rgba(26,21,35,.18))}
+footer .nav-logo{width:150px;filter:drop-shadow(0 0 14px rgba(232,201,92,.15))}
 
 /* ---------- flip cards ---------- */
 .flip{position:relative;height:300px;perspective:1200px;cursor:pointer}
@@ -248,23 +249,8 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 <!-- ============ NAV ============ -->
 <header>
   <nav class="nav">
-    <a href="#top" class="label-chip" aria-label="BreathEZs home">
-      <svg viewBox="0 0 150 64" role="img" aria-label="BEZ BreathEZs woven label">
-        <defs>
-          <linearGradient id="satinA" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stop-color="#e8e7e2"/><stop offset=".5" stop-color="#c7c6c0"/><stop offset="1" stop-color="#e0dfda"/>
-          </linearGradient>
-        </defs>
-        <rect x="1.5" y="1.5" width="147" height="61" rx="5" fill="url(#satinA)" stroke="#8f8d86" stroke-width="1.6" stroke-dasharray="3.5 2.5"/>
-        <text x="76" y="40" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-style="italic" font-size="33" letter-spacing="1" fill="#17140e">BEZ</text>
-        <g fill="none" stroke="#e0a91d" stroke-width="3.4" stroke-linecap="round">
-          <path d="M28 22 C36 15 43 21 53 13"/>
-          <path d="M30 29 C38 22 45 28 55 20"/>
-          <path d="M82 22 C90 15 97 21 107 13"/>
-          <path d="M84 29 C92 22 99 28 109 20"/>
-        </g>
-        <text x="76" y="56" text-anchor="middle" font-family="'Brush Script MT','Segoe Script',cursive" font-style="italic" font-size="14" fill="#c9971e">BreathEZs</text>
-      </svg>
+    <a href="#top" class="nav-logo" aria-label="BreathEZs home">
+      <img src="images/logo.png" alt="BEZ BreathEZs logo">
     </a>
     <div class="nav-links">
       <a href="#collection">Collection</a>
@@ -560,23 +546,8 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 <footer id="contact">
   <div class="container foot-grid">
     <div class="foot-brand">
-      <span class="label-chip">
-        <svg viewBox="0 0 150 64" role="img" aria-label="BEZ BreathEZs woven label">
-          <defs>
-            <linearGradient id="satinB" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#e8e7e2"/><stop offset=".5" stop-color="#c7c6c0"/><stop offset="1" stop-color="#e0dfda"/>
-            </linearGradient>
-          </defs>
-          <rect x="1.5" y="1.5" width="147" height="61" rx="5" fill="url(#satinB)" stroke="#8f8d86" stroke-width="1.6" stroke-dasharray="3.5 2.5"/>
-          <text x="76" y="40" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-style="italic" font-size="33" letter-spacing="1" fill="#17140e">BEZ</text>
-          <g fill="none" stroke="#e0a91d" stroke-width="3.4" stroke-linecap="round">
-            <path d="M28 22 C36 15 43 21 53 13"/>
-            <path d="M30 29 C38 22 45 28 55 20"/>
-            <path d="M82 22 C90 15 97 21 107 13"/>
-            <path d="M84 29 C92 22 99 28 109 20"/>
-          </g>
-          <text x="76" y="56" text-anchor="middle" font-family="'Brush Script MT','Segoe Script',cursive" font-style="italic" font-size="14" fill="#c9971e">BreathEZs</text>
-        </svg>
+      <span class="nav-logo">
+        <img src="images/logo.png" alt="BEZ BreathEZs logo">
       </span>
       <p>Luxury Men's Underwear.<br>Designed to Breathe.</p>
     </div>
