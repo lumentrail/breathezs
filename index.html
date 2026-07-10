@@ -3,134 +3,154 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BreathEZs® — Luxury Men's Underwear. Designed to Breathe.</title>
-<meta name="description" content="BreathEZs (BEZ) is premium performance men's underwear with an engineered airflow design. Italian-inspired comfort built for confidence, movement, and all-day wear. Launching late August — join the waitlist.">
+<title>BreathEZs® | Luxury Underwear. Designed to Breathe.</title>
+<meta name="description" content="BreathEZs (BEZ) is premium 100% cotton underwear with an engineered airflow design. Comfort built for confidence, movement, and all day wear. Launching late August. Join the waitlist.">
 <link rel="icon" type="image/png" href="images/favicon.png">
 <!-- Social sharing (Facebook/Twitter). This site lives at breathezs.com. -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="BreathEZs® — Luxury Men's Underwear. Designed to Breathe.">
-<meta property="og:description" content="Premium 100% cotton boxer briefs with engineered rear ventilation. Full support up front, free-flowing air where you need it. Launching late August.">
+<meta property="og:title" content="BreathEZs® | Luxury Underwear. Designed to Breathe.">
+<meta property="og:description" content="Premium 100% cotton boxer briefs with an engineered open rear for real airflow. Full support up front, free flowing air where you need it. Launching late August.">
 <meta property="og:url" content="https://breathezs.com/">
 <meta property="og:image" content="https://breathezs.com/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="BreathEZs® — Luxury Men's Underwear. Designed to Breathe.">
-<meta name="twitter:description" content="Premium 100% cotton boxer briefs with engineered rear ventilation. Launching late August.">
+<meta name="twitter:title" content="BreathEZs® | Luxury Underwear. Designed to Breathe.">
+<meta name="twitter:description" content="Premium 100% cotton boxer briefs with an engineered open rear for real airflow. Launching late August.">
 <meta name="twitter:image" content="https://breathezs.com/images/og-image.jpg">
 <style>
+/* ---------- Poppins (self hosted) ---------- */
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/poppins-400.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url(fonts/poppins-500.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url(fonts/poppins-600.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url(fonts/poppins-700.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:800;font-display:swap;src:url(fonts/poppins-800.woff2) format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:900;font-display:swap;src:url(fonts/poppins-900.woff2) format('woff2')}
+
 :root{
-  --purple:#6d28d9;
-  --purple-deep:#4c1d95;
+  --purple:#7c3aed;
+  --purple-deep:#5b21b6;
   --purple-neon:#a855f7;
+  --purple-soft:#f2ecfd;
   --gold:#c9a227;
   --gold-light:#e8c95c;
-  --gold-pale:#f3e3a8;
-  --ink:#1a1523;
-  --ink-soft:#4b4356;
-  --cream:#faf7f2;
-  --marble:#f4f0e9;
+  --ink:#20182e;
+  --ink-soft:#5c5273;
+  --cream:#faf8fd;
+  --marble:#f1eafb;
   --white:#ffffff;
-  --radius:14px;
-  --shadow:0 10px 30px rgba(26,21,35,.10);
-  --font:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+  --line:rgba(124,58,237,.16);
+  --radius:16px;
+  --shadow:0 14px 40px rgba(32,24,46,.10);
+  --font:'Poppins',system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+  --maxw:1240px;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.6}
+html{scroll-behavior:smooth;font-size:17px}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.65;font-weight:400}
 img{max-width:100%}
 a{color:inherit;text-decoration:none}
-h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
-.container{max-width:1180px;margin:0 auto;padding:0 24px}
-section{padding:88px 0}
+h1,h2,h3,h4{line-height:1.12;letter-spacing:-.01em;font-weight:800}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+section{padding:104px 0}
+@media(max-width:640px){html{font-size:16px}section{padding:72px 0}.container{padding:0 22px}}
 
 /* ---------- buttons ---------- */
-.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;padding:15px 30px;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:.25s}
-.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#2a2110;box-shadow:0 6px 18px rgba(201,162,39,.35)}
-.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,162,39,.45)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font);font-weight:700;font-size:.9rem;letter-spacing:.05em;text-transform:uppercase;padding:16px 32px;border-radius:10px;border:2px solid transparent;cursor:pointer;transition:.25s}
+.btn-primary{background:linear-gradient(135deg,var(--purple-neon),var(--purple-deep));color:#fff;box-shadow:0 8px 22px rgba(124,58,237,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(124,58,237,.45)}
 .btn-outline{border-color:var(--purple);color:var(--purple);background:transparent}
 .btn-outline:hover{background:var(--purple);color:#fff}
-.btn-light{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-light{border-color:rgba(255,255,255,.55);color:#fff}
 .btn-light:hover{background:#fff;color:var(--purple-deep)}
 
-/* ---------- logo ---------- */
-.logo{display:flex;flex-direction:column;align-items:center;line-height:1}
-.logo .bez{font-size:2rem;font-weight:900;font-style:italic;letter-spacing:.02em;background:linear-gradient(180deg,#f6e27a 0%,#c9a227 55%,#8f6d12 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
-.logo .brand{font-size:.72rem;font-weight:700;font-style:italic;letter-spacing:.14em;color:var(--gold);margin-top:2px}
-.logo.lg .bez{font-size:4.6rem}
-.logo.lg .brand{font-size:1.15rem}
-.logo .wing{display:block;height:10px}
-
 /* ---------- nav ---------- */
-header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,39,.25)}
-.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1280px;margin:0 auto}
-.nav-links{display:flex;gap:28px;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+header{position:sticky;top:0;z-index:50;background:rgba(250,248,253,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 32px;max-width:1360px;margin:0 auto}
+.nav-links{display:flex;gap:34px;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
 .nav-links a:hover{color:var(--purple)}
-.nav .btn{padding:10px 20px;font-size:.75rem}
-@media(max-width:920px){.nav-links{display:none}}
+.nav .btn{padding:11px 22px;font-size:.74rem}
+.nav-logo{display:block;width:110px;transition:transform .25s}
+.nav-logo:hover{transform:scale(1.05)}
+.nav-logo img{display:block;width:100%;height:auto;filter:drop-shadow(0 1px 3px rgba(32,24,46,.18))}
+@media(max-width:940px){.nav-links{display:none}}
+
+/* ---------- section headings ---------- */
+.kicker{display:flex;align-items:center;justify-content:center;gap:12px;font-size:.72rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--purple);margin-bottom:18px}
+.kicker::before,.kicker::after{content:"";width:38px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--purple-neon),transparent)}
+.kicker::before{background:linear-gradient(90deg,transparent,var(--purple-neon))}
+h2.title{font-size:clamp(2rem,3.8vw,2.9rem);font-weight:900;text-transform:uppercase;text-align:center;text-wrap:balance}
+h2.title .accent{color:var(--purple)}
+.sub{max-width:46rem;margin:20px auto 0;text-align:center;color:var(--ink-soft);font-size:1.05rem}
 
 /* ---------- hero ---------- */
 .hero{background:
-  radial-gradient(1000px 500px at 85% 0%,rgba(168,85,247,.16),transparent 60%),
-  radial-gradient(800px 420px at 0% 100%,rgba(201,162,39,.14),transparent 60%),
+  radial-gradient(1100px 560px at 82% -5%,rgba(168,85,247,.28),transparent 60%),
+  radial-gradient(820px 460px at 2% 105%,rgba(124,58,237,.16),transparent 60%),
   linear-gradient(180deg,var(--marble),var(--cream));
-  padding:90px 0 80px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:900;text-transform:uppercase}
+  padding:96px 0 92px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
 .hero h1 .accent{color:var(--purple)}
-.hero p.lead{margin:22px 0 30px;font-size:1.1rem;color:var(--ink-soft);max-width:34rem}
+.hero p.lead{margin:24px 0 34px;font-size:1.2rem;color:var(--ink-soft);max-width:34rem}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
-.hero-badges{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
-.badge{display:flex;align-items:center;gap:12px;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.hero-badges{display:flex;gap:38px;margin-top:52px;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:13px;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
 .badge small{display:block;font-weight:500;color:var(--ink-soft);text-transform:none;letter-spacing:0}
-.badge .ico{color:var(--gold);flex-shrink:0}
-
-/* neon emblem */
-.emblem-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px}
-.emblem-stage::before{content:"";position:absolute;inset:8%;background:
-  radial-gradient(closest-side,rgba(168,85,247,.35),rgba(109,40,217,.12) 55%,transparent 75%);filter:blur(6px)}
-.emblem{position:relative;filter:drop-shadow(0 0 18px rgba(168,85,247,.8)) drop-shadow(0 0 46px rgba(109,40,217,.5));animation:pulse 3.5s ease-in-out infinite}
-@keyframes pulse{0%,100%{filter:drop-shadow(0 0 18px rgba(168,85,247,.8)) drop-shadow(0 0 46px rgba(109,40,217,.5))}50%{filter:drop-shadow(0 0 26px rgba(168,85,247,1)) drop-shadow(0 0 64px rgba(109,40,217,.7))}}
-.pedestal{position:absolute;bottom:30px;width:70%;height:26px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(76,29,149,.35),transparent 70%)}
-
-/* ---------- photography ---------- */
-.photo-frame{border-radius:var(--radius);overflow:hidden;box-shadow:0 18px 44px rgba(26,21,35,.28);border:1px solid rgba(201,162,39,.35);line-height:0}
+.badge .ico{color:var(--purple);flex-shrink:0}
+.photo-frame{border-radius:var(--radius);overflow:hidden;box-shadow:0 22px 50px rgba(32,24,46,.26);border:1px solid var(--line);line-height:0}
 .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-photo{max-width:440px;justify-self:center;transform:rotate(1.5deg)}
-.emblem-card{width:180px;margin:34px auto 0;padding:18px;background:var(--white);border:1px solid rgba(201,162,39,.35);border-radius:var(--radius);box-shadow:var(--shadow);line-height:0}
-.emblem-card img{width:100%;display:block}
-.brand-lockup{max-width:400px;padding:30px;background:var(--white);line-height:0}
-.brand-lockup img{width:100%;display:block}
+.hero-photo{max-width:460px;justify-self:center;transform:rotate(1.5deg)}
+@media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:44px}.hero-photo{transform:none;max-width:420px}}
 
-/* ---------- brand logo ---------- */
-.nav-logo{display:block;width:104px;transition:transform .25s}
-.nav-logo:hover{transform:scale(1.05)}
-.nav-logo img{display:block;width:100%;height:auto;filter:drop-shadow(0 1px 3px rgba(26,21,35,.18))}
-footer .nav-logo{width:150px;filter:drop-shadow(0 0 14px rgba(232,201,92,.15))}
+/* ---------- inclusivity band ---------- */
+.inclusive{background:linear-gradient(135deg,var(--purple-deep),var(--purple));color:#fff;padding:30px 0}
+.inclusive .container{display:flex;align-items:center;justify-content:center;gap:22px;text-align:center;flex-wrap:wrap}
+.inclusive .pride{width:46px;height:46px;border-radius:50%;flex-shrink:0;background:conic-gradient(#e63946,#f4a261,#e9c46a,#2a9d8f,#457b9d,#7c3aed,#e63946);box-shadow:0 0 0 4px rgba(255,255,255,.18)}
+.inclusive p{font-size:1.05rem;font-weight:500;max-width:40rem}
+.inclusive strong{font-weight:800}
 
-/* ---------- flip cards ---------- */
-.flip{position:relative;aspect-ratio:3/4;perspective:1200px;cursor:pointer}
-.flip-inner{position:absolute;inset:0;transition:transform .8s cubic-bezier(.35,.1,.2,1);transform-style:preserve-3d}
-.product:hover .flip-inner,.product:focus-within .flip-inner,.product.flipped .flip-inner{transform:rotateY(180deg)}
-.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
-.flip-face img{width:100%;height:100%;object-fit:cover;display:block}
-.flip-back{transform:rotateY(180deg)}
-.flip-hint{position:absolute;bottom:12px;right:12px;z-index:2;display:flex;align-items:center;gap:7px;background:rgba(26,21,35,.78);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:99px;pointer-events:none}
-.flip-hint svg{flex-shrink:0}
-.flip-tag{position:absolute;top:12px;left:12px;z-index:2;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#2a2110;font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:99px;pointer-events:none}
-@media(prefers-reduced-motion:reduce){.flip-inner{transition:none}}
+/* ---------- about ---------- */
+.about{position:relative;overflow:hidden}
+.about .emblem-bg{position:absolute;right:-90px;top:50%;transform:translateY(-50%);width:min(460px,42vw);opacity:.08;pointer-events:none;filter:saturate(1.1)}
+.about .container{position:relative;z-index:1}
+
+/* ---------- feature cards ---------- */
+.features{background:var(--white)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);padding:44px 32px;text-align:center;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-5px);border-color:var(--purple-neon)}
+.card .frame{width:78px;height:78px;margin:0 auto 24px;display:flex;align-items:center;justify-content:center;transform:rotate(45deg);border:2px solid var(--purple);border-radius:12px;background:var(--purple-soft)}
+.card .frame svg{transform:rotate(-45deg)}
+.card h3{font-size:1rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.card p{font-size:.98rem;color:var(--ink-soft)}
+@media(max-width:940px){.cards{grid-template-columns:1fr}}
+
+/* ---------- technology ---------- */
+.design{background:
+  radial-gradient(1000px 520px at 12% 18%,rgba(168,85,247,.16),transparent 60%),
+  linear-gradient(180deg,var(--cream),var(--marble))}
+.design-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-top:14px}
+.design h2{text-align:left}
+.design .kicker{justify-content:flex-start}
+.design .kicker::after{display:none}
+.design p.intro{color:var(--ink-soft);margin:20px 0;font-size:1.08rem}
+.design ul{list-style:none;margin-top:10px}
+.design li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+.design li:last-child{border-bottom:none}
+.design li .dot{color:var(--purple-neon);font-weight:900;flex-shrink:0;font-size:1.1rem;line-height:1.3}
+.design li strong{display:block;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.design li span{font-size:.98rem;color:var(--ink-soft)}
+@media(max-width:940px){.design-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- anatomy ---------- */
 .anatomy{background:var(--white)}
-.anatomy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
-.anat{background:var(--cream);border:1px solid rgba(201,162,39,.28);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s}
-.anat:hover{transform:translateY(-4px);border-color:var(--gold)}
-.anat .shot{aspect-ratio:4/5;overflow:hidden}
-.anat .shot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
-.anat:hover .shot img{transform:scale(1.06)}
-.anat .diagram{background:
-  radial-gradient(420px 300px at 50% 20%,rgba(168,85,247,.22),transparent 65%),
-  linear-gradient(165deg,#241338 0%,#161022 55%,#1e1430 100%)}
+.anatomy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.anat{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.anat:hover{transform:translateY(-5px);border-color:var(--purple-neon)}
+.anat .diagram{aspect-ratio:4/5;background:
+  radial-gradient(440px 320px at 50% 22%,rgba(168,85,247,.28),transparent 65%),
+  linear-gradient(165deg,#2a1748 0%,#181026 55%,#241638 100%)}
 .anat .diagram svg{width:100%;height:100%;display:block}
 .airline{stroke-dasharray:7 9;animation:bezflow 1.5s linear infinite}
 .airline.slow{animation-duration:2.2s}
@@ -142,132 +162,108 @@ footer .nav-logo{width:150px;filter:drop-shadow(0 0 14px rgba(232,201,92,.15))}
 .pouchglow{animation:bezpulse 3s ease-in-out infinite}
 @keyframes bezpulse{0%,100%{opacity:.55}50%{opacity:1}}
 @media(prefers-reduced-motion:reduce){.airline,.heatwave,.pouchglow{animation:none}}
-.anat .body{padding:24px 26px 30px}
-.anat .num{font-size:.7rem;font-weight:800;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
-.anat h3{font-size:1.05rem;font-weight:900;text-transform:uppercase;margin:6px 0 8px}
-.anat p{font-size:.92rem;color:var(--ink-soft)}
-@media(max-width:920px){.anatomy-grid{grid-template-columns:1fr}}
+.anat .body{padding:26px 28px 32px}
+.anat .num{font-size:.72rem;font-weight:800;letter-spacing:.2em;color:var(--purple);text-transform:uppercase}
+.anat h3{font-size:1.1rem;font-weight:900;text-transform:uppercase;margin:8px 0 10px}
+.anat p{font-size:.96rem;color:var(--ink-soft)}
+@media(max-width:940px){.anatomy-grid{grid-template-columns:1fr}}
 
 /* ---------- built-for strip ---------- */
-.built-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
-.built-strip span{border:1.5px solid rgba(201,162,39,.5);color:var(--ink);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:99px;background:var(--cream)}
-.built-strip span.hot{background:linear-gradient(135deg,var(--gold-light),var(--gold));border-color:transparent;color:#2a2110}
-
-/* ---------- testimonials ---------- */
-.field{background:
-  radial-gradient(800px 460px at 15% 10%,rgba(168,85,247,.25),transparent 55%),
-  linear-gradient(150deg,#241338 0%,#1a1523 60%,#2c1a4d 100%);color:#fff}
-.field .title{color:#fff}
-.field .title .accent{color:var(--purple-neon)}
-.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
-.quote{background:rgba(255,255,255,.05);border:1px solid rgba(201,162,39,.35);border-radius:var(--radius);padding:34px 30px;position:relative}
-.quote .mark{font-size:3.4rem;line-height:1;color:var(--gold);font-family:Georgia,serif;position:absolute;top:14px;left:22px;opacity:.9}
-.quote p{margin-top:34px;font-size:.98rem;color:rgba(255,255,255,.88);font-style:italic}
-.quote footer{margin-top:18px;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);background:none;padding:0}
-@media(max-width:920px){.quotes{grid-template-columns:1fr}}
-@media(max-width:920px){.hero-grid{grid-template-columns:1fr}.emblem-stage{min-height:320px}}
-
-/* ---------- section headings ---------- */
-.kicker{display:flex;align-items:center;justify-content:center;gap:10px;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.kicker::before,.kicker::after{content:"";width:36px;height:1px;background:var(--gold)}
-h2.title{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:900;text-transform:uppercase;text-align:center}
-h2.title .accent{color:var(--purple)}
-.sub{max-width:42rem;margin:18px auto 0;text-align:center;color:var(--ink-soft)}
-
-/* ---------- feature cards ---------- */
-.features{background:var(--white)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
-.card{background:var(--cream);border:1px solid rgba(201,162,39,.28);border-radius:var(--radius);padding:40px 30px;text-align:center;box-shadow:var(--shadow);transition:.25s}
-.card:hover{transform:translateY(-4px);border-color:var(--gold)}
-.card .frame{width:74px;height:74px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;transform:rotate(45deg);border:1.5px solid var(--gold);border-radius:10px}
-.card .frame svg{transform:rotate(-45deg)}
-.card h3{font-size:.95rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
-.card p{font-size:.92rem;color:var(--ink-soft)}
-@media(max-width:920px){.cards{grid-template-columns:1fr}}
-
-/* ---------- design/technology ---------- */
-.design{background:
-  radial-gradient(900px 480px at 15% 20%,rgba(168,85,247,.14),transparent 60%),
-  linear-gradient(180deg,var(--cream),var(--marble))}
-.design-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:26px}
-.design h2{text-align:left}
-.design .kicker{justify-content:flex-start}
-.design .kicker::after{display:none}
-.design p{color:var(--ink-soft);margin:18px 0}
-.design ul{list-style:none;margin-top:8px}
-.design li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(201,162,39,.2)}
-.design li:last-child{border-bottom:none}
-.design li .dot{color:var(--gold);font-weight:900;flex-shrink:0}
-.design li strong{display:block;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
-.design li span{font-size:.9rem;color:var(--ink-soft)}
-@media(max-width:920px){.design-grid{grid-template-columns:1fr}}
+.built-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:48px}
+.built-strip span{border:1.5px solid var(--line);color:var(--ink);font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:10px 20px;border-radius:99px;background:var(--cream)}
+.built-strip span.hot{background:linear-gradient(135deg,var(--purple-neon),var(--purple-deep));border-color:transparent;color:#fff;font-weight:700}
 
 /* ---------- night banner ---------- */
 .night{background:
-  radial-gradient(900px 500px at 80% 20%,rgba(168,85,247,.28),transparent 55%),
-  radial-gradient(700px 400px at 10% 90%,rgba(201,162,39,.18),transparent 60%),
-  linear-gradient(135deg,#241338 0%,#1a1523 55%,#2c1a4d 100%);
+  radial-gradient(1000px 560px at 82% 18%,rgba(168,85,247,.34),transparent 55%),
+  radial-gradient(760px 440px at 8% 92%,rgba(124,58,237,.28),transparent 60%),
+  linear-gradient(135deg,#241443 0%,#160f26 55%,#2c1a4d 100%);
   color:#fff}
-.night-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-.night h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:900;text-transform:uppercase}
+.night-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.night h2{font-size:clamp(2.2rem,4.4vw,3.2rem);font-weight:900;text-transform:uppercase}
 .night h2 .accent{color:var(--purple-neon)}
-.night p{color:rgba(255,255,255,.75);margin:20px 0 30px;max-width:30rem}
-.skyline{display:block;width:100%;filter:drop-shadow(0 0 24px rgba(168,85,247,.35))}
-@media(max-width:920px){.night-grid{grid-template-columns:1fr}}
+.night p{color:rgba(255,255,255,.78);margin:22px 0 30px;max-width:30rem;font-size:1.08rem}
+.tagline{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase;color:var(--gold-light);letter-spacing:.02em;margin:6px 0 30px}
+.vid-wrap{max-width:480px;justify-self:center;position:relative}
+.vid-wrap video{width:100%;display:block}
+.vid-cap{position:absolute;top:15px;left:0;right:0;text-align:center;line-height:1.4;pointer-events:none;z-index:2}
+.vid-cap .a{font-size:1.05rem;font-weight:900;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase}
+.vid-cap .b{font-size:.62rem;font-weight:600;letter-spacing:.38em;color:rgba(255,255,255,.7);text-transform:uppercase;margin-top:5px}
+.vid-scrim{position:absolute;inset:0 0 auto 0;height:40%;background:linear-gradient(180deg,rgba(14,9,20,.94) 0%,rgba(14,9,20,.7) 46%,rgba(14,9,20,0) 100%);pointer-events:none;z-index:1}
+@media(max-width:940px){.night-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- collection ---------- */
 .collection{background:var(--white)}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,460px));justify-content:center;gap:34px;margin-top:52px}
-.product{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(201,162,39,.3);box-shadow:var(--shadow);background:var(--cream);display:flex;flex-direction:column}
-.product .visual{height:280px;display:flex;align-items:center;justify-content:center;position:relative}
-.product.white .visual{background:linear-gradient(160deg,#fdfcf9,#ece7dd)}
-.product.black .visual{background:radial-gradient(600px 300px at 70% 20%,rgba(168,85,247,.28),transparent 60%),linear-gradient(160deg,#221a2e,#120d1a)}
-.product .info{padding:28px 30px 34px;text-align:center}
-.product .tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);border:1px solid var(--purple);border-radius:99px;padding:4px 14px;margin-bottom:14px}
-.product.black .tag{color:var(--gold);border-color:var(--gold)}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:56px}
+.product{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--cream);display:flex;flex-direction:column;transition:.25s}
+.product:hover{transform:translateY(-5px);border-color:var(--purple-neon)}
+.product .visual{aspect-ratio:4/5;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
+.product .visual img{width:100%;height:100%;object-fit:cover;display:block}
+.product .visual.special{background:
+  radial-gradient(420px 340px at 50% 40%,rgba(168,85,247,.4),transparent 62%),
+  linear-gradient(160deg,#2a1748,#140d1f)}
+.product .visual.special img{width:70%;height:auto;filter:drop-shadow(0 10px 30px rgba(168,85,247,.5))}
+.product .tag{position:absolute;top:14px;left:14px;z-index:2;font-size:.64rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--purple-neon),var(--purple-deep));border-radius:99px;padding:6px 14px}
+.product .tag.soft{background:var(--white);color:var(--purple);border:1px solid var(--purple)}
+.product .info{padding:26px 28px 32px;text-align:center}
 .product h3{font-size:1.3rem;font-weight:900;text-transform:uppercase}
-.product p{font-size:.92rem;color:var(--ink-soft);margin:10px 0 20px}
-@media(max-width:920px){.products{grid-template-columns:1fr}}
+.product p{font-size:.96rem;color:var(--ink-soft);margin:10px 0 22px;min-height:3em}
+.collection .shop-all{text-align:center;margin-top:50px}
+@media(max-width:940px){.products{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto}}
+
+/* ---------- testimonials ---------- */
+.field{background:
+  radial-gradient(860px 500px at 14% 8%,rgba(168,85,247,.3),transparent 55%),
+  linear-gradient(150deg,#241443 0%,#181026 60%,#2c1a4d 100%);color:#fff}
+.field .title{color:#fff}
+.field .title .accent{color:var(--purple-neon)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
+.quote{background:rgba(255,255,255,.055);border:1px solid rgba(168,85,247,.3);border-radius:var(--radius);padding:38px 32px;position:relative}
+.quote .mark{font-size:3.6rem;line-height:1;color:var(--purple-neon);font-family:Georgia,serif;position:absolute;top:16px;left:24px;opacity:.85}
+.quote p{margin-top:36px;font-size:1rem;color:rgba(255,255,255,.9);font-style:italic}
+.quote footer{margin-top:20px;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-neon)}
+@media(max-width:940px){.quotes{grid-template-columns:1fr}}
 
 /* ---------- waitlist ---------- */
 .waitlist{background:
-  radial-gradient(800px 400px at 85% 30%,rgba(168,85,247,.18),transparent 60%),
+  radial-gradient(860px 440px at 84% 26%,rgba(168,85,247,.24),transparent 60%),
   linear-gradient(180deg,var(--marble),var(--cream))}
-.wait-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.waitlist h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;font-style:italic;text-transform:uppercase}
+.wait-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:64px;align-items:center}
+.waitlist h2{font-size:clamp(2.2rem,4.2vw,3rem);font-weight:900;font-style:italic;text-transform:uppercase}
 .waitlist h2 .accent{color:var(--purple)}
-.waitlist p{color:var(--ink-soft);margin:18px 0 28px;max-width:30rem}
+.waitlist p{color:var(--ink-soft);margin:20px 0 30px;max-width:30rem;font-size:1.08rem}
 .wait-form{display:flex;gap:12px;flex-wrap:wrap}
-.wait-form input{flex:1;min-width:240px;padding:15px 18px;border:1.5px solid rgba(201,162,39,.45);border-radius:8px;font-size:1rem;background:#fff;color:var(--ink)}
+.wait-form input{flex:1;min-width:250px;padding:16px 20px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:var(--font);background:#fff;color:var(--ink)}
 .wait-form input:focus{outline:2px solid var(--purple);border-color:transparent}
-.form-note{font-size:.8rem;color:var(--ink-soft);margin-top:12px}
+.form-note{font-size:.85rem;color:var(--ink-soft);margin-top:14px}
 .wait-emblem{display:flex;justify-content:center}
-@media(max-width:920px){.wait-grid{grid-template-columns:1fr}.wait-emblem{display:none}}
+@media(max-width:940px){.wait-grid{grid-template-columns:1fr}.wait-emblem{display:none}}
 
 /* ---------- FAQ ---------- */
 .faq{background:var(--white)}
-.faq-list{max-width:840px;margin:48px auto 0;display:grid;gap:14px}
-.faq-item{border:1px solid rgba(201,162,39,.3);border-radius:10px;background:var(--cream);overflow:hidden}
-.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.faq-list{max-width:880px;margin:52px auto 0;display:grid;gap:14px}
+.faq-item{border:1px solid var(--line);border-radius:12px;background:var(--cream);overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 24px;font-size:.9rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary .plus{color:var(--purple);font-size:1.2rem;font-weight:400;transition:.2s}
+.faq-item summary .plus{color:var(--purple);font-size:1.3rem;font-weight:400;transition:.2s;line-height:1}
 .faq-item[open] summary .plus{transform:rotate(45deg)}
-.faq-item .answer{padding:0 22px 20px;color:var(--ink-soft);font-size:.95rem}
+.faq-item .answer{padding:0 24px 22px;color:var(--ink-soft);font-size:1rem}
 
 /* ---------- footer ---------- */
-footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255,.72);padding:64px 0 30px}
-.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:40px}
-.foot-grid h4{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:16px}
-.foot-grid ul{list-style:none;display:grid;gap:10px;font-size:.9rem}
-.foot-grid a:hover{color:var(--gold-light)}
-.foot-brand p{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-top:14px;color:rgba(255,255,255,.6)}
-.foot-form{display:flex;gap:0;margin-top:6px}
-.foot-form input{flex:1;padding:12px 14px;border:1px solid rgba(255,255,255,.25);border-right:none;border-radius:8px 0 0 8px;background:rgba(255,255,255,.06);color:#fff;font-size:.9rem}
-.foot-form input::placeholder{color:rgba(255,255,255,.4)}
-.foot-form button{padding:12px 18px;border:none;border-radius:0 8px 8px 0;background:var(--purple);color:#fff;font-size:1rem;cursor:pointer}
+footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255,.72);padding:72px 0 32px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.5fr;gap:44px}
+.foot-grid h4{font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
+.foot-grid ul{list-style:none;display:grid;gap:11px;font-size:.94rem}
+.foot-grid a:hover{color:var(--purple-neon)}
+.foot-brand .nav-logo{width:158px}
+.foot-brand p{font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;margin-top:16px;color:rgba(255,255,255,.6)}
+.foot-form{display:flex;gap:0;margin-top:8px}
+.foot-form input{flex:1;padding:13px 15px;border:1px solid rgba(255,255,255,.22);border-right:none;border-radius:10px 0 0 10px;background:rgba(255,255,255,.06);color:#fff;font-size:.92rem;font-family:var(--font)}
+.foot-form input::placeholder{color:rgba(255,255,255,.42)}
+.foot-form button{padding:13px 19px;border:none;border-radius:0 10px 10px 0;background:var(--purple);color:#fff;font-size:1.1rem;cursor:pointer}
 .foot-form button:hover{background:var(--purple-neon)}
-.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:48px;padding-top:24px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.45)}
-@media(max-width:920px){.foot-grid{grid-template-columns:1fr 1fr}}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:52px;padding-top:26px;text-align:center;font-size:.82rem;color:rgba(255,255,255,.45)}
+@media(max-width:940px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -282,11 +278,11 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <div class="nav-links">
       <a href="#collection">Collection</a>
       <a href="#technology">Technology</a>
-      <a href="#about">About Us</a>
+      <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+    <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
   </nav>
 </header>
 
@@ -294,44 +290,52 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 <section class="hero" id="top">
   <div class="container hero-grid">
     <div>
-      <h1>Luxury Men's Underwear.<br><span class="accent">Designed to Breathe.</span></h1>
-      <p class="lead">Italian-inspired comfort engineered for confidence, movement, and all-day wear. Premium 100% cotton underwear with an engineered airflow design that keeps you cool where it counts.</p>
+      <h1>Luxury Underwear.<br><span class="accent">Designed to Breathe.</span></h1>
+      <p class="lead">Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.</p>
       <div class="hero-ctas">
-        <a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="btn btn-gold store-link">Shop the Collection</a>
+        <a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="btn btn-primary store-link">Shop the Collection</a>
         <a href="#waitlist" class="btn btn-outline">Join Waitlist</a>
       </div>
       <div class="hero-badges">
         <div class="badge">
-          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
           <div>Engineered<small>Airflow</small></div>
         </div>
         <div class="badge">
-          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
           <div>Premium<small>Materials</small></div>
         </div>
         <div class="badge">
-          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
           <div>All Day<small>Comfort</small></div>
         </div>
         <div class="badge">
-          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8l4 4 5-7 5 7 4-4v9H3z"/></svg>
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8l4 4 5-7 5 7 4-4v9H3z"/></svg>
           <div>Fit For<small>Royalty</small></div>
         </div>
       </div>
     </div>
     <div class="photo-frame hero-photo">
-      <img src="images/black-edition-lifestyle.jpg" alt="BreathEZs Black Edition boxer briefs with BEZ waistband label">
+      <img src="images/black-edition-lifestyle.jpg" alt="BreathEZs boxer briefs with the BEZ waistband label">
     </div>
   </div>
 </section>
 
-<!-- ============ CRAFTED ============ -->
-<section id="about">
+<!-- ============ INCLUSIVITY BAND ============ -->
+<section class="inclusive" aria-label="Inclusivity statement">
+  <div class="container">
+    <span class="pride" aria-hidden="true"></span>
+    <p><strong>BreathEZs is for every body.</strong> All genders, all orientations, all identities are welcome here. Comfort has no labels, and neither do we.</p>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about" id="about">
+  <img class="emblem-bg" src="images/emblem-bg.png" alt="" aria-hidden="true">
   <div class="container">
     <div class="kicker">The Symbol of Comfort</div>
     <h2 class="title">Crafted for Confidence.<br><span class="accent">Designed to Breathe.</span></h2>
-    <p class="sub">BreathEZs blends elevated design, breathable comfort, and masculine confidence into an everyday luxury essential. Founded by Rich White, who spent years working long shifts in the heat and knew standard underwear wasn't built for it — so he engineered something that was. The first prototypes were designed by Rich and hand-sewn by his wife, an experienced seamstress, then refined and tested in the real world until they earned the name.</p>
-    <div class="emblem-card"><img src="images/emblem.jpg" alt="BreathEZs diamond emblem in purple and gold"></div>
+    <p class="sub">BreathEZs blends elevated design, breathable comfort, and quiet confidence into an everyday luxury essential. Founded by Rich White, who spent years working long shifts in the heat and knew standard underwear was never built for it, so he engineered something that was. The first prototypes were designed by Rich and hand sewn by his wife, an experienced seamstress, then refined and tested in the real world until they earned the name.</p>
   </div>
 </section>
 
@@ -341,24 +345,24 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <div class="cards">
       <div class="card">
         <div class="frame">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.8" aria-hidden="true"><path d="M5 9l3-5h8l3 5-7 11z M5 9h14 M9 4l3 5 3-5 M12 9v11"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" aria-hidden="true"><path d="M5 9l3-5h8l3 5-7 11z M5 9h14 M9 4l3 5 3-5 M12 9v11"/></svg>
         </div>
         <h3>Elevated Comfort</h3>
-        <p>Soft, breathable 100% cotton designed for all-day wear — under jeans, work gear, or nothing at all.</p>
+        <p>Soft, breathable 100% cotton made for all day wear. Under jeans, work gear, or nothing at all.</p>
       </div>
       <div class="card">
         <div class="frame">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h10a2.5 2.5 0 100-5M4 12h14a2.5 2.5 0 110 5M4 16h7a2.5 2.5 0 11-2.5 4"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h10a2.5 2.5 0 100-5M4 12h14a2.5 2.5 0 110 5M4 16h7a2.5 2.5 0 11-2.5 4"/></svg>
         </div>
         <h3>Breathable Confidence</h3>
         <p>Engineered for airflow, cooling, and movement. Every step creates natural ventilation.</p>
       </div>
       <div class="card">
         <div class="frame">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3c2 3 2 5 0 7-2-2-2-4 0-7zM12 10c3-1 5 0 6 2-2 2-4 2-6 1zM12 10c-3-1-5 0-6 2 2 2 4 2 6 1zM12 13v8M9 21h6"/></svg>
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3c2 3 2 5 0 7-2-2-2-4 0-7zM12 10c3-1 5 0 6 2-2 2-4 2-6 1zM12 10c-3-1-5 0-6 2 2 2 4 2 6 1zM12 13v8M9 21h6"/></svg>
         </div>
         <h3>Italian-Inspired Luxury</h3>
-        <p>Refined masculine styling for everyday confidence. Heritage craftsmanship, modern performance.</p>
+        <p>Refined styling and premium materials, built for everyday confidence and modern performance.</p>
       </div>
     </div>
   </div>
@@ -370,16 +374,16 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <div>
       <div class="kicker">The Technology</div>
       <h2 class="title">Airflow, <span class="accent">Engineered.</span></h2>
-      <p>BreathEZs are medium-length boxer briefs with a signature open-rear ventilation design. Full support up front. Free-flowing air where you need it most. No elastic straps, no restriction — nothing like a jockstrap, everything like relief.</p>
+      <p class="intro">BreathEZs are medium length boxer briefs with a signature open rear for real ventilation. Full support up front. Free flowing air where you need it most. No elastic straps, no restriction, nothing like a jockstrap. Everything like relief.</p>
       <ul>
-        <li><span class="dot">◆</span><div><strong>Natural Ventilation</strong><span>The engineered rear opening turns every step into airflow, keeping you cooler through the longest, hottest days.</span></div></li>
-        <li><span class="dot">◆</span><div><strong>Full Support, Zero Restriction</strong><span>Classic boxer-brief support and coverage in front — without straps or elastic pressing where it shouldn't.</span></div></li>
-        <li><span class="dot">◆</span><div><strong>Invisible Under Anything</strong><span>Tested under jeans and work pants. You'll barely notice you're wearing them. Everyone notices you're cooler.</span></div></li>
-        <li><span class="dot">◆</span><div><strong>Built for Real Work</strong><span>Made for warehouse crews, construction, mechanics, drivers, athletes — anyone who works up a sweat.</span></div></li>
+        <li><span class="dot">◆</span><div><strong>Natural Ventilation</strong><span>The open rear turns every step into airflow, keeping you cooler through the longest, hottest days.</span></div></li>
+        <li><span class="dot">◆</span><div><strong>Full Support, Zero Restriction</strong><span>Classic boxer brief support and coverage in front, without straps or elastic pressing where it shouldn't.</span></div></li>
+        <li><span class="dot">◆</span><div><strong>Invisible Under Anything</strong><span>Tested under jeans and work pants. You'll barely notice you're wearing them.</span></div></li>
+        <li><span class="dot">◆</span><div><strong>Built for Real Work</strong><span>Made for warehouse crews, construction, mechanics, drivers, and athletes. Anyone who works up a sweat.</span></div></li>
       </ul>
     </div>
     <div class="photo-frame">
-      <img src="images/render-rear-design.jpg" alt="Rear view of white BreathEZs showing the open-rear ventilation design — comfort isn't optional">
+      <img src="images/render-rear-design.jpg" alt="Rear view of white BreathEZs showing the open airflow design">
     </div>
   </div>
 </section>
@@ -389,172 +393,150 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
   <div class="container">
     <div class="kicker">Anatomy of Airflow</div>
     <h2 class="title">Every Detail Pulls <span class="accent">Its Weight.</span></h2>
-    <p class="sub">Take a closer look at the construction. This isn't a gimmick cut into a cheap pair of shorts — it's a purpose-built ventilation system stitched into premium 100% cotton.</p>
+    <p class="sub">Take a closer look at the construction. This is not a gimmick cut into a cheap pair of shorts. It is a purpose built ventilation system stitched into premium 100% cotton.</p>
     <div class="anatomy-grid">
       <div class="anat">
-        <div class="shot diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the open-rear ventilation: cool air flows in through the vent while body heat escapes upward">
+        <div class="diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the open rear ventilation, with cool air flowing in through the opening while body heat escapes upward">
           <defs>
-            <pattern id="mesh1" width="9" height="9" patternUnits="userSpaceOnUse">
-              <circle cx="4.5" cy="4.5" r="1.4" fill="rgba(232,201,92,.45)"/>
-            </pattern>
             <marker id="arrowP" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
               <path d="M0 0 L8 4 L0 8 Z" fill="#a855f7"/>
             </marker>
           </defs>
-          <text x="200" y="38" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#e8c95c" font-family="Arial">REAR VIEW</text>
-          <!-- heat rising out of the vent -->
+          <text x="200" y="40" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#c9a227" font-family="Poppins,Arial">REAR VIEW</text>
           <g stroke="#f0a86b" stroke-width="3" fill="none" stroke-linecap="round">
-            <path class="heatwave" d="M168 96 q5 -9 0 -18 q-5 -9 0 -18"/>
-            <path class="heatwave d2" d="M200 92 q5 -9 0 -18 q-5 -9 0 -18"/>
-            <path class="heatwave d3" d="M232 96 q5 -9 0 -18 q-5 -9 0 -18"/>
+            <path class="heatwave" d="M168 100 q5 -9 0 -18 q-5 -9 0 -18"/>
+            <path class="heatwave d2" d="M200 96 q5 -9 0 -18 q-5 -9 0 -18"/>
+            <path class="heatwave d3" d="M232 100 q5 -9 0 -18 q-5 -9 0 -18"/>
           </g>
-          <!-- garment rear -->
           <g>
-            <rect x="72" y="118" width="256" height="34" rx="9" fill="#2c1f42" stroke="#e8c95c" stroke-width="3"/>
-            <path d="M74 152 L64 300 C62 344 108 372 148 375 L172 375 L180 318 C186 300 214 300 220 318 L228 375 L252 375 C292 372 338 344 336 300 L326 152 Z" fill="#2c1f42" stroke="#e8c95c" stroke-width="3" stroke-linejoin="round"/>
-            <!-- vent opening with mesh trim -->
-            <path d="M138 168 L262 168 C252 240 218 272 200 279 C182 272 148 240 138 168 Z" fill="url(#mesh1)" stroke="#a855f7" stroke-width="4" stroke-linejoin="round"/>
+            <rect x="72" y="122" width="256" height="34" rx="9" fill="#33224f" stroke="#a855f7" stroke-width="3"/>
+            <path d="M74 156 L64 304 C62 348 108 376 148 379 L172 379 L180 322 C186 304 214 304 220 322 L228 379 L252 379 C292 376 338 348 336 304 L326 156 Z" fill="#33224f" stroke="#a855f7" stroke-width="3" stroke-linejoin="round"/>
+            <!-- simply open vent -->
+            <path d="M138 172 L262 172 C252 244 218 276 200 283 C182 276 148 244 138 172 Z" fill="#181026" stroke="#c9a227" stroke-width="3.5" stroke-linejoin="round"/>
           </g>
-          <!-- air flowing in through vent -->
           <g stroke="#a855f7" stroke-width="3.5" fill="none" stroke-linecap="round">
-            <path class="airline" marker-end="url(#arrowP)" d="M96 430 C120 380 150 330 178 245"/>
-            <path class="airline slow" marker-end="url(#arrowP)" d="M200 445 C200 390 200 320 200 240"/>
-            <path class="airline" marker-end="url(#arrowP)" d="M304 430 C280 380 250 330 222 245"/>
+            <path class="airline" marker-end="url(#arrowP)" d="M96 434 C120 384 150 334 178 249"/>
+            <path class="airline slow" marker-end="url(#arrowP)" d="M200 449 C200 394 200 324 200 244"/>
+            <path class="airline" marker-end="url(#arrowP)" d="M304 434 C280 384 250 334 222 249"/>
           </g>
-          <!-- callouts -->
-          <g font-family="Arial" font-size="12.5" font-weight="700" letter-spacing="1.5">
-            <line x1="262" y1="176" x2="330" y2="200" stroke="rgba(232,201,92,.7)" stroke-width="1.5"/>
-            <text x="336" y="204" fill="#e8c95c" text-anchor="start" transform="rotate(0)" font-size="11">MESH-</text>
-            <text x="336" y="218" fill="#e8c95c" font-size="11">TRIMMED</text>
-            <text x="336" y="232" fill="#e8c95c" font-size="11">VENT</text>
-            <text x="200" y="52" text-anchor="middle" fill="#f0a86b" font-size="11">HEAT OUT</text>
-            <text x="200" y="482" text-anchor="middle" fill="#c084fc" font-size="11">COOL AIR IN — EVERY STEP</text>
+          <g font-family="Poppins,Arial" font-weight="700" letter-spacing="1.5">
+            <line x1="262" y1="182" x2="330" y2="206" stroke="rgba(201,162,39,.7)" stroke-width="1.5"/>
+            <text x="336" y="204" fill="#e8c95c" font-size="11">OPEN</text>
+            <text x="336" y="218" fill="#e8c95c" font-size="11">VENT</text>
+            <text x="200" y="56" text-anchor="middle" fill="#f0a86b" font-size="11">HEAT OUT</text>
+            <text x="200" y="486" text-anchor="middle" fill="#c084fc" font-size="11">COOL AIR IN, EVERY STEP</text>
           </g>
         </svg></div>
         <div class="body">
-          <span class="num">01 — The Vent</span>
+          <span class="num">01 · The Vent</span>
           <h3>Open-Rear Ventilation</h3>
-          <p>A reinforced, mesh-trimmed opening lets heat escape the moment it builds. Every step you take pumps fresh air through — no batteries, no tech fabric hype, just physics.</p>
+          <p>The rear is simply open, so heat escapes the moment it builds. Every step you take pumps fresh air through. No batteries, no tech fabric hype, just physics.</p>
         </div>
       </div>
       <div class="anat">
-        <div class="shot diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the full-pouch front: a contoured pouch cradles and supports with a working fly and no straps">
+        <div class="diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the full pouch front, with a contoured pouch that cradles and supports, a working fly, and no straps">
           <defs>
             <radialGradient id="pouchG" cx="50%" cy="42%" r="65%">
-              <stop offset="0" stop-color="rgba(232,201,92,.85)"/>
-              <stop offset=".55" stop-color="rgba(201,162,39,.35)"/>
-              <stop offset="1" stop-color="rgba(201,162,39,0)"/>
+              <stop offset="0" stop-color="rgba(168,85,247,.9)"/>
+              <stop offset=".55" stop-color="rgba(124,58,237,.35)"/>
+              <stop offset="1" stop-color="rgba(124,58,237,0)"/>
             </radialGradient>
             <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
-              <path d="M0 0 L8 4 L0 8 Z" fill="#e8c95c"/>
+              <path d="M0 0 L8 4 L0 8 Z" fill="#c9a227"/>
             </marker>
           </defs>
-          <text x="200" y="38" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#e8c95c" font-family="Arial">FRONT VIEW</text>
-          <!-- garment front -->
-          <rect x="72" y="88" width="256" height="34" rx="9" fill="#2c1f42" stroke="#e8c95c" stroke-width="3"/>
-          <rect x="172" y="94" width="56" height="22" rx="4" fill="#17130d" stroke="#e8c95c" stroke-width="1.5"/>
-          <text x="200" y="110" text-anchor="middle" font-size="13" font-weight="900" font-style="italic" fill="#e8c95c" font-family="Arial">BEZ</text>
-          <path d="M74 122 L64 270 C62 314 108 342 148 345 L172 345 L180 288 C186 270 214 270 220 288 L228 345 L252 345 C292 342 338 314 336 270 L326 122 Z" fill="#2c1f42" stroke="#e8c95c" stroke-width="3" stroke-linejoin="round"/>
-          <!-- pouch glow + contour -->
-          <ellipse class="pouchglow" cx="200" cy="205" rx="72" ry="78" fill="url(#pouchG)"/>
-          <path d="M200 142 C160 148 142 180 145 214 C148 250 172 274 200 277 C228 274 252 250 255 214 C258 180 240 148 200 142 Z" fill="none" stroke="#e8c95c" stroke-width="3.5"/>
-          <!-- fly line -->
-          <path d="M164 160 C150 190 152 236 170 262" fill="none" stroke="#c084fc" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
-          <!-- cradle arrows -->
-          <g stroke="#e8c95c" stroke-width="3" fill="none" stroke-linecap="round">
-            <path marker-end="url(#arrowG)" d="M140 320 C150 296 158 280 170 264"/>
-            <path marker-end="url(#arrowG)" d="M260 320 C250 296 242 280 230 264"/>
+          <text x="200" y="40" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#c9a227" font-family="Poppins,Arial">FRONT VIEW</text>
+          <rect x="72" y="90" width="256" height="34" rx="9" fill="#33224f" stroke="#a855f7" stroke-width="3"/>
+          <rect x="172" y="96" width="56" height="22" rx="4" fill="#181026" stroke="#c9a227" stroke-width="1.5"/>
+          <text x="200" y="112" text-anchor="middle" font-size="13" font-weight="900" font-style="italic" fill="#e8c95c" font-family="Poppins,Arial">BEZ</text>
+          <path d="M74 124 L64 272 C62 316 108 344 148 347 L172 347 L180 290 C186 272 214 272 220 290 L228 347 L252 347 C292 344 338 316 336 272 L326 124 Z" fill="#33224f" stroke="#a855f7" stroke-width="3" stroke-linejoin="round"/>
+          <ellipse class="pouchglow" cx="200" cy="207" rx="72" ry="78" fill="url(#pouchG)"/>
+          <path d="M200 144 C160 150 142 182 145 216 C148 252 172 276 200 279 C228 276 252 252 255 216 C258 182 240 150 200 144 Z" fill="none" stroke="#c9a227" stroke-width="3.5"/>
+          <path d="M164 162 C150 192 152 238 170 264" fill="none" stroke="#c084fc" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+          <g stroke="#c9a227" stroke-width="3" fill="none" stroke-linecap="round">
+            <path marker-end="url(#arrowG)" d="M140 322 C150 298 158 282 170 266"/>
+            <path marker-end="url(#arrowG)" d="M260 322 C250 298 242 282 230 266"/>
           </g>
-          <!-- no straps -->
           <g>
-            <circle cx="200" cy="415" r="30" fill="none" stroke="#a855f7" stroke-width="3"/>
-            <path d="M186 425 C192 408 208 408 214 405" stroke="#a855f7" stroke-width="3" fill="none" stroke-linecap="round"/>
-            <line x1="179" y1="436" x2="221" y2="394" stroke="#a855f7" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="200" cy="418" r="30" fill="none" stroke="#a855f7" stroke-width="3"/>
+            <path d="M186 428 C192 411 208 411 214 408" stroke="#a855f7" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <line x1="179" y1="439" x2="221" y2="397" stroke="#a855f7" stroke-width="4" stroke-linecap="round"/>
           </g>
-          <g font-family="Arial" font-weight="700" letter-spacing="1.5">
-            <line x1="255" y1="200" x2="310" y2="186" stroke="rgba(232,201,92,.7)" stroke-width="1.5"/>
-            <text x="396" y="182" text-anchor="end" fill="#e8c95c" font-size="11">CONTOURED</text>
-            <text x="396" y="196" text-anchor="end" fill="#e8c95c" font-size="11">POUCH</text>
-            <line x1="158" y1="210" x2="86" y2="196" stroke="rgba(192,132,252,.7)" stroke-width="1.5"/>
-            <text x="30" y="182" fill="#c084fc" font-size="11">WORKING</text>
-            <text x="30" y="196" fill="#c084fc" font-size="11">FLY</text>
-            <text x="200" y="372" text-anchor="middle" fill="#e8c95c" font-size="11">LIFT &amp; SUPPORT</text>
-            <text x="200" y="474" text-anchor="middle" fill="#c084fc" font-size="11">NO STRAPS. NO SQUEEZE.</text>
+          <g font-family="Poppins,Arial" font-weight="700" letter-spacing="1.5">
+            <line x1="255" y1="202" x2="310" y2="188" stroke="rgba(201,162,39,.7)" stroke-width="1.5"/>
+            <text x="396" y="184" text-anchor="end" fill="#e8c95c" font-size="11">CONTOURED</text>
+            <text x="396" y="198" text-anchor="end" fill="#e8c95c" font-size="11">POUCH</text>
+            <line x1="158" y1="212" x2="86" y2="198" stroke="rgba(192,132,252,.7)" stroke-width="1.5"/>
+            <text x="30" y="184" fill="#c084fc" font-size="11">WORKING</text>
+            <text x="30" y="198" fill="#c084fc" font-size="11">FLY</text>
+            <text x="200" y="374" text-anchor="middle" fill="#e8c95c" font-size="11">LIFT &amp; SUPPORT</text>
+            <text x="200" y="478" text-anchor="middle" fill="#c084fc" font-size="11">NO STRAPS. NO SQUEEZE.</text>
           </g>
         </svg></div>
         <div class="body">
-          <span class="num">02 — The Support</span>
+          <span class="num">02 · The Support</span>
           <h3>Full-Pouch Front</h3>
-          <p>A contoured pouch keeps the boys supported and exactly where they belong — with a working fly. No elastic strap digging in like a jockstrap. Support without the squeeze.</p>
+          <p>A contoured pouch keeps everything supported and exactly where it belongs, with a working fly. No elastic strap digging in like a jockstrap. Support without the squeeze.</p>
         </div>
       </div>
       <div class="anat">
-        <div class="shot diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of premium 100% cotton quality: a cotton boll, tight weave, and ratings for softness, breathability and durability">
+        <div class="diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of premium 100% cotton quality, with a cotton boll, a tight weave, and ratings for softness, breathability and durability">
           <defs>
             <radialGradient id="cottonHalo" cx="50%" cy="50%" r="55%">
-              <stop offset="0" stop-color="rgba(250,247,242,.28)"/>
-              <stop offset="1" stop-color="rgba(250,247,242,0)"/>
+              <stop offset="0" stop-color="rgba(168,85,247,.3)"/>
+              <stop offset="1" stop-color="rgba(168,85,247,0)"/>
             </radialGradient>
           </defs>
-          <text x="200" y="38" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#e8c95c" font-family="Arial">THE FABRIC</text>
-          <!-- 100% cotton seal -->
-          <g transform="translate(200 178)">
+          <text x="200" y="40" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#c9a227" font-family="Poppins,Arial">THE FABRIC</text>
+          <g transform="translate(200 180)">
             <circle r="118" fill="url(#cottonHalo)"/>
-            <circle r="96" fill="none" stroke="#e8c95c" stroke-width="2.5"/>
-            <circle r="104" fill="none" stroke="rgba(232,201,92,.4)" stroke-width="1.5" stroke-dasharray="4 6"/>
-            <!-- cotton boll: stem, sepals, fluff -->
+            <circle r="96" fill="none" stroke="#a855f7" stroke-width="2.5"/>
+            <circle r="104" fill="none" stroke="rgba(168,85,247,.4)" stroke-width="1.5" stroke-dasharray="4 6"/>
             <path d="M0 62 C-4 44 -2 30 0 16" stroke="#8f6d12" stroke-width="4" fill="none" stroke-linecap="round"/>
             <path d="M0 26 L-16 44 M0 26 L16 44 M0 30 L0 50" stroke="#8f6d12" stroke-width="4" fill="none" stroke-linecap="round"/>
             <g fill="#faf7f2">
-              <circle cx="-26" cy="-8" r="24"/>
-              <circle cx="26" cy="-8" r="24"/>
-              <circle cx="0" cy="-30" r="26"/>
-              <circle cx="0" cy="2" r="24"/>
+              <circle cx="-26" cy="-8" r="24"/><circle cx="26" cy="-8" r="24"/><circle cx="0" cy="-30" r="26"/><circle cx="0" cy="2" r="24"/>
             </g>
-            <g fill="none" stroke="rgba(26,21,35,.18)" stroke-width="2">
-              <path d="M-14 -14 C-8 -6 -8 4 -12 12"/>
-              <path d="M14 -14 C8 -6 8 4 12 12"/>
-              <path d="M0 -44 C2 -36 2 -26 0 -18"/>
+            <g fill="none" stroke="rgba(32,24,46,.18)" stroke-width="2">
+              <path d="M-14 -14 C-8 -6 -8 4 -12 12"/><path d="M14 -14 C8 -6 8 4 12 12"/><path d="M0 -44 C2 -36 2 -26 0 -18"/>
             </g>
-            <text y="52" text-anchor="middle" font-size="26" font-weight="900" fill="#e8c95c" font-family="Arial">100%</text>
-            <text y="74" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="5" fill="#faf7f2" font-family="Arial">COTTON</text>
+            <text y="52" text-anchor="middle" font-size="26" font-weight="900" fill="#e8c95c" font-family="Poppins,Arial">100%</text>
+            <text y="74" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="5" fill="#faf7f2" font-family="Poppins,Arial">COTTON</text>
           </g>
-          <!-- weave swatch -->
-          <g transform="translate(58 320)">
-            <rect x="0" y="0" width="284" height="36" rx="6" fill="#2c1f42" stroke="rgba(232,201,92,.5)" stroke-width="1.5"/>
-            <g stroke="rgba(232,201,92,.55)" stroke-width="2">
+          <g transform="translate(58 322)">
+            <rect x="0" y="0" width="284" height="36" rx="6" fill="#33224f" stroke="rgba(168,85,247,.5)" stroke-width="1.5"/>
+            <g stroke="rgba(201,162,39,.55)" stroke-width="2">
               <path d="M10 6 L10 30 M26 6 L26 30 M42 6 L42 30 M58 6 L58 30 M74 6 L74 30 M90 6 L90 30 M106 6 L106 30 M122 6 L122 30 M138 6 L138 30 M154 6 L154 30 M170 6 L170 30 M186 6 L186 30 M202 6 L202 30 M218 6 L218 30 M234 6 L234 30 M250 6 L250 30 M266 6 L266 30"/>
             </g>
-            <g stroke="rgba(192,132,252,.55)" stroke-width="2">
+            <g stroke="rgba(192,132,252,.6)" stroke-width="2">
               <path d="M4 12 L280 12 M4 24 L280 24"/>
             </g>
-            <text x="142" y="52" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="2" fill="rgba(250,247,242,.65)" font-family="Arial">TIGHT COMBED WEAVE — SOFT, STRONG, BREATHABLE</text>
+            <text x="142" y="52" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="2" fill="rgba(250,247,242,.7)" font-family="Poppins,Arial">TIGHT COMBED WEAVE, SOFT AND BREATHABLE</text>
           </g>
-          <!-- quality meters -->
-          <g font-family="Arial" font-size="11" font-weight="700" letter-spacing="1.5" fill="#faf7f2">
-            <text x="58" y="416">SOFTNESS</text>
-            <g transform="translate(210 408)" fill="#e8c95c">
+          <g font-family="Poppins,Arial" font-size="11" font-weight="700" letter-spacing="1.5" fill="#faf7f2">
+            <text x="58" y="418">SOFTNESS</text>
+            <g transform="translate(210 410)" fill="#a855f7">
               <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5"/>
             </g>
-            <text x="58" y="446">BREATHABILITY</text>
-            <g transform="translate(210 438)" fill="#a855f7">
+            <text x="58" y="448">BREATHABILITY</text>
+            <g transform="translate(210 440)" fill="#c9a227">
               <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5"/>
             </g>
-            <text x="58" y="476">DURABILITY</text>
-            <g transform="translate(210 468)" fill="#e8c95c">
-              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5" fill="rgba(232,201,92,.25)"/>
+            <text x="58" y="478">DURABILITY</text>
+            <g transform="translate(210 470)" fill="#a855f7">
+              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5" fill="rgba(168,85,247,.25)"/>
             </g>
           </g>
         </svg></div>
         <div class="body">
-          <span class="num">03 — The Finish</span>
+          <span class="num">03 · The Finish</span>
           <h3>Premium Construction</h3>
-          <p>Plush no-roll waistband, flat seams that disappear under jeans, and the woven BEZ label on every pair. Prototyped by hand, refined until it earned the name.</p>
+          <p>A plush no roll waistband, flat seams that disappear under jeans, and the woven BEZ label on every pair. Prototyped by hand, refined until it earned the name.</p>
         </div>
       </div>
     </div>
     <div class="built-strip" aria-label="Who BreathEZs are built for">
-      <span class="hot">Built For:</span>
+      <span class="hot">Built For</span>
       <span>Warehouse Crews</span>
       <span>Construction</span>
       <span>Mechanics</span>
@@ -571,19 +553,19 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
   <div class="container night-grid">
     <div>
       <h2>Made for Long Days.<br>Built for <span class="accent">Long Nights.</span></h2>
-      <p>BreathEZs delivers elevated comfort that moves with you — from everyday routines to after-dark confidence.</p>
-      <p style="font-size:1.45rem;font-weight:900;font-style:italic;text-transform:uppercase;color:var(--gold-light);letter-spacing:.03em;margin:6px 0 26px">No Heat For Your Meat.<sup style="font-size:.55em">™</sup></p>
-      <a href="#collection" class="btn btn-gold">Discover More</a>
+      <p>BreathEZs delivers elevated comfort that moves with you, from everyday routines to after dark confidence.</p>
+      <p class="tagline">No Heat For Your Meat.<sup style="font-size:.55em">™</sup></p>
+      <a href="#collection" class="btn btn-primary">Discover More</a>
     </div>
-    <div class="photo-frame" style="max-width:460px;justify-self:center;position:relative">
-      <video autoplay muted loop playsinline style="width:100%;display:block" aria-label="BreathEZs Special Edition promo — the black edition with its emblem and retail box">
+    <div class="photo-frame vid-wrap">
+      <video autoplay muted loop playsinline aria-label="BreathEZs Special Edition promo, the black edition with its emblem and retail box">
         <source src="videos/special-edition-promo.mp4" type="video/mp4">
-        <img src="images/render-standard.jpg" alt="BEZ logo in marble and gold — It's the standard">
+        <img src="images/coming-soon.jpg" alt="BEZ BreathEZs Special Edition">
       </video>
-      <div style="position:absolute;inset:0 0 auto 0;height:38%;background:linear-gradient(180deg,rgba(14,9,20,.96) 0%,rgba(14,9,20,.75) 45%,rgba(14,9,20,0) 100%);pointer-events:none"></div>
-      <div style="position:absolute;top:13px;left:0;right:0;text-align:center;line-height:1.4;pointer-events:none">
-        <div style="font-size:1rem;font-weight:900;letter-spacing:.32em;color:var(--gold-light);text-transform:uppercase">Special Edition</div>
-        <div style="font-size:.6rem;font-weight:700;letter-spacing:.4em;color:rgba(255,255,255,.65);text-transform:uppercase;margin-top:4px">Limited &middot; Bold &middot; Exclusive</div>
+      <div class="vid-scrim"></div>
+      <div class="vid-cap">
+        <div class="a">Special Edition</div>
+        <div class="b">Limited &middot; Bold &middot; Exclusive</div>
       </div>
     </div>
   </div>
@@ -593,52 +575,45 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 <section class="collection" id="collection">
   <div class="container">
     <div class="kicker">The Collection</div>
-    <h2 class="title">Two Editions. <span class="accent">One Standard.</span></h2>
-    <p class="sub">Launching late August with preorders on our official store. Reserve your spot on the waitlist for first access and exclusive first-release drops. <strong>Hover or tap a pair to flip it around and see the airflow side.</strong></p>
+    <h2 class="title">Three Ways to <span class="accent">Stay Cool.</span></h2>
+    <p class="sub">Launching late August with preorders. Reserve your spot on the waitlist for first access and exclusive first release drops.</p>
     <div class="products">
-      <div class="product white" tabindex="0" onclick="this.classList.toggle('flipped')">
-        <div class="flip">
-          <div class="flip-inner">
-            <div class="flip-face">
-              <img src="images/classic-white-hanging.jpg" alt="BreathEZs Classic White boxer briefs — front view">
-              <span class="flip-hint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12a9 9 0 019-9c3.6 0 6.6 2 8.2 5M21 12a9 9 0 01-9 9c-3.6 0-6.6-2-8.2-5M17 8h4V4M7 16H3v4"/></svg> Flip it</span>
-            </div>
-            <div class="flip-face flip-back">
-              <img src="images/classic-white-rear.jpg" alt="BreathEZs Classic White boxer briefs — rear view showing the open airflow vent">
-              <span class="flip-tag">The Airflow Side</span>
-            </div>
-          </div>
+      <div class="product">
+        <div class="visual">
+          <span class="tag soft">Classic</span>
+          <img src="images/product-white.jpg" alt="BreathEZs Classic White boxer briefs">
         </div>
         <div class="info">
-          <span class="tag">Classic</span>
-          <h3>The Classic White</h3>
-          <p>The original. Clean, breathable, and built for every day on the job — engineered airflow in its purest form.</p>
-          <a href="#waitlist" class="btn btn-outline" onclick="event.stopPropagation()">Notify Me</a>
+          <h3>Classic White</h3>
+          <p>The clean original. Breathable 100% cotton built for every day, with the open airflow design in its purest form.</p>
+          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
         </div>
       </div>
-      <div class="product black" tabindex="0" onclick="this.classList.toggle('flipped')">
-        <div class="flip">
-          <div class="flip-inner">
-            <div class="flip-face">
-              <img src="images/black-edition-hanging.jpg" alt="BreathEZs Black Edition boxer briefs — front view with BEZ waistband label">
-              <span class="flip-hint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12a9 9 0 019-9c3.6 0 6.6 2 8.2 5M21 12a9 9 0 01-9 9c-3.6 0-6.6-2-8.2-5M17 8h4V4M7 16H3v4"/></svg> Flip it</span>
-            </div>
-            <div class="flip-face flip-back">
-              <img src="images/black-edition-rear.jpg" alt="BreathEZs Black Edition boxer briefs — rear view showing the mesh-trimmed airflow vent">
-              <span class="flip-tag">The Airflow Side</span>
-            </div>
-          </div>
+      <div class="product">
+        <div class="visual">
+          <span class="tag soft">Classic</span>
+          <img src="images/product-black.jpg" alt="BreathEZs Classic Black boxer briefs">
         </div>
         <div class="info">
+          <h3>Classic Black</h3>
+          <p>The everyday essential in a bold, go anywhere black. Same premium cotton, same engineered airflow.</p>
+          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
+        </div>
+      </div>
+      <div class="product">
+        <div class="visual">
           <span class="tag">Special Edition</span>
-          <h3>The Black Edition</h3>
-          <p>Exclusive branding, custom emblem, after-dark attitude. The same engineered airflow, elevated.</p>
-          <a href="#waitlist" class="btn btn-outline" onclick="event.stopPropagation()">Notify Me</a>
+          <img src="images/product-special.jpg" alt="BreathEZs Special Edition black boxer briefs with the diamond emblem">
+        </div>
+        <div class="info">
+          <h3>Special Edition Black</h3>
+          <p>Black with the signature diamond emblem and exclusive branding. The same engineered airflow, elevated.</p>
+          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:44px">
-      <a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="btn btn-gold store-link">Shop the Official Store</a>
+    <div class="shop-all">
+      <a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="btn btn-primary store-link">Shop the Collection</a>
     </div>
   </div>
 </section>
@@ -650,19 +625,19 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <h2 class="title">Proven Where It's <span class="accent">Hot.</span></h2>
     <div class="quotes">
       <blockquote class="quote">
-        <span class="mark">“</span>
-        <p>Wore them under a full costume for an entire convention weekend. Coolest I've ever been at a con — I forgot ventilation like this was even possible.</p>
+        <span class="mark">&ldquo;</span>
+        <p>Wore them under a full costume for an entire convention weekend. Coolest I have ever been at a con. I forgot ventilation like this was even possible.</p>
         <footer>Cosplay field tester</footer>
       </blockquote>
       <blockquote class="quote">
-        <span class="mark">“</span>
+        <span class="mark">&ldquo;</span>
         <p>I tried a pair on the job and haven't stopped thinking about them since. I keep asking every week when the 3XL is dropping.</p>
         <footer>Warehouse crew tester</footer>
       </blockquote>
-      <blockquote class="quote quote-open">
-        <span class="mark">“</span>
+      <blockquote class="quote">
+        <span class="mark">&ldquo;</span>
         <p>This spot is reserved for you. Join the waitlist, be one of the first to wear BreathEZs, and tell us how cool you stayed.</p>
-        <footer><a href="#waitlist" style="color:inherit;text-decoration:underline">Claim your pair →</a></footer>
+        <footer><a href="#waitlist" style="color:inherit;text-decoration:underline">Claim your pair &rarr;</a></footer>
       </blockquote>
     </div>
   </div>
@@ -673,16 +648,16 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
   <div class="container wait-grid">
     <div>
       <h2>Be First to Wear <span class="accent">BreathEZs.</span></h2>
-      <p>Join the waitlist for launch updates, early access, and exclusive first-release drops.</p>
+      <p>Join the waitlist for launch updates, early access, and exclusive first release drops.</p>
       <form class="wait-form" onsubmit="return joinWaitlist(this)">
         <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
-        <button type="submit" class="btn btn-gold">Reserve My Spot</button>
+        <button type="submit" class="btn btn-primary">Reserve My Spot</button>
       </form>
       <p class="form-note" id="waitlist-note">No spam. Just launch news and first dibs.</p>
     </div>
     <div class="wait-emblem">
-      <div class="photo-frame" style="max-width:340px">
-        <img src="images/coming-soon.jpg" alt="BEZ BreathEZs — the new standard of comfort, coming soon">
+      <div class="photo-frame" style="max-width:360px">
+        <img src="images/coming-soon.jpg" alt="BEZ BreathEZs, the new standard of comfort, coming soon">
       </div>
     </div>
   </div>
@@ -696,27 +671,27 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <div class="faq-list">
       <details class="faq-item">
         <summary>When do you launch? <span class="plus">＋</span></summary>
-        <div class="answer">We launch in late August with a preorder soft launch so production has time to meet demand. Sales run through our official online store — and waitlist members get first access before anyone else.</div>
+        <div class="answer">We launch in late August with a preorder soft launch, so production has time to meet demand. Waitlist members get first access before anyone else.</div>
       </details>
       <details class="faq-item">
-        <summary>Can I pre-order? <span class="plus">＋</span></summary>
-        <div class="answer">Preorders open with our soft launch. Join the waitlist above and you'll be the first to know the moment they're available.</div>
+        <summary>Where can I buy them? <span class="plus">＋</span></summary>
+        <div class="answer">Right here. BreathEZs.com is our official home, and the Shop buttons take you straight to checkout once we go live in late August.</div>
       </details>
       <details class="faq-item">
         <summary>How does sizing fit? <span class="plus">＋</span></summary>
-        <div class="answer">BreathEZs fit like your favorite medium-length boxer briefs, true to size. A full size guide (including extended sizes) will be published at launch.</div>
+        <div class="answer">BreathEZs fit like your favorite medium length boxer briefs, true to size. A full size guide, including extended sizes, will be published at launch.</div>
       </details>
       <details class="faq-item">
         <summary>How is this different from a jockstrap? <span class="plus">＋</span></summary>
-        <div class="answer">Completely different. There are no elastic straps pressing against you — BreathEZs are real boxer briefs with an open rear ventilation design. Full coverage and support in front, free airflow behind, zero restriction.</div>
+        <div class="answer">Completely different. There are no elastic straps pressing against you. BreathEZs are real boxer briefs with an open rear for airflow. Full coverage and support in front, free airflow behind, zero restriction.</div>
       </details>
       <details class="faq-item">
         <summary>What fabrics are used? <span class="plus">＋</span></summary>
-        <div class="answer">BreathEZs are 100% cotton — soft, breathable, and durable, chosen for all-day comfort against your skin.</div>
+        <div class="answer">BreathEZs are 100% cotton. Soft, breathable, and durable, chosen for all day comfort against your skin.</div>
       </details>
       <details class="faq-item">
-        <summary>Will more styles be released? <span class="plus">＋</span></summary>
-        <div class="answer">Yes. We're launching with the Classic White and the Black Edition, and a women's line is planned for the future.</div>
+        <summary>Is BreathEZs for everyone? <span class="plus">＋</span></summary>
+        <div class="answer">Yes. BreathEZs welcomes all genders, orientations, and identities. We are launching with three boxer brief styles, and more is on the way.</div>
       </details>
     </div>
   </div>
@@ -729,12 +704,12 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
       <span class="nav-logo">
         <img src="images/logo.png" alt="BEZ BreathEZs logo">
       </span>
-      <p>Luxury Men's Underwear.<br>Designed to Breathe.</p>
+      <p>Luxury Underwear.<br>Designed to Breathe.</p>
     </div>
     <div>
       <h4>Shop</h4>
       <ul>
-        <li><a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="store-link">Official Store</a></li>
+        <li><a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="store-link">Shop Now</a></li>
         <li><a href="#collection">The Collection</a></li>
         <li><a href="#waitlist">Preorder Waitlist</a></li>
       </ul>
@@ -742,17 +717,17 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <div>
       <h4>Company</h4>
       <ul>
-        <li><a href="#about">About Us</a></li>
+        <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </div>
     <div>
       <h4>Stay in the Know</h4>
-      <p style="font-size:.9rem;margin-bottom:14px">Be the first to know about new drops and exclusive offers.</p>
+      <p style="font-size:.94rem;margin-bottom:14px;color:rgba(255,255,255,.7)">Be the first to know about new drops and exclusive offers.</p>
       <form class="foot-form" onsubmit="return joinWaitlist(this)">
         <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
-        <button type="submit" aria-label="Subscribe">→</button>
+        <button type="submit" aria-label="Subscribe">&rarr;</button>
       </form>
     </div>
   </div>
@@ -760,15 +735,15 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 </footer>
 
 <script>
-// Official Shopify store URL — update this one line when the storefront
-// address is finalized; every "store-link" on the page follows it.
+// Official Shopify store URL. Update this one line when the storefront
+// address is finalized, and every store link on the page follows it.
 var STORE_URL = "https://breathezs.myshopify.com";
 document.querySelectorAll("a.store-link").forEach(function(a){ a.href = STORE_URL; });
 
 function joinWaitlist(form){
   var email = form.email.value;
-  // No backend yet — store locally and confirm. Swap for a real
-  // email-capture endpoint (Mailchimp, Klaviyo, etc.) before launch.
+  // No backend yet. Store locally and confirm. Swap for a real email
+  // capture endpoint (Mailchimp, Klaviyo, etc.) before launch.
   try{
     var list = JSON.parse(localStorage.getItem('bez-waitlist')||'[]');
     if(list.indexOf(email)===-1){list.push(email);}
