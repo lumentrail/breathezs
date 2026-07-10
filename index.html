@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BreathEZs® — Luxury Men's Underwear. Designed to Breathe.</title>
+<meta name="description" content="BreathEZs (BEZ) is premium performance men's underwear with an engineered airflow design. Italian-inspired comfort built for confidence, movement, and all-day wear. Join the waitlist.">
+<style>
+:root{
+  --purple:#6d28d9;
+  --purple-deep:#4c1d95;
+  --purple-neon:#a855f7;
+  --gold:#c9a227;
+  --gold-light:#e8c95c;
+  --gold-pale:#f3e3a8;
+  --ink:#1a1523;
+  --ink-soft:#4b4356;
+  --cream:#faf7f2;
+  --marble:#f4f0e9;
+  --white:#ffffff;
+  --radius:14px;
+  --shadow:0 10px 30px rgba(26,21,35,.10);
+  --font:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font);color:var(--ink);background:var(--cream);line-height:1.6}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.15;letter-spacing:-.01em}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase;padding:15px 30px;border-radius:8px;border:2px solid transparent;cursor:pointer;transition:.25s}
+.btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#2a2110;box-shadow:0 6px 18px rgba(201,162,39,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,162,39,.45)}
+.btn-outline{border-color:var(--purple);color:var(--purple);background:transparent}
+.btn-outline:hover{background:var(--purple);color:#fff}
+.btn-light{border-color:rgba(255,255,255,.6);color:#fff}
+.btn-light:hover{background:#fff;color:var(--purple-deep)}
+
+/* ---------- logo ---------- */
+.logo{display:flex;flex-direction:column;align-items:center;line-height:1}
+.logo .bez{font-size:2rem;font-weight:900;font-style:italic;letter-spacing:.02em;background:linear-gradient(180deg,#f6e27a 0%,#c9a227 55%,#8f6d12 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 1px 1px rgba(0,0,0,.25))}
+.logo .brand{font-size:.72rem;font-weight:700;font-style:italic;letter-spacing:.14em;color:var(--gold);margin-top:2px}
+.logo.lg .bez{font-size:4.6rem}
+.logo.lg .brand{font-size:1.15rem}
+.logo .wing{display:block;height:10px}
+
+/* ---------- nav ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,162,39,.25)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 24px;max-width:1280px;margin:0 auto}
+.nav-links{display:flex;gap:28px;font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.nav-links a:hover{color:var(--purple)}
+.nav .btn{padding:10px 20px;font-size:.75rem}
+@media(max-width:920px){.nav-links{display:none}}
+
+/* ---------- hero ---------- */
+.hero{background:
+  radial-gradient(1000px 500px at 85% 0%,rgba(168,85,247,.16),transparent 60%),
+  radial-gradient(800px 420px at 0% 100%,rgba(201,162,39,.14),transparent 60%),
+  linear-gradient(180deg,var(--marble),var(--cream));
+  padding:90px 0 80px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.4rem,5vw,3.6rem);font-weight:900;text-transform:uppercase}
+.hero h1 .accent{color:var(--purple)}
+.hero p.lead{margin:22px 0 30px;font-size:1.1rem;color:var(--ink-soft);max-width:34rem}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero-badges{display:flex;gap:34px;margin-top:44px;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:12px;font-size:.78rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--ink)}
+.badge small{display:block;font-weight:500;color:var(--ink-soft);text-transform:none;letter-spacing:0}
+.badge .ico{color:var(--gold);flex-shrink:0}
+
+/* neon emblem */
+.emblem-stage{position:relative;display:flex;align-items:center;justify-content:center;min-height:420px}
+.emblem-stage::before{content:"";position:absolute;inset:8%;background:
+  radial-gradient(closest-side,rgba(168,85,247,.35),rgba(109,40,217,.12) 55%,transparent 75%);filter:blur(6px)}
+.emblem{position:relative;filter:drop-shadow(0 0 18px rgba(168,85,247,.8)) drop-shadow(0 0 46px rgba(109,40,217,.5));animation:pulse 3.5s ease-in-out infinite}
+@keyframes pulse{0%,100%{filter:drop-shadow(0 0 18px rgba(168,85,247,.8)) drop-shadow(0 0 46px rgba(109,40,217,.5))}50%{filter:drop-shadow(0 0 26px rgba(168,85,247,1)) drop-shadow(0 0 64px rgba(109,40,217,.7))}}
+.pedestal{position:absolute;bottom:30px;width:70%;height:26px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(76,29,149,.35),transparent 70%)}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr}.emblem-stage{min-height:320px}}
+
+/* ---------- section headings ---------- */
+.kicker{display:flex;align-items:center;justify-content:center;gap:10px;font-size:.72rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
+.kicker::before,.kicker::after{content:"";width:36px;height:1px;background:var(--gold)}
+h2.title{font-size:clamp(1.8rem,3.6vw,2.5rem);font-weight:900;text-transform:uppercase;text-align:center}
+h2.title .accent{color:var(--purple)}
+.sub{max-width:42rem;margin:18px auto 0;text-align:center;color:var(--ink-soft)}
+
+/* ---------- feature cards ---------- */
+.features{background:var(--white)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+.card{background:var(--cream);border:1px solid rgba(201,162,39,.28);border-radius:var(--radius);padding:40px 30px;text-align:center;box-shadow:var(--shadow);transition:.25s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.card .frame{width:74px;height:74px;margin:0 auto 22px;display:flex;align-items:center;justify-content:center;transform:rotate(45deg);border:1.5px solid var(--gold);border-radius:10px}
+.card .frame svg{transform:rotate(-45deg)}
+.card h3{font-size:.95rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.card p{font-size:.92rem;color:var(--ink-soft)}
+@media(max-width:920px){.cards{grid-template-columns:1fr}}
+
+/* ---------- design/technology ---------- */
+.design{background:
+  radial-gradient(900px 480px at 15% 20%,rgba(168,85,247,.14),transparent 60%),
+  linear-gradient(180deg,var(--cream),var(--marble))}
+.design-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;margin-top:26px}
+.design h2{text-align:left}
+.design .kicker{justify-content:flex-start}
+.design .kicker::after{display:none}
+.design p{color:var(--ink-soft);margin:18px 0}
+.design ul{list-style:none;margin-top:8px}
+.design li{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(201,162,39,.2)}
+.design li:last-child{border-bottom:none}
+.design li .dot{color:var(--gold);font-weight:900;flex-shrink:0}
+.design li strong{display:block;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase}
+.design li span{font-size:.9rem;color:var(--ink-soft)}
+@media(max-width:920px){.design-grid{grid-template-columns:1fr}}
+
+/* ---------- night banner ---------- */
+.night{background:
+  radial-gradient(900px 500px at 80% 20%,rgba(168,85,247,.28),transparent 55%),
+  radial-gradient(700px 400px at 10% 90%,rgba(201,162,39,.18),transparent 60%),
+  linear-gradient(135deg,#241338 0%,#1a1523 55%,#2c1a4d 100%);
+  color:#fff}
+.night-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.night h2{font-size:clamp(2rem,4.2vw,3rem);font-weight:900;text-transform:uppercase}
+.night h2 .accent{color:var(--purple-neon)}
+.night p{color:rgba(255,255,255,.75);margin:20px 0 30px;max-width:30rem}
+.skyline{display:block;width:100%;filter:drop-shadow(0 0 24px rgba(168,85,247,.35))}
+@media(max-width:920px){.night-grid{grid-template-columns:1fr}}
+
+/* ---------- collection ---------- */
+.collection{background:var(--white)}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,460px));justify-content:center;gap:34px;margin-top:52px}
+.product{border-radius:var(--radius);overflow:hidden;border:1px solid rgba(201,162,39,.3);box-shadow:var(--shadow);background:var(--cream);display:flex;flex-direction:column}
+.product .visual{height:280px;display:flex;align-items:center;justify-content:center;position:relative}
+.product.white .visual{background:linear-gradient(160deg,#fdfcf9,#ece7dd)}
+.product.black .visual{background:radial-gradient(600px 300px at 70% 20%,rgba(168,85,247,.28),transparent 60%),linear-gradient(160deg,#221a2e,#120d1a)}
+.product .info{padding:28px 30px 34px;text-align:center}
+.product .tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--purple);border:1px solid var(--purple);border-radius:99px;padding:4px 14px;margin-bottom:14px}
+.product.black .tag{color:var(--gold);border-color:var(--gold)}
+.product h3{font-size:1.3rem;font-weight:900;text-transform:uppercase}
+.product p{font-size:.92rem;color:var(--ink-soft);margin:10px 0 20px}
+@media(max-width:920px){.products{grid-template-columns:1fr}}
+
+/* ---------- waitlist ---------- */
+.waitlist{background:
+  radial-gradient(800px 400px at 85% 30%,rgba(168,85,247,.18),transparent 60%),
+  linear-gradient(180deg,var(--marble),var(--cream))}
+.wait-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.waitlist h2{font-size:clamp(2rem,4vw,2.8rem);font-weight:900;font-style:italic;text-transform:uppercase}
+.waitlist h2 .accent{color:var(--purple)}
+.waitlist p{color:var(--ink-soft);margin:18px 0 28px;max-width:30rem}
+.wait-form{display:flex;gap:12px;flex-wrap:wrap}
+.wait-form input{flex:1;min-width:240px;padding:15px 18px;border:1.5px solid rgba(201,162,39,.45);border-radius:8px;font-size:1rem;background:#fff;color:var(--ink)}
+.wait-form input:focus{outline:2px solid var(--purple);border-color:transparent}
+.form-note{font-size:.8rem;color:var(--ink-soft);margin-top:12px}
+.wait-emblem{display:flex;justify-content:center}
+@media(max-width:920px){.wait-grid{grid-template-columns:1fr}.wait-emblem{display:none}}
+
+/* ---------- FAQ ---------- */
+.faq{background:var(--white)}
+.faq-list{max-width:840px;margin:48px auto 0;display:grid;gap:14px}
+.faq-item{border:1px solid rgba(201,162,39,.3);border-radius:10px;background:var(--cream);overflow:hidden}
+.faq-item summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;font-size:.85rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary .plus{color:var(--purple);font-size:1.2rem;font-weight:400;transition:.2s}
+.faq-item[open] summary .plus{transform:rotate(45deg)}
+.faq-item .answer{padding:0 22px 20px;color:var(--ink-soft);font-size:.95rem}
+
+/* ---------- footer ---------- */
+footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255,.72);padding:64px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.4fr;gap:40px}
+.foot-grid h4{font-size:.72rem;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+.foot-grid ul{list-style:none;display:grid;gap:10px;font-size:.9rem}
+.foot-grid a:hover{color:var(--gold-light)}
+.foot-brand p{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;margin-top:14px;color:rgba(255,255,255,.6)}
+.foot-form{display:flex;gap:0;margin-top:6px}
+.foot-form input{flex:1;padding:12px 14px;border:1px solid rgba(255,255,255,.25);border-right:none;border-radius:8px 0 0 8px;background:rgba(255,255,255,.06);color:#fff;font-size:.9rem}
+.foot-form input::placeholder{color:rgba(255,255,255,.4)}
+.foot-form button{padding:12px 18px;border:none;border-radius:0 8px 8px 0;background:var(--purple);color:#fff;font-size:1rem;cursor:pointer}
+.foot-form button:hover{background:var(--purple-neon)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:48px;padding-top:24px;text-align:center;font-size:.8rem;color:rgba(255,255,255,.45)}
+@media(max-width:920px){.foot-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header>
+  <nav class="nav">
+    <a href="#top" class="logo" aria-label="BreathEZs home">
+      <svg class="wing" width="90" height="12" viewBox="0 0 90 12" fill="none" aria-hidden="true">
+        <path d="M45 10 L38 4 L30 8 L22 3 L12 7 L2 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
+        <path d="M45 10 L52 4 L60 8 L68 3 L78 7 L88 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
+        <path d="M45 9 L42 2 L45 4 L48 2 Z" fill="#c9a227"/>
+      </svg>
+      <span class="bez">BEZ</span>
+      <span class="brand">BreathEZs®</span>
+    </a>
+    <div class="nav-links">
+      <a href="#collection">Collection</a>
+      <a href="#technology">Technology</a>
+      <a href="#about">About Us</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a href="#waitlist" class="btn btn-gold">Join the Waitlist</a>
+  </nav>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div>
+      <h1>Luxury Men's Underwear.<br><span class="accent">Designed to Breathe.</span></h1>
+      <p class="lead">Italian-inspired comfort engineered for confidence, movement, and all-day wear. Premium performance underwear with a patented airflow design that keeps you cool where it counts.</p>
+      <div class="hero-ctas">
+        <a href="#collection" class="btn btn-gold">Shop the Collection</a>
+        <a href="#waitlist" class="btn btn-outline">Join Waitlist</a>
+      </div>
+      <div class="hero-badges">
+        <div class="badge">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2 5 5 .5-3.7 3.4 1.1 5.1L12 13.5 7.6 16l1.1-5.1L5 7.5 10 7z"/></svg>
+          <div>Italian Inspired<small>Design</small></div>
+        </div>
+        <div class="badge">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
+          <div>Breathable<small>Comfort</small></div>
+        </div>
+        <div class="badge">
+          <svg class="ico" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+          <div>Built For<small>Confidence</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="emblem-stage" aria-hidden="true">
+      <svg class="emblem" width="300" height="360" viewBox="0 0 300 360" fill="none">
+        <path d="M150 10 L286 130 L150 350 L14 130 Z" stroke="#a855f7" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M150 40 L258 134 L150 316 L42 134 Z" stroke="#c084fc" stroke-width="2.5" stroke-linejoin="round" opacity=".7"/>
+        <path d="M150 110 C130 140 118 160 118 185 C118 205 132 220 150 220 C168 220 182 205 182 185 C182 160 170 140 150 110 Z" stroke="#a855f7" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M150 220 L150 268 M128 240 L150 268 L172 240" stroke="#a855f7" stroke-width="5" stroke-linecap="round"/>
+        <path d="M120 78 L130 62 L140 74 L150 58 L160 74 L170 62 L180 78" stroke="#e8c95c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="pedestal"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRAFTED ============ -->
+<section id="about">
+  <div class="container">
+    <div class="kicker">The Symbol of Comfort</div>
+    <h2 class="title">Crafted for Confidence.<br><span class="accent">Designed to Breathe.</span></h2>
+    <p class="sub">BreathEZs blends elevated design, breathable comfort, and masculine confidence into an everyday luxury essential. Founded by Rich White, who spent years working long shifts in the heat and knew standard underwear wasn't built for it — so he engineered something that was. Every pair is designed with purpose, prototyped by hand, and tested in the real world.</p>
+  </div>
+</section>
+
+<!-- ============ FEATURE CARDS ============ -->
+<section class="features">
+  <div class="container">
+    <div class="cards">
+      <div class="card">
+        <div class="frame">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.8" aria-hidden="true"><path d="M5 9l3-5h8l3 5-7 11z M5 9h14 M9 4l3 5 3-5 M12 9v11"/></svg>
+        </div>
+        <h3>Elevated Comfort</h3>
+        <p>Soft premium materials designed for all-day wear — under jeans, work gear, or nothing at all.</p>
+      </div>
+      <div class="card">
+        <div class="frame">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h10a2.5 2.5 0 100-5M4 12h14a2.5 2.5 0 110 5M4 16h7a2.5 2.5 0 11-2.5 4"/></svg>
+        </div>
+        <h3>Breathable Confidence</h3>
+        <p>Engineered for airflow, cooling, and movement. Every step creates natural ventilation.</p>
+      </div>
+      <div class="card">
+        <div class="frame">
+          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#c9a227" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3c2 3 2 5 0 7-2-2-2-4 0-7zM12 10c3-1 5 0 6 2-2 2-4 2-6 1zM12 10c-3-1-5 0-6 2 2 2 4 2 6 1zM12 13v8M9 21h6"/></svg>
+        </div>
+        <h3>Italian-Inspired Luxury</h3>
+        <p>Refined masculine styling for everyday confidence. Heritage craftsmanship, modern performance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGY ============ -->
+<section class="design" id="technology">
+  <div class="container design-grid">
+    <div>
+      <div class="kicker">The Technology</div>
+      <h2 class="title">Airflow, <span class="accent">Engineered.</span></h2>
+      <p>BreathEZs are medium-length boxer briefs with a signature open-rear ventilation design. Full support up front. Free-flowing air where you need it most. No elastic straps, no restriction — nothing like a jockstrap, everything like relief.</p>
+      <ul>
+        <li><span class="dot">◆</span><div><strong>Natural Ventilation</strong><span>The engineered rear opening turns every step into airflow, keeping you cooler through the longest, hottest days.</span></div></li>
+        <li><span class="dot">◆</span><div><strong>Full Support, Zero Restriction</strong><span>Classic boxer-brief support and coverage in front — without straps or elastic pressing where it shouldn't.</span></div></li>
+        <li><span class="dot">◆</span><div><strong>Invisible Under Anything</strong><span>Tested under jeans and work pants. You'll barely notice you're wearing them. Everyone notices you're cooler.</span></div></li>
+        <li><span class="dot">◆</span><div><strong>Built for Real Work</strong><span>Made for warehouse crews, construction, mechanics, drivers, athletes — anyone who works up a sweat.</span></div></li>
+      </ul>
+    </div>
+    <div class="emblem-stage" aria-hidden="true">
+      <svg class="emblem" width="260" height="312" viewBox="0 0 300 360" fill="none">
+        <path d="M150 10 L286 130 L150 350 L14 130 Z" stroke="#a855f7" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M150 110 C130 140 118 160 118 185 C118 205 132 220 150 220 C168 220 182 205 182 185 C182 160 170 140 150 110 Z" stroke="#a855f7" stroke-width="5" stroke-linejoin="round"/>
+        <path d="M150 220 L150 268 M128 240 L150 268 L172 240" stroke="#a855f7" stroke-width="5" stroke-linecap="round"/>
+        <path d="M120 78 L130 62 L140 74 L150 58 L160 74 L170 62 L180 78" stroke="#e8c95c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="pedestal"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NIGHT BANNER ============ -->
+<section class="night">
+  <div class="container night-grid">
+    <div>
+      <h2>Made for Long Days.<br>Built for <span class="accent">Long Nights.</span></h2>
+      <p>BreathEZs delivers elevated comfort that moves with you — from everyday routines to after-dark confidence.</p>
+      <a href="#collection" class="btn btn-gold">Discover More</a>
+    </div>
+    <svg class="skyline" viewBox="0 0 520 220" fill="none" aria-hidden="true">
+      <rect x="10" y="90" width="34" height="130" fill="#3b2564"/>
+      <rect x="52" y="60" width="42" height="160" fill="#4c2f80"/>
+      <rect x="102" y="110" width="30" height="110" fill="#33205a"/>
+      <rect x="140" y="40" width="48" height="180" fill="#55348c"/>
+      <rect x="196" y="80" width="36" height="140" fill="#3b2564"/>
+      <rect x="240" y="20" width="54" height="200" fill="#5d3a99"/>
+      <rect x="302" y="70" width="40" height="150" fill="#44296f"/>
+      <rect x="350" y="100" width="30" height="120" fill="#33205a"/>
+      <rect x="388" y="50" width="46" height="170" fill="#4c2f80"/>
+      <rect x="442" y="86" width="34" height="134" fill="#3b2564"/>
+      <rect x="484" y="120" width="26" height="100" fill="#2c1a4d"/>
+      <g fill="#e8c95c" opacity=".85">
+        <rect x="60" y="72" width="5" height="5"/><rect x="74" y="90" width="5" height="5"/><rect x="150" y="56" width="5" height="5"/><rect x="166" y="84" width="5" height="5"/><rect x="150" y="120" width="5" height="5"/><rect x="252" y="38" width="5" height="5"/><rect x="270" y="70" width="5" height="5"/><rect x="252" y="104" width="5" height="5"/><rect x="312" y="90" width="5" height="5"/><rect x="398" y="66" width="5" height="5"/><rect x="414" y="98" width="5" height="5"/><rect x="452" y="102" width="5" height="5"/>
+      </g>
+      <g fill="#c084fc" opacity=".8">
+        <rect x="24" y="104" width="5" height="5"/><rect x="112" y="126" width="5" height="5"/><rect x="206" y="96" width="5" height="5"/><rect x="270" y="140" width="5" height="5"/><rect x="360" y="116" width="5" height="5"/><rect x="398" y="140" width="5" height="5"/>
+      </g>
+      <ellipse cx="260" cy="218" rx="250" ry="6" fill="#a855f7" opacity=".25"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ============ COLLECTION ============ -->
+<section class="collection" id="collection">
+  <div class="container">
+    <div class="kicker">The Collection</div>
+    <h2 class="title">Two Editions. <span class="accent">One Standard.</span></h2>
+    <p class="sub">Launching soon with preorders. Reserve your spot on the waitlist for first access and exclusive first-release drops.</p>
+    <div class="products">
+      <div class="product white">
+        <div class="visual" aria-hidden="true">
+          <svg width="180" height="150" viewBox="0 0 180 150" fill="none">
+            <path d="M20 20 H160 L156 62 C156 62 130 66 118 82 L112 120 H98 L92 78 H88 L82 120 H68 L62 82 C50 66 24 62 24 62 Z" fill="#ffffff" stroke="#c9b98f" stroke-width="2.5" stroke-linejoin="round"/>
+            <rect x="18" y="14" width="144" height="14" rx="7" fill="#eee6d4" stroke="#c9b98f" stroke-width="2"/>
+            <text x="90" y="25" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" font-style="italic" fill="#a3812e" letter-spacing="2">BREATHEZS</text>
+          </svg>
+        </div>
+        <div class="info">
+          <span class="tag">Classic</span>
+          <h3>The Classic White</h3>
+          <p>The original. Clean, breathable, and built for every day on the job — engineered airflow in its purest form.</p>
+          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
+        </div>
+      </div>
+      <div class="product black">
+        <div class="visual" aria-hidden="true">
+          <svg width="180" height="150" viewBox="0 0 180 150" fill="none">
+            <path d="M20 20 H160 L156 62 C156 62 130 66 118 82 L112 120 H98 L92 78 H88 L82 120 H68 L62 82 C50 66 24 62 24 62 Z" fill="#221a2e" stroke="#a855f7" stroke-width="2.5" stroke-linejoin="round"/>
+            <rect x="18" y="14" width="144" height="14" rx="7" fill="#120d1a" stroke="#c9a227" stroke-width="2"/>
+            <text x="90" y="25" text-anchor="middle" font-family="Arial" font-size="9" font-weight="bold" font-style="italic" fill="#e8c95c" letter-spacing="2">BEZ</text>
+            <path d="M90 70 C84 79 80 85 80 92 C80 98 84 102 90 102 C96 102 100 98 100 92 C100 85 96 79 90 70 Z" stroke="#a855f7" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="info">
+          <span class="tag">Special Edition</span>
+          <h3>The Black Edition</h3>
+          <p>Exclusive branding, custom emblem, after-dark attitude. The same engineered airflow, elevated.</p>
+          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WAITLIST ============ -->
+<section class="waitlist" id="waitlist">
+  <div class="container wait-grid">
+    <div>
+      <h2>Be First to Wear <span class="accent">BreathEZs.</span></h2>
+      <p>Join the waitlist for launch updates, early access, and exclusive first-release drops.</p>
+      <form class="wait-form" onsubmit="return joinWaitlist(this)">
+        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" class="btn btn-gold">Reserve My Spot</button>
+      </form>
+      <p class="form-note" id="waitlist-note">No spam. Just launch news and first dibs.</p>
+    </div>
+    <div class="wait-emblem" aria-hidden="true">
+      <div class="logo lg">
+        <svg class="wing" width="220" height="30" viewBox="0 0 220 30" fill="none">
+          <path d="M110 26 L92 12 L72 20 L52 8 L30 16 L6 4" stroke="#c9a227" stroke-width="4" stroke-linecap="round"/>
+          <path d="M110 26 L128 12 L148 20 L168 8 L190 16 L214 4" stroke="#c9a227" stroke-width="4" stroke-linecap="round"/>
+          <path d="M110 24 L103 5 L110 11 L117 5 Z" fill="#c9a227"/>
+        </svg>
+        <span class="bez">BEZ</span>
+        <span class="brand">BreathEZs®</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="kicker">Frequently Asked Questions</div>
+    <h2 class="title">Good <span class="accent">Questions.</span></h2>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>When do you launch? <span class="plus">＋</span></summary>
+        <div class="answer">We're launching soon with a preorder soft launch so production has time to meet demand. Waitlist members get first access before anyone else.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can I pre-order? <span class="plus">＋</span></summary>
+        <div class="answer">Preorders open with our soft launch. Join the waitlist above and you'll be the first to know the moment they're available.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How does sizing fit? <span class="plus">＋</span></summary>
+        <div class="answer">BreathEZs fit like your favorite medium-length boxer briefs, true to size. A full size guide (including extended sizes) will be published at launch.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How is this different from a jockstrap? <span class="plus">＋</span></summary>
+        <div class="answer">Completely different. There are no elastic straps pressing against you — BreathEZs are real boxer briefs with an open rear ventilation design. Full coverage and support in front, free airflow behind, zero restriction.</div>
+      </details>
+      <details class="faq-item">
+        <summary>What fabrics are used? <span class="plus">＋</span></summary>
+        <div class="answer">Soft, premium, breathable materials chosen for all-day comfort and durability. Final fabric specs will be confirmed with our production release.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Will more styles be released? <span class="plus">＋</span></summary>
+        <div class="answer">Yes. We're launching with the Classic White and the Black Edition, and a women's line is planned for the future.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact">
+  <div class="container foot-grid">
+    <div class="foot-brand">
+      <div class="logo">
+        <svg class="wing" width="90" height="12" viewBox="0 0 90 12" fill="none" aria-hidden="true">
+          <path d="M45 10 L38 4 L30 8 L22 3 L12 7 L2 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
+          <path d="M45 10 L52 4 L60 8 L68 3 L78 7 L88 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
+          <path d="M45 9 L42 2 L45 4 L48 2 Z" fill="#c9a227"/>
+        </svg>
+        <span class="bez">BEZ</span>
+        <span class="brand">BreathEZs®</span>
+      </div>
+      <p>Luxury Men's Underwear.<br>Designed to Breathe.</p>
+    </div>
+    <div>
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#collection">All Collection</a></li>
+        <li><a href="#collection">Special Edition</a></li>
+        <li><a href="#collection">Accessories</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Stay in the Know</h4>
+      <p style="font-size:.9rem;margin-bottom:14px">Be the first to know about new drops and exclusive offers.</p>
+      <form class="foot-form" onsubmit="return joinWaitlist(this)">
+        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+        <button type="submit" aria-label="Subscribe">→</button>
+      </form>
+    </div>
+  </div>
+  <div class="container foot-bottom">© 2026 BreathEZs®. All Rights Reserved.</div>
+</footer>
+
+<script>
+function joinWaitlist(form){
+  var email = form.email.value;
+  // No backend yet — store locally and confirm. Swap for a real
+  // email-capture endpoint (Mailchimp, Klaviyo, etc.) before launch.
+  try{
+    var list = JSON.parse(localStorage.getItem('bez-waitlist')||'[]');
+    if(list.indexOf(email)===-1){list.push(email);}
+    localStorage.setItem('bez-waitlist', JSON.stringify(list));
+  }catch(e){}
+  form.reset();
+  var btn = form.querySelector('button');
+  var original = btn.innerHTML;
+  btn.innerHTML = "You're on the list ✓";
+  btn.disabled = true;
+  setTimeout(function(){btn.innerHTML = original; btn.disabled = false;}, 3500);
+  return false;
+}
+</script>
+</body>
+</html>
