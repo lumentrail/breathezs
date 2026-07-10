@@ -203,13 +203,42 @@ h2.title .accent{color:var(--purple)}
 .night p{color:rgba(255,255,255,.78);margin:22px 0 30px;max-width:30rem;font-size:1.08rem}
 .tagline{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase;color:var(--gold-light);letter-spacing:.02em;margin:6px 0 30px}
 .night .tagline{background:linear-gradient(92deg,#f6d987,#e8c95c 35%,#c9a227 70%,#f2d377);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 14px rgba(201,162,39,.35))}
-.vid-wrap{max-width:660px;justify-self:center;position:relative;background:#0d0812;padding-top:62px}
-.vid-stage{position:relative;line-height:0}
-.vid-stage video{width:100%;display:block}
-.vid-cap{position:absolute;top:16px;left:0;right:0;text-align:center;line-height:1.4;pointer-events:none;z-index:2}
-.vid-cap .a{font-size:1.05rem;font-weight:900;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase}
-.vid-cap .b{font-size:.62rem;font-weight:600;letter-spacing:.38em;color:rgba(255,255,255,.7);text-transform:uppercase;margin-top:5px}
-.vid-scrim{position:absolute;inset:0 0 auto 0;height:34%;background:linear-gradient(180deg,#0d0812 0%,#0d0812 66%,rgba(13,8,18,0) 100%);pointer-events:none;z-index:1}
+/* ---- Special Edition 3D animated scene ---- */
+.se-scene{max-width:560px;justify-self:center;position:relative;border-radius:var(--radius);overflow:hidden;
+  background:radial-gradient(130% 100% at 50% 34%,rgba(124,58,237,.42),rgba(24,12,42,.92) 58%,#0d0812 100%);
+  padding:26px 24px 22px;display:flex;flex-direction:column;align-items:center;gap:16px}
+.se-cap{text-align:center}
+.se-cap .a{display:block;font-size:1rem;font-weight:900;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase;line-height:1}
+.se-cap .b{display:block;font-size:.58rem;font-weight:600;letter-spacing:.32em;color:rgba(255,255,255,.68);text-transform:uppercase;margin-top:9px}
+.se-objects{display:flex;align-items:center;justify-content:center;gap:24px;min-height:206px;perspective:900px}
+.se-foot{font-size:.6rem;font-weight:700;letter-spacing:.34em;color:rgba(255,255,255,.5);text-transform:uppercase}
+@keyframes seSpin{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+@keyframes boxSpin{from{transform:rotateX(-12deg) rotateY(0)}to{transform:rotateX(-12deg) rotateY(360deg)}}
+.se-spin{transform-style:preserve-3d}
+/* brief flip (front / open-rear) */
+.se-brief{position:relative;width:126px;height:168px;animation:seSpin 8s linear infinite;animation-delay:-1.2s}
+.se-brief .face{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:10px;backface-visibility:hidden;box-shadow:0 10px 26px rgba(0,0,0,.5)}
+.se-brief .b{transform:rotateY(180deg)}
+/* spinning emblem accent */
+.se-emblem{width:78px;animation:seSpin 8s linear infinite;animation-delay:-4s;filter:drop-shadow(0 0 16px rgba(168,85,247,.75))}
+.se-emblem img{width:100%;display:block}
+/* rotating collector box */
+.se-box{position:relative;width:116px;height:168px;animation:boxSpin 8s linear infinite}
+.se-box .cf{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box}
+.se-box .front,.se-box .back{left:0;top:0;width:116px;height:168px;background:linear-gradient(158deg,#2a1748,#130c1e);border:1px solid rgba(201,162,39,.55)}
+.se-box .front{transform:translateZ(37px)}
+.se-box .back{transform:rotateY(180deg) translateZ(37px)}
+.se-box .right,.se-box .left{left:21px;top:0;width:74px;height:168px;background:linear-gradient(158deg,#20123a,#0e0917);border:1px solid rgba(201,162,39,.4)}
+.se-box .right{transform:rotateY(90deg) translateZ(58px)}
+.se-box .left{transform:rotateY(-90deg) translateZ(58px)}
+.se-box .top,.se-box .bottom{left:0;top:47px;width:116px;height:74px;background:linear-gradient(158deg,#251543,#120b1e);border:1px solid rgba(201,162,39,.3)}
+.se-box .top{transform:rotateX(90deg) translateZ(84px)}
+.se-box .bottom{transform:rotateX(-90deg) translateZ(84px)}
+.se-box .front img,.se-box .back img{width:64%;filter:drop-shadow(0 0 8px rgba(168,85,247,.6))}
+.se-box .front em,.se-box .back em{font-style:normal;font-size:.48rem;font-weight:800;letter-spacing:.2em;color:var(--gold-light);text-transform:uppercase;margin-top:9px}
+.se-box .right b,.se-box .left b{font-size:1.35rem;font-weight:900;color:var(--gold-light);letter-spacing:.04em}
+.se-box .right i,.se-box .left i{font-style:normal;font-size:.46rem;letter-spacing:.2em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:5px}
+@media(max-width:520px){.se-objects{gap:14px}.se-emblem{width:60px}.se-brief{width:104px;height:140px}.se-box{width:96px;height:140px}}
 @media(max-width:940px){.night-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- collection ---------- */
@@ -610,18 +639,24 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <p class="tagline">No Heat For Your Meat.<sup style="font-size:.55em">™</sup></p>
       <a href="#collection" class="btn btn-primary">Discover More</a>
     </div>
-    <div class="photo-frame vid-wrap">
-      <div class="vid-cap">
-        <div class="a">Special Edition</div>
-        <div class="b">Limited &middot; Bold &middot; Exclusive</div>
+    <div class="photo-frame se-scene" aria-label="BreathEZs Special Edition, black boxer briefs with the diamond emblem and collector box, rotating">
+      <div class="se-cap"><span class="a">Special Edition</span><span class="b">Black &middot; Emblem &middot; Boxed</span></div>
+      <div class="se-objects">
+        <div class="se-spin se-brief">
+          <img class="face f" src="images/product-special.jpg" alt="Special Edition black boxer briefs, front with emblem">
+          <img class="face b" src="images/product-special-back.jpg" alt="Special Edition black boxer briefs, open rear">
+        </div>
+        <div class="se-emblem"><img src="images/emblem-bg.png" alt=""></div>
+        <div class="se-spin se-box">
+          <span class="cf front"><img src="images/emblem-bg.png" alt=""><em>Special Edition</em></span>
+          <span class="cf back"><img src="images/emblem-bg.png" alt=""><em>Special Edition</em></span>
+          <span class="cf right"><b>BEZ</b><i>BreathEZs</i></span>
+          <span class="cf left"><b>BEZ</b><i>BreathEZs</i></span>
+          <span class="cf top"></span>
+          <span class="cf bottom"></span>
+        </div>
       </div>
-      <div class="vid-stage">
-        <video autoplay muted loop playsinline aria-label="BreathEZs Special Edition promo, the black edition with its emblem and retail box">
-          <source src="videos/special-edition-promo.mp4" type="video/mp4">
-          <img src="images/coming-soon.jpg" alt="BEZ BreathEZs Special Edition">
-        </video>
-        <div class="vid-scrim"></div>
-      </div>
+      <div class="se-foot">Limited &middot; Bold &middot; Exclusive</div>
     </div>
   </div>
 </section>
