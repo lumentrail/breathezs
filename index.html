@@ -88,6 +88,55 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.92);backdro
 .emblem-card img{width:100%;display:block}
 .brand-lockup{max-width:400px;padding:30px;background:var(--white);line-height:0}
 .brand-lockup img{width:100%;display:block}
+
+/* ---------- woven label logo ---------- */
+.label-chip{display:block;width:132px;transition:transform .25s}
+.label-chip:hover{transform:scale(1.04)}
+.label-chip svg{display:block;width:100%;height:auto;filter:drop-shadow(0 2px 5px rgba(26,21,35,.25))}
+
+/* ---------- flip cards ---------- */
+.flip{position:relative;height:300px;perspective:1200px;cursor:pointer}
+.flip-inner{position:absolute;inset:0;transition:transform .8s cubic-bezier(.35,.1,.2,1);transform-style:preserve-3d}
+.product:hover .flip-inner,.product:focus-within .flip-inner,.product.flipped .flip-inner{transform:rotateY(180deg)}
+.flip-face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden}
+.flip-face img{width:100%;height:100%;object-fit:cover;display:block}
+.flip-back{transform:rotateY(180deg)}
+.flip-hint{position:absolute;bottom:12px;right:12px;z-index:2;display:flex;align-items:center;gap:7px;background:rgba(26,21,35,.78);color:#fff;font-size:.64rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:99px;pointer-events:none}
+.flip-hint svg{flex-shrink:0}
+.flip-tag{position:absolute;top:12px;left:12px;z-index:2;background:linear-gradient(135deg,var(--gold-light),var(--gold));color:#2a2110;font-size:.64rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px;border-radius:99px;pointer-events:none}
+@media(prefers-reduced-motion:reduce){.flip-inner{transition:none}}
+
+/* ---------- anatomy ---------- */
+.anatomy{background:var(--white)}
+.anatomy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+.anat{background:var(--cream);border:1px solid rgba(201,162,39,.28);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s}
+.anat:hover{transform:translateY(-4px);border-color:var(--gold)}
+.anat .shot{height:230px;overflow:hidden}
+.anat .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.anat:hover .shot img{transform:scale(1.06)}
+.anat .body{padding:24px 26px 30px}
+.anat .num{font-size:.7rem;font-weight:800;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
+.anat h3{font-size:1.05rem;font-weight:900;text-transform:uppercase;margin:6px 0 8px}
+.anat p{font-size:.92rem;color:var(--ink-soft)}
+@media(max-width:920px){.anatomy-grid{grid-template-columns:1fr}}
+
+/* ---------- built-for strip ---------- */
+.built-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
+.built-strip span{border:1.5px solid rgba(201,162,39,.5);color:var(--ink);font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 18px;border-radius:99px;background:var(--cream)}
+.built-strip span.hot{background:linear-gradient(135deg,var(--gold-light),var(--gold));border-color:transparent;color:#2a2110}
+
+/* ---------- testimonials ---------- */
+.field{background:
+  radial-gradient(800px 460px at 15% 10%,rgba(168,85,247,.25),transparent 55%),
+  linear-gradient(150deg,#241338 0%,#1a1523 60%,#2c1a4d 100%);color:#fff}
+.field .title{color:#fff}
+.field .title .accent{color:var(--purple-neon)}
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
+.quote{background:rgba(255,255,255,.05);border:1px solid rgba(201,162,39,.35);border-radius:var(--radius);padding:34px 30px;position:relative}
+.quote .mark{font-size:3.4rem;line-height:1;color:var(--gold);font-family:Georgia,serif;position:absolute;top:14px;left:22px;opacity:.9}
+.quote p{margin-top:34px;font-size:.98rem;color:rgba(255,255,255,.88);font-style:italic}
+.quote footer{margin-top:18px;font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);background:none;padding:0}
+@media(max-width:920px){.quotes{grid-template-columns:1fr}}
 @media(max-width:920px){.hero-grid{grid-template-columns:1fr}.emblem-stage{min-height:320px}}
 
 /* ---------- section headings ---------- */
@@ -199,13 +248,23 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 <!-- ============ NAV ============ -->
 <header>
   <nav class="nav">
-    <a href="#top" class="logo" aria-label="BreathEZs home">
-      <svg class="wing" width="90" height="12" viewBox="0 0 90 12" fill="none" aria-hidden="true">
-        <path d="M45 10 L38 4 L30 8 L22 3 L12 7 L2 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
-        <path d="M45 10 L52 4 L60 8 L68 3 L78 7 L88 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
+    <a href="#top" class="label-chip" aria-label="BreathEZs home">
+      <svg viewBox="0 0 150 64" role="img" aria-label="BEZ BreathEZs woven label">
+        <defs>
+          <linearGradient id="satinA" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#e8e7e2"/><stop offset=".5" stop-color="#c7c6c0"/><stop offset="1" stop-color="#e0dfda"/>
+          </linearGradient>
+        </defs>
+        <rect x="1.5" y="1.5" width="147" height="61" rx="5" fill="url(#satinA)" stroke="#8f8d86" stroke-width="1.6" stroke-dasharray="3.5 2.5"/>
+        <text x="76" y="40" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-style="italic" font-size="33" letter-spacing="1" fill="#17140e">BEZ</text>
+        <g fill="none" stroke="#e0a91d" stroke-width="3.4" stroke-linecap="round">
+          <path d="M28 22 C36 15 43 21 53 13"/>
+          <path d="M30 29 C38 22 45 28 55 20"/>
+          <path d="M82 22 C90 15 97 21 107 13"/>
+          <path d="M84 29 C92 22 99 28 109 20"/>
+        </g>
+        <text x="76" y="56" text-anchor="middle" font-family="'Brush Script MT','Segoe Script',cursive" font-style="italic" font-size="14" fill="#c9971e">BreathEZs</text>
       </svg>
-      <span class="bez">BEZ</span>
-      <span class="brand">BreathEZs®</span>
     </a>
     <div class="nav-links">
       <a href="#collection">Collection</a>
@@ -308,6 +367,51 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
   </div>
 </section>
 
+<!-- ============ ANATOMY OF AIRFLOW ============ -->
+<section class="anatomy" id="anatomy">
+  <div class="container">
+    <div class="kicker">Anatomy of Airflow</div>
+    <h2 class="title">Every Detail Pulls <span class="accent">Its Weight.</span></h2>
+    <p class="sub">Take a closer look at the construction. This isn't a gimmick cut into a cheap pair of shorts — it's a purpose-built ventilation system stitched into premium 100% cotton.</p>
+    <div class="anatomy-grid">
+      <div class="anat">
+        <div class="shot"><img src="images/detail-vent.jpg" alt="Close-up of the mesh-trimmed rear vent on the Classic White"></div>
+        <div class="body">
+          <span class="num">01 — The Vent</span>
+          <h3>Open-Rear Ventilation</h3>
+          <p>A reinforced, mesh-trimmed opening lets heat escape the moment it builds. Every step you take pumps fresh air through — no batteries, no tech fabric hype, just physics.</p>
+        </div>
+      </div>
+      <div class="anat">
+        <div class="shot"><img src="images/detail-fly.jpg" alt="Close-up of the contoured front pouch and fly on the Black Edition"></div>
+        <div class="body">
+          <span class="num">02 — The Support</span>
+          <h3>Full-Pouch Front</h3>
+          <p>A contoured pouch keeps the boys supported and exactly where they belong — with a working fly. No elastic strap digging in like a jockstrap. Support without the squeeze.</p>
+        </div>
+      </div>
+      <div class="anat">
+        <div class="shot"><img src="images/detail-label.jpg" alt="Close-up of the woven BEZ label on the Black Edition waistband"></div>
+        <div class="body">
+          <span class="num">03 — The Finish</span>
+          <h3>Premium Construction</h3>
+          <p>Plush no-roll waistband, flat seams that disappear under jeans, and the woven BEZ label on every pair. Prototyped by hand, refined until it earned the name.</p>
+        </div>
+      </div>
+    </div>
+    <div class="built-strip" aria-label="Who BreathEZs are built for">
+      <span class="hot">Built For:</span>
+      <span>Warehouse Crews</span>
+      <span>Construction</span>
+      <span>Mechanics</span>
+      <span>Truck Drivers</span>
+      <span>Athletes</span>
+      <span>Outdoor Workers</span>
+      <span>Anyone In The Heat</span>
+    </div>
+  </div>
+</section>
+
 <!-- ============ NIGHT BANNER ============ -->
 <section class="night">
   <div class="container night-grid">
@@ -327,30 +431,73 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
   <div class="container">
     <div class="kicker">The Collection</div>
     <h2 class="title">Two Editions. <span class="accent">One Standard.</span></h2>
-    <p class="sub">Launching soon with preorders. Reserve your spot on the waitlist for first access and exclusive first-release drops.</p>
+    <p class="sub">Launching soon with preorders. Reserve your spot on the waitlist for first access and exclusive first-release drops. <strong>Hover or tap a pair to flip it around and see the airflow side.</strong></p>
     <div class="products">
-      <div class="product white">
-        <div class="visual">
-          <img src="images/classic-white-hanging.jpg" alt="BreathEZs Classic White boxer briefs with purple and gold emblem" style="width:100%;height:100%;object-fit:cover">
+      <div class="product white" tabindex="0" onclick="this.classList.toggle('flipped')">
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face">
+              <img src="images/classic-white-hanging.jpg" alt="BreathEZs Classic White boxer briefs — front view">
+              <span class="flip-hint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12a9 9 0 019-9c3.6 0 6.6 2 8.2 5M21 12a9 9 0 01-9 9c-3.6 0-6.6-2-8.2-5M17 8h4V4M7 16H3v4"/></svg> Flip it</span>
+            </div>
+            <div class="flip-face flip-back">
+              <img src="images/classic-white-rear.jpg" alt="BreathEZs Classic White boxer briefs — rear view showing the open airflow vent">
+              <span class="flip-tag">The Airflow Side</span>
+            </div>
+          </div>
         </div>
         <div class="info">
           <span class="tag">Classic</span>
           <h3>The Classic White</h3>
           <p>The original. Clean, breathable, and built for every day on the job — engineered airflow in its purest form.</p>
-          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
+          <a href="#waitlist" class="btn btn-outline" onclick="event.stopPropagation()">Notify Me</a>
         </div>
       </div>
-      <div class="product black">
-        <div class="visual">
-          <img src="images/black-edition-hanging.jpg" alt="BreathEZs Black Edition boxer briefs with BEZ waistband label" style="width:100%;height:100%;object-fit:cover">
+      <div class="product black" tabindex="0" onclick="this.classList.toggle('flipped')">
+        <div class="flip">
+          <div class="flip-inner">
+            <div class="flip-face">
+              <img src="images/black-edition-hanging.jpg" alt="BreathEZs Black Edition boxer briefs — front view with BEZ waistband label">
+              <span class="flip-hint"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M3 12a9 9 0 019-9c3.6 0 6.6 2 8.2 5M21 12a9 9 0 01-9 9c-3.6 0-6.6-2-8.2-5M17 8h4V4M7 16H3v4"/></svg> Flip it</span>
+            </div>
+            <div class="flip-face flip-back">
+              <img src="images/black-edition-rear.jpg" alt="BreathEZs Black Edition boxer briefs — rear view showing the mesh-trimmed airflow vent">
+              <span class="flip-tag">The Airflow Side</span>
+            </div>
+          </div>
         </div>
         <div class="info">
           <span class="tag">Special Edition</span>
           <h3>The Black Edition</h3>
           <p>Exclusive branding, custom emblem, after-dark attitude. The same engineered airflow, elevated.</p>
-          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
+          <a href="#waitlist" class="btn btn-outline" onclick="event.stopPropagation()">Notify Me</a>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FIELD TESTED ============ -->
+<section class="field">
+  <div class="container">
+    <div class="kicker">Field Tested</div>
+    <h2 class="title">Proven Where It's <span class="accent">Hot.</span></h2>
+    <div class="quotes">
+      <blockquote class="quote">
+        <span class="mark">“</span>
+        <p>Wore them under a full costume for an entire convention weekend. Coolest I've ever been at a con — I forgot ventilation like this was even possible.</p>
+        <footer>Cosplay field tester</footer>
+      </blockquote>
+      <blockquote class="quote">
+        <span class="mark">“</span>
+        <p>My old warehouse crew got one look at the prototype and now one of them asks me every week when the 3XL is dropping. That's how I know it works.</p>
+        <footer>Rich White — Founder</footer>
+      </blockquote>
+      <blockquote class="quote">
+        <span class="mark">“</span>
+        <p>I designed them and even I was surprised. Under jeans you barely notice you're wearing them — until you realize you're the only one on the crew not sweating.</p>
+        <footer>Rich White — Founder</footer>
+      </blockquote>
     </div>
   </div>
 </section>
@@ -413,14 +560,24 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 <footer id="contact">
   <div class="container foot-grid">
     <div class="foot-brand">
-      <div class="logo">
-        <svg class="wing" width="90" height="12" viewBox="0 0 90 12" fill="none" aria-hidden="true">
-          <path d="M45 10 L38 4 L30 8 L22 3 L12 7 L2 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
-          <path d="M45 10 L52 4 L60 8 L68 3 L78 7 L88 2" stroke="#c9a227" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        <span class="bez">BEZ</span>
-        <span class="brand">BreathEZs®</span>
-      </div>
+      <span class="label-chip">
+        <svg viewBox="0 0 150 64" role="img" aria-label="BEZ BreathEZs woven label">
+          <defs>
+            <linearGradient id="satinB" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#e8e7e2"/><stop offset=".5" stop-color="#c7c6c0"/><stop offset="1" stop-color="#e0dfda"/>
+            </linearGradient>
+          </defs>
+          <rect x="1.5" y="1.5" width="147" height="61" rx="5" fill="url(#satinB)" stroke="#8f8d86" stroke-width="1.6" stroke-dasharray="3.5 2.5"/>
+          <text x="76" y="40" text-anchor="middle" font-family="'Arial Black',Arial,sans-serif" font-weight="900" font-style="italic" font-size="33" letter-spacing="1" fill="#17140e">BEZ</text>
+          <g fill="none" stroke="#e0a91d" stroke-width="3.4" stroke-linecap="round">
+            <path d="M28 22 C36 15 43 21 53 13"/>
+            <path d="M30 29 C38 22 45 28 55 20"/>
+            <path d="M82 22 C90 15 97 21 107 13"/>
+            <path d="M84 29 C92 22 99 28 109 20"/>
+          </g>
+          <text x="76" y="56" text-anchor="middle" font-family="'Brush Script MT','Segoe Script',cursive" font-style="italic" font-size="14" fill="#c9971e">BreathEZs</text>
+        </svg>
+      </span>
       <p>Luxury Men's Underwear.<br>Designed to Breathe.</p>
     </div>
     <div>
