@@ -6,19 +6,18 @@
 <title>BreathEZs® — Luxury Men's Underwear. Designed to Breathe.</title>
 <meta name="description" content="BreathEZs (BEZ) is premium performance men's underwear with an engineered airflow design. Italian-inspired comfort built for confidence, movement, and all-day wear. Launching late August — join the waitlist.">
 <link rel="icon" type="image/png" href="images/favicon.png">
-<!-- Social sharing (Facebook/Twitter). og:image must be an absolute URL —
-     update the domain below if the marketing site moves off GitHub Pages. -->
+<!-- Social sharing (Facebook/Twitter). This site lives at breathezs.com. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="BreathEZs® — Luxury Men's Underwear. Designed to Breathe.">
 <meta property="og:description" content="Premium 100% cotton boxer briefs with engineered rear ventilation. Full support up front, free-flowing air where you need it. Launching late August.">
-<meta property="og:url" content="https://lumentrail.github.io/breathezs/">
-<meta property="og:image" content="https://lumentrail.github.io/breathezs/images/og-image.jpg">
+<meta property="og:url" content="https://breathezs.com/">
+<meta property="og:image" content="https://breathezs.com/images/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="BreathEZs® — Luxury Men's Underwear. Designed to Breathe.">
 <meta name="twitter:description" content="Premium 100% cotton boxer briefs with engineered rear ventilation. Launching late August.">
-<meta name="twitter:image" content="https://lumentrail.github.io/breathezs/images/og-image.jpg">
+<meta name="twitter:image" content="https://breathezs.com/images/og-image.jpg">
 <style>
 :root{
   --purple:#6d28d9;
@@ -298,7 +297,7 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
       <h1>Luxury Men's Underwear.<br><span class="accent">Designed to Breathe.</span></h1>
       <p class="lead">Italian-inspired comfort engineered for confidence, movement, and all-day wear. Premium 100% cotton underwear with an engineered airflow design that keeps you cool where it counts.</p>
       <div class="hero-ctas">
-        <a href="https://breathezs.com" target="_blank" rel="noopener" class="btn btn-gold">Shop the Collection</a>
+        <a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="btn btn-gold store-link">Shop the Collection</a>
         <a href="#waitlist" class="btn btn-outline">Join Waitlist</a>
       </div>
       <div class="hero-badges">
@@ -626,7 +625,7 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
       </div>
     </div>
     <div style="text-align:center;margin-top:44px">
-      <a href="https://breathezs.com" target="_blank" rel="noopener" class="btn btn-gold">Shop at BreathEZs.com</a>
+      <a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="btn btn-gold store-link">Shop the Official Store</a>
     </div>
   </div>
 </section>
@@ -684,7 +683,7 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <div class="faq-list">
       <details class="faq-item">
         <summary>When do you launch? <span class="plus">＋</span></summary>
-        <div class="answer">We launch in late August with a preorder soft launch so production has time to meet demand. Sales will run through our official store at breathezs.com — and waitlist members get first access before anyone else.</div>
+        <div class="answer">We launch in late August with a preorder soft launch so production has time to meet demand. Sales run through our official online store — and waitlist members get first access before anyone else.</div>
       </details>
       <details class="faq-item">
         <summary>Can I pre-order? <span class="plus">＋</span></summary>
@@ -722,7 +721,7 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <div>
       <h4>Shop</h4>
       <ul>
-        <li><a href="https://breathezs.com" target="_blank" rel="noopener">Official Store</a></li>
+        <li><a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="store-link">Official Store</a></li>
         <li><a href="#collection">The Collection</a></li>
         <li><a href="#waitlist">Preorder Waitlist</a></li>
       </ul>
@@ -748,6 +747,11 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
 </footer>
 
 <script>
+// Official Shopify store URL — update this one line when the storefront
+// address is finalized; every "store-link" on the page follows it.
+var STORE_URL = "https://breathezs.myshopify.com";
+document.querySelectorAll("a.store-link").forEach(function(a){ a.href = STORE_URL; });
+
 function joinWaitlist(form){
   var email = form.email.value;
   // No backend yet — store locally and confirm. Swap for a real
