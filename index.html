@@ -203,52 +203,12 @@ h2.title .accent{color:var(--purple)}
 .night p{color:rgba(255,255,255,.78);margin:22px 0 30px;max-width:30rem;font-size:1.08rem}
 .tagline{font-size:1.5rem;font-weight:900;font-style:italic;text-transform:uppercase;color:var(--gold-light);letter-spacing:.02em;margin:6px 0 30px}
 .night .tagline{background:linear-gradient(92deg,#f6d987,#e8c95c 35%,#c9a227 70%,#f2d377);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;filter:drop-shadow(0 0 14px rgba(201,162,39,.35))}
-/* ---- Special Edition 3D animated scene ---- */
-.se-scene{max-width:560px;justify-self:center;position:relative;border-radius:var(--radius);overflow:hidden;
-  background:radial-gradient(130% 100% at 50% 34%,rgba(124,58,237,.42),rgba(24,12,42,.92) 58%,#0d0812 100%);
-  padding:26px 24px 22px;display:flex;flex-direction:column;align-items:center;gap:16px}
-.se-cap{text-align:center}
-.se-cap .a{display:block;font-size:1rem;font-weight:900;letter-spacing:.3em;color:var(--gold-light);text-transform:uppercase;line-height:1}
-.se-cap .b{display:block;font-size:.58rem;font-weight:600;letter-spacing:.32em;color:rgba(255,255,255,.68);text-transform:uppercase;margin-top:9px}
-.se-objects{display:flex;align-items:center;justify-content:center;gap:24px;min-height:216px;perspective:820px;position:relative}
-.se-objects::after{content:"";position:absolute;left:8%;right:8%;bottom:2px;height:30px;
-  background:radial-gradient(50% 100% at 50% 50%,rgba(168,85,247,.4),rgba(168,85,247,.12) 55%,transparent 75%);filter:blur(7px);pointer-events:none}
-.se-foot{font-size:.6rem;font-weight:700;letter-spacing:.34em;color:rgba(255,255,255,.5);text-transform:uppercase}
-@keyframes seSpin{from{transform:rotateX(-9deg) rotateY(0)}to{transform:rotateX(-9deg) rotateY(360deg)}}
-@keyframes boxSpin{from{transform:rotateX(-12deg) rotateY(0)}to{transform:rotateX(-12deg) rotateY(360deg)}}
-@keyframes seShade{0%,46%,54%,100%{filter:brightness(1)}22%,28%{filter:brightness(.58)}72%,78%{filter:brightness(.58)}}
-@keyframes seShadeGlow{0%,46%,54%,100%{filter:brightness(1) drop-shadow(0 0 12px rgba(168,85,247,.8))}25%,75%{filter:brightness(.6) drop-shadow(0 0 6px rgba(168,85,247,.5))}}
-.se-spin{transform-style:preserve-3d}
-/* volumetric depth slices (built by JS) */
-.se-slice{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:brightness(.26) saturate(.5);pointer-events:none}
-/* brief: real thickness + tilted spin so the rear reads in 3D */
-.se-brief{position:relative;width:176px;height:162px;animation:seSpin 11s linear infinite}
-.se-brief .face{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden;
-  animation:seShade 11s linear infinite;filter:drop-shadow(0 10px 16px rgba(0,0,0,.45))}
-.se-brief .f{transform:translateZ(9px)}
-.se-brief .b{transform:rotateY(180deg) translateZ(9px)}
-/* emblem: extruded slab with glow */
-.se-emblem{position:relative;width:80px;height:96px;animation:seSpin 11s linear infinite}
-.se-emblem .face{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden;animation:seShadeGlow 11s linear infinite}
-.se-emblem .f{transform:translateZ(5px)}
-.se-emblem .b{transform:rotateY(180deg) translateZ(5px)}
-/* rotating collector box */
-.se-box{position:relative;width:116px;height:168px;animation:boxSpin 11s linear infinite}
-.se-box .cf{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box}
-.se-box .front,.se-box .back{left:0;top:0;width:116px;height:168px;background:linear-gradient(158deg,#2a1748,#130c1e);border:1px solid rgba(201,162,39,.55)}
-.se-box .front{transform:translateZ(37px)}
-.se-box .back{transform:rotateY(180deg) translateZ(37px)}
-.se-box .right,.se-box .left{left:21px;top:0;width:74px;height:168px;background:linear-gradient(158deg,#20123a,#0e0917);border:1px solid rgba(201,162,39,.4)}
-.se-box .right{transform:rotateY(90deg) translateZ(58px)}
-.se-box .left{transform:rotateY(-90deg) translateZ(58px)}
-.se-box .top,.se-box .bottom{left:0;top:47px;width:116px;height:74px;background:linear-gradient(158deg,#251543,#120b1e);border:1px solid rgba(201,162,39,.3)}
-.se-box .top{transform:rotateX(90deg) translateZ(84px)}
-.se-box .bottom{transform:rotateX(-90deg) translateZ(84px)}
-.se-box .front img,.se-box .back img{width:64%;filter:drop-shadow(0 0 8px rgba(168,85,247,.6))}
-.se-box .front em,.se-box .back em{font-style:normal;font-size:.48rem;font-weight:800;letter-spacing:.2em;color:var(--gold-light);text-transform:uppercase;margin-top:9px}
-.se-box .right b,.se-box .left b{font-size:1.35rem;font-weight:900;color:var(--gold-light);letter-spacing:.04em}
-.se-box .right i,.se-box .left i{font-style:normal;font-size:.46rem;letter-spacing:.2em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:5px}
-@media(max-width:520px){.se-objects{gap:12px}.se-emblem{width:58px}.se-brief{width:132px;height:126px}.se-box{width:96px;height:140px}}
+/* ---- real 360 product video ---- */
+.rv-wrap{max-width:500px;justify-self:center;position:relative;background:#0d0812;overflow:hidden}
+.rv-wrap video{width:100%;display:block}
+.rv-cap{padding:18px 16px 14px;text-align:center;line-height:1.4}
+.rv-cap .a{display:block;font-size:1rem;font-weight:900;letter-spacing:.24em;color:var(--gold-light);text-transform:uppercase}
+.rv-cap .b{display:block;font-size:.6rem;font-weight:600;letter-spacing:.34em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:6px}
 @media(max-width:940px){.night-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- collection ---------- */
@@ -649,27 +609,12 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <p class="tagline">No Heat For Your Meat.<sup style="font-size:.55em">™</sup></p>
       <a href="#collection" class="btn btn-primary">Discover More</a>
     </div>
-    <div class="photo-frame se-scene" aria-label="BreathEZs Special Edition, black boxer briefs with the diamond emblem and collector box, rotating">
-      <div class="se-cap"><span class="a">Special Edition</span><span class="b">Black &middot; Emblem &middot; Boxed</span></div>
-      <div class="se-objects">
-        <div class="se-spin se-brief se-3d" data-slice="images/se-front.png" data-depth="18" data-n="7">
-          <img class="face f" src="images/se-front.png" alt="Special Edition black boxer briefs, front with emblem">
-          <img class="face b" src="images/se-back.png" alt="Special Edition black boxer briefs, open rear">
-        </div>
-        <div class="se-spin se-emblem se-3d" data-slice="images/emblem-sm.png" data-depth="10" data-n="6">
-          <img class="face f" src="images/emblem-sm.png" alt="">
-          <img class="face b" src="images/emblem-sm.png" alt="">
-        </div>
-        <div class="se-spin se-box">
-          <span class="cf front"><img src="images/emblem-sm.png" alt=""><em>Special Edition</em></span>
-          <span class="cf back"><img src="images/emblem-sm.png" alt=""><em>Special Edition</em></span>
-          <span class="cf right"><b>BEZ</b><i>BreathEZs</i></span>
-          <span class="cf left"><b>BEZ</b><i>BreathEZs</i></span>
-          <span class="cf top"></span>
-          <span class="cf bottom"></span>
-        </div>
-      </div>
-      <div class="se-foot">Limited &middot; Bold &middot; Exclusive</div>
+    <div class="photo-frame rv-wrap">
+      <div class="rv-cap"><span class="a">Every Angle. Real Airflow.</span><span class="b">360&deg; product view</span></div>
+      <video autoplay muted loop playsinline aria-label="Real 360 degree view of BreathEZs boxer briefs, rotating to show the front, sides, and open rear">
+        <source src="videos/special-edition-promo.mp4" type="video/mp4">
+        <img src="images/coming-soon.jpg" alt="BreathEZs boxer briefs">
+      </video>
     </div>
   </div>
 </section>
@@ -870,24 +815,6 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 // STORE_URL, and every one of them will point to the store.
 var STORE_URL = "https://breathezs.myshopify.com";
 document.querySelectorAll("a.store-link").forEach(function(a){ a.href = STORE_URL; });
-
-// Build volumetric depth slices for the Special Edition 3D objects, so
-// they keep real thickness (instead of vanishing) when edge-on.
-document.querySelectorAll('.se-3d').forEach(function(el){
-  var src = el.dataset.slice;
-  var depth = parseFloat(el.dataset.depth || 12);
-  var n = parseInt(el.dataset.n || 6, 10);
-  for (var i = 0; i < n; i++){
-    var im = document.createElement('img');
-    im.src = src;
-    im.className = 'se-slice';
-    im.alt = '';
-    im.setAttribute('aria-hidden','true');
-    var z = -depth/2 + depth * (i/(n-1));
-    im.style.transform = 'translateZ(' + z.toFixed(2) + 'px)';
-    el.insertBefore(im, el.firstChild);
-  }
-});
 
 // Tap to flip products between the front and the open-rear view.
 // Works on touch (where hover does not) and as a sticky toggle on desktop.
