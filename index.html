@@ -619,7 +619,7 @@ footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255
       </div>
     </div>
     <div class="shop-all">
-      <a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="btn btn-primary store-link">Shop the Collection</a>
+      <a href="#collection" class="btn btn-primary">Shop the Collection</a>
     </div>
   </div>
 </section>
@@ -715,7 +715,7 @@ footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255
     <div>
       <h4>Shop</h4>
       <ul>
-        <li><a href="https://breathezs.myshopify.com" target="_blank" rel="noopener" class="store-link">Shop Now</a></li>
+        <li><a href="#collection">Shop Now</a></li>
         <li><a href="#collection">The Collection</a></li>
         <li><a href="#waitlist">Preorder Waitlist</a></li>
       </ul>
@@ -741,8 +741,10 @@ footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255
 </footer>
 
 <script>
-// Official Shopify store URL. Update this one line when the storefront
-// address is finalized, and every store link on the page follows it.
+// Shop links currently scroll to the on-page #collection section.
+// When the storefront is finalized (e.g. this page becomes a Shopify
+// Liquid theme), give the shop links the class "store-link" and set
+// STORE_URL, and every one of them will point to the store.
 var STORE_URL = "https://breathezs.myshopify.com";
 document.querySelectorAll("a.store-link").forEach(function(a){ a.href = STORE_URL; });
 
