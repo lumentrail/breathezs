@@ -216,14 +216,14 @@ h2.title .accent{color:var(--purple)}
 @keyframes boxSpin{from{transform:rotateX(-12deg) rotateY(0)}to{transform:rotateX(-12deg) rotateY(360deg)}}
 .se-spin{transform-style:preserve-3d}
 /* brief flip (front / open-rear) */
-.se-brief{position:relative;width:126px;height:168px;animation:seSpin 8s linear infinite;animation-delay:-1.2s}
-.se-brief .face{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:10px;backface-visibility:hidden;box-shadow:0 10px 26px rgba(0,0,0,.5)}
+.se-brief{position:relative;width:172px;height:160px;animation:seSpin 11s linear infinite;filter:drop-shadow(0 12px 22px rgba(0,0,0,.55))}
+.se-brief .face{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;backface-visibility:hidden}
 .se-brief .b{transform:rotateY(180deg)}
 /* spinning emblem accent */
-.se-emblem{width:78px;animation:seSpin 8s linear infinite;animation-delay:-4s;filter:drop-shadow(0 0 16px rgba(168,85,247,.75))}
+.se-emblem{width:78px;animation:seSpin 11s linear infinite;filter:drop-shadow(0 0 16px rgba(168,85,247,.75))}
 .se-emblem img{width:100%;display:block}
 /* rotating collector box */
-.se-box{position:relative;width:116px;height:168px;animation:boxSpin 8s linear infinite}
+.se-box{position:relative;width:116px;height:168px;animation:boxSpin 11s linear infinite}
 .se-box .cf{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;box-sizing:border-box}
 .se-box .front,.se-box .back{left:0;top:0;width:116px;height:168px;background:linear-gradient(158deg,#2a1748,#130c1e);border:1px solid rgba(201,162,39,.55)}
 .se-box .front{transform:translateZ(37px)}
@@ -238,7 +238,7 @@ h2.title .accent{color:var(--purple)}
 .se-box .front em,.se-box .back em{font-style:normal;font-size:.48rem;font-weight:800;letter-spacing:.2em;color:var(--gold-light);text-transform:uppercase;margin-top:9px}
 .se-box .right b,.se-box .left b{font-size:1.35rem;font-weight:900;color:var(--gold-light);letter-spacing:.04em}
 .se-box .right i,.se-box .left i{font-style:normal;font-size:.46rem;letter-spacing:.2em;color:rgba(255,255,255,.6);text-transform:uppercase;margin-top:5px}
-@media(max-width:520px){.se-objects{gap:14px}.se-emblem{width:60px}.se-brief{width:104px;height:140px}.se-box{width:96px;height:140px}}
+@media(max-width:520px){.se-objects{gap:12px}.se-emblem{width:58px}.se-brief{width:132px;height:126px}.se-box{width:96px;height:140px}}
 @media(max-width:940px){.night-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- collection ---------- */
@@ -643,8 +643,8 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <div class="se-cap"><span class="a">Special Edition</span><span class="b">Black &middot; Emblem &middot; Boxed</span></div>
       <div class="se-objects">
         <div class="se-spin se-brief">
-          <img class="face f" src="images/product-special.jpg" alt="Special Edition black boxer briefs, front with emblem">
-          <img class="face b" src="images/product-special-back.jpg" alt="Special Edition black boxer briefs, open rear">
+          <img class="face f" src="images/se-front.png" alt="Special Edition black boxer briefs, front with emblem">
+          <img class="face b" src="images/se-back.png" alt="Special Edition black boxer briefs, open rear">
         </div>
         <div class="se-emblem"><img src="images/emblem-bg.png" alt=""></div>
         <div class="se-spin se-box">
