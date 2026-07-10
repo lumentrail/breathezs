@@ -262,18 +262,7 @@ h2.title .accent{color:var(--purple)}
 .size-table td{color:var(--ink-soft)}
 .size-note{text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:20px}
 @media(max-width:560px){.size-table th,.size-table td{padding:13px 14px;font-size:.92rem}}
-@media(max-width:940px){
-  .products{display:flex;grid-template-columns:none;max-width:none;gap:16px;margin:56px 0 0;
-    justify-content:flex-start;
-    overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
-    padding-bottom:10px;scrollbar-width:none}
-  .products::-webkit-scrollbar{display:none}
-  .product{flex:0 0 86%;scroll-snap-align:start}
-  .swipe-hint{display:flex}
-}
-.swipe-hint{display:none;align-items:center;justify-content:center;gap:8px;margin-top:16px;
-  font-size:.74rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
-.swipe-hint .arrow{color:var(--purple);font-size:1rem;line-height:1}
+@media(max-width:940px){.products{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto}}
 
 /* ---------- testimonials ---------- */
 .field{background:
@@ -674,7 +663,6 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
         </div>
       </div>
     </div>
-    <div class="swipe-hint"><span class="arrow">&#8592;</span> Swipe &middot; tap to flip <span class="arrow">&#8594;</span></div>
     <div class="shop-all">
       <a href="#collection" class="btn btn-primary">Shop the Collection</a>
     </div>
