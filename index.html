@@ -18,6 +18,19 @@
 <meta name="twitter:title" content="BreathEZs® | Luxury Underwear. Designed to Breathe.">
 <meta name="twitter:description" content="Premium 100% cotton boxer briefs with an engineered open rear for real airflow. Launching August 2026.">
 <meta name="twitter:image" content="https://breathezs.com/images/og-image.jpg">
+<link rel="canonical" href="https://breathezs.com/">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0a0810">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"Organization","@id":"https://breathezs.com/#org","name":"BreathEZs","url":"https://breathezs.com/","logo":"https://breathezs.com/images/logo.png","email":"customerservice@breathezs.com","founder":{"@type":"Person","name":"Rich White"}},
+    {"@type":"WebSite","@id":"https://breathezs.com/#website","url":"https://breathezs.com/","name":"BreathEZs","publisher":{"@id":"https://breathezs.com/#org"}},
+    {"@type":"Product","name":"BreathEZs Boxer Briefs","brand":{"@id":"https://breathezs.com/#org"},"description":"Premium 100% cotton boxer briefs with an engineered open-rear airflow design. Full support up front, free-flowing air where you need it.","image":"https://breathezs.com/images/og-image.jpg","releaseDate":"2026-08"}
+  ]
+}
+</script>
 <style>
 /* ---------- Poppins (self hosted) ---------- */
 @font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url(fonts/poppins-400.woff2) format('woff2')}
@@ -277,6 +290,9 @@ h2.title .accent{color:var(--purple)}
 .quote .mark{font-size:3.6rem;line-height:1;color:var(--purple-neon);font-family:Georgia,serif;position:absolute;top:16px;left:24px;opacity:.85}
 .quote p{margin-top:36px;font-size:1rem;color:rgba(255,255,255,.9);font-style:italic}
 .quote footer{margin-top:20px;font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--purple-neon)}
+.quote.quote-invite{background:linear-gradient(135deg,rgba(201,162,39,.14),rgba(168,85,247,.05));border-color:var(--gold);border-style:dashed}
+.quote.quote-invite .mark{color:var(--gold-light);font-family:var(--font);font-style:normal;font-weight:900}
+.quote.quote-invite footer a{color:var(--gold-light)}
 @media(max-width:940px){.quotes{grid-template-columns:1fr}}
 
 /* ---------- waitlist ---------- */
@@ -388,7 +404,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 
 <!-- ============ ABOUT ============ -->
 <section class="about" id="about">
-  <img class="emblem-bg" src="images/emblem-bg.png" alt="" aria-hidden="true">
+  <img class="emblem-bg" src="images/emblem-bg.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
   <div class="container">
     <h2 class="title">Crafted for Confidence.<br><span class="accent">Designed to Breathe.</span></h2>
     <p class="sub">BreathEZs blends elevated design, breathable comfort, and quiet confidence into an everyday luxury essential. Founded by Rich White, who spent years working long shifts in the heat and knew standard underwear was never built for it, so he engineered something that was. The first prototypes were designed by Rich and hand sewn by his wife, an experienced seamstress, then refined and tested in the real world until they earned the name.</p>
@@ -438,7 +454,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       </ul>
     </div>
     <div class="photo-frame infographic-frame">
-      <img src="images/airflow-infographic.jpg" alt="BreathEZs comfort infographic: open-back ventilation, 100% premium cotton, breathable, soft, tag-free, machine washable, built to last">
+      <img src="images/airflow-infographic.jpg" loading="lazy" decoding="async" alt="BreathEZs comfort infographic: open-back ventilation, 100% premium cotton, breathable, soft, tag-free, machine washable, built to last">
     </div>
   </div>
 </section>
@@ -482,7 +498,6 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
           </g>
         </svg></div>
         <div class="body">
-          <span class="num">01 · The Vent</span>
           <h3>Open-Rear Ventilation</h3>
           <p>The rear is simply open, so heat escapes the moment it builds. Every step you take pumps fresh air through. No batteries, no tech fabric hype, just physics.</p>
         </div>
@@ -528,7 +543,6 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
           </g>
         </svg></div>
         <div class="body">
-          <span class="num">02 · The Support</span>
           <h3>Full-Pouch Front</h3>
           <p>A contoured pouch keeps everything supported and exactly where it belongs, with a working fly. No elastic strap digging in like a jockstrap. Support without the squeeze.</p>
         </div>
@@ -583,7 +597,6 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
           </g>
         </svg></div>
         <div class="body">
-          <span class="num">03 · The Finish</span>
           <h3>Premium Construction</h3>
           <p>A plush no roll waistband, flat seams that disappear under jeans, and the woven BEZ label on every pair. Prototyped by hand, refined until it earned the name.</p>
         </div>
@@ -614,12 +627,12 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
     <div class="photo-frame rv-wrap">
       <div class="rv-cap"><span class="a">Special Edition</span><span class="b">Limited &middot; Bold &middot; Exclusive</span></div>
       <div class="rv-stage">
-        <video autoplay muted loop playsinline aria-label="BreathEZs Special Edition promo, the black edition with its emblem and retail box">
+        <video autoplay muted loop playsinline poster="images/coming-soon.jpg" aria-label="BreathEZs Special Edition promo, the black edition with its emblem and retail box">
           <source src="videos/special-edition-promo.mp4" type="video/mp4">
           <img src="images/coming-soon.jpg" alt="BEZ BreathEZs Special Edition">
         </video>
         <div class="rv-scrim"></div>
-        <img class="rv-logo" src="images/logo.png" alt="">
+        <img class="rv-logo" src="images/logo.png" loading="lazy" decoding="async" alt="">
 
       </div>
     </div>
@@ -629,7 +642,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 <!-- ============ COLLECTION ============ -->
 <section class="collection" id="collection">
   <div class="container">
-    <h2 class="title">Three Ways to <span class="accent">Stay Cool.</span></h2>
+    <h2 class="title">Two Ways to <span class="accent">Stay Cool.</span></h2>
     <p class="sub">Launching August 2026 with preorders. Reserve your spot on the waitlist for first access and exclusive first release drops.</p>
     <div class="products">
       <div class="product" data-color="white">
@@ -637,8 +650,8 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
              data-front-white="images/product-white.jpg" data-back-white="images/product-white-back.jpg"
              data-front-black="images/product-black.jpg" data-back-black="images/product-black-back.jpg">
           <span class="tag soft">Classic</span>
-          <img class="face front" src="images/product-white.jpg" alt="BreathEZs Classic boxer briefs, front">
-          <img class="face back" src="images/product-white-back.jpg" alt="BreathEZs Classic boxer briefs, open rear airflow">
+          <img class="face front" src="images/product-white.jpg" loading="lazy" decoding="async" alt="BreathEZs Classic boxer briefs, front">
+          <img class="face back" src="images/product-white-back.jpg" loading="lazy" decoding="async" alt="BreathEZs Classic boxer briefs, open rear airflow">
         </div>
         <div class="info">
           <h3>Classic</h3>
@@ -656,8 +669,8 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <div class="product">
         <div class="visual flip">
           <span class="tag">Special Edition</span>
-          <img class="face front" src="images/product-special.jpg" alt="BreathEZs Special Edition black boxer briefs with the diamond emblem, front">
-          <img class="face back" src="images/product-special-back.jpg" alt="BreathEZs Special Edition boxer briefs, open rear airflow">
+          <img class="face front" src="images/product-special.jpg" loading="lazy" decoding="async" alt="BreathEZs Special Edition black boxer briefs with the diamond emblem, front">
+          <img class="face back" src="images/product-special-back.jpg" loading="lazy" decoding="async" alt="BreathEZs Special Edition boxer briefs, open rear airflow">
         </div>
         <div class="info">
           <h3>Special Edition Black</h3>
@@ -711,10 +724,10 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
         <p>I tried a pair on the job and haven't stopped thinking about them since. I keep asking every week when the 3XL is dropping.</p>
         <footer>Warehouse crew tester</footer>
       </blockquote>
-      <blockquote class="quote">
-        <span class="mark">&ldquo;</span>
+      <blockquote class="quote quote-invite">
+        <span class="mark" aria-hidden="true">&#10022;</span>
         <p>This spot is reserved for you. Join the waitlist, be one of the first to wear BreathEZs, and tell us how cool you stayed.</p>
-        <footer><a href="#waitlist" style="color:inherit;text-decoration:underline">Claim your pair &rarr;</a></footer>
+        <footer><a href="#waitlist" style="text-decoration:underline">Claim your pair &rarr;</a></footer>
       </blockquote>
     </div>
   </div>
@@ -734,7 +747,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
     </div>
     <div class="wait-emblem">
       <div class="photo-frame" style="max-width:360px">
-        <img src="images/coming-soon.jpg" alt="BEZ BreathEZs, the new standard of comfort, coming soon">
+        <img src="images/coming-soon.jpg" loading="lazy" decoding="async" alt="BEZ BreathEZs, the new standard of comfort, coming soon">
       </div>
     </div>
   </div>
@@ -767,7 +780,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       </details>
       <details class="faq-item">
         <summary>Is BreathEZs for everyone? <span class="plus">＋</span></summary>
-        <div class="answer">Yes. BreathEZs welcomes all genders, orientations, and identities. We are launching with three boxer brief styles, and more is on the way.</div>
+        <div class="answer">Yes. BreathEZs welcomes all genders, orientations, and identities. We are launching with two boxer brief styles, and more is on the way.</div>
       </details>
       <details class="faq-item">
         <summary>How do I get in touch? <span class="plus">＋</span></summary>
@@ -782,7 +795,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
   <div class="container foot-grid">
     <div class="foot-brand">
       <span class="nav-logo">
-        <img src="images/logo.png" alt="BEZ BreathEZs logo">
+        <img src="images/logo.png" loading="lazy" decoding="async" alt="BEZ BreathEZs logo">
       </span>
       <p>Luxury Underwear.<br>Designed to Breathe.</p>
       <p class="foot-contact">Questions? <a href="mailto:customerservice@breathezs.com">customerservice@breathezs.com</a></p>
@@ -832,7 +845,13 @@ document.querySelectorAll('.product .visual.flip').forEach(function(v){
   cue.innerHTML = '&#8635;';
   v.appendChild(cue);
   var product = v.closest('.product');
+  v.setAttribute('role','button');
+  v.setAttribute('tabindex','0');
+  v.setAttribute('aria-label','Flip to see the front and open-rear views');
   v.addEventListener('click', function(){ product.classList.toggle('flipped'); });
+  v.addEventListener('keydown', function(e){
+    if(e.key==='Enter'||e.key===' '){ e.preventDefault(); product.classList.toggle('flipped'); }
+  });
 });
 
 // Color selector: swap the front and back images for the chosen colorway,
