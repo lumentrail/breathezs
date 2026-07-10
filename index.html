@@ -216,6 +216,19 @@ h2.title .accent{color:var(--purple)}
 .product h3{font-size:1.3rem;font-weight:900;text-transform:uppercase}
 .product p{font-size:.96rem;color:var(--ink-soft);margin:10px 0 22px;min-height:3em}
 .collection .shop-all{text-align:center;margin-top:50px}
+
+/* ---------- size guide ---------- */
+.sizing{background:var(--marble)}
+.size-wrap{max-width:760px;margin:52px auto 0;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+.size-table{width:100%;border-collapse:collapse;font-size:1rem}
+.size-table th,.size-table td{padding:16px 22px;text-align:left}
+.size-table thead th{background:linear-gradient(135deg,var(--purple),var(--purple-deep));color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.size-table tbody tr{border-top:1px solid var(--line)}
+.size-table tbody tr:nth-child(odd){background:var(--cream)}
+.size-table td:first-child{font-weight:800;color:var(--purple);text-transform:uppercase}
+.size-table td{color:var(--ink-soft)}
+.size-note{text-align:center;color:var(--ink-soft);font-size:.9rem;margin-top:20px}
+@media(max-width:560px){.size-table th,.size-table td{padding:13px 14px;font-size:.92rem}}
 @media(max-width:940px){.products{grid-template-columns:1fr;max-width:440px;margin-left:auto;margin-right:auto}}
 
 /* ---------- testimonials ---------- */
@@ -257,7 +270,7 @@ h2.title .accent{color:var(--purple)}
 .faq-item .answer{padding:0 24px 22px;color:var(--ink-soft);font-size:1rem}
 
 /* ---------- footer ---------- */
-footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255,.72);padding:72px 0 32px}
+footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255,.72);padding:72px 0 32px}
 .foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.5fr;gap:44px}
 .foot-grid h4{font-size:.74rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#fff;margin-bottom:18px}
 .foot-grid ul{list-style:none;display:grid;gap:11px;font-size:.94rem}
@@ -285,6 +298,7 @@ footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255
     <div class="nav-links">
       <a href="#collection">Collection</a>
       <a href="#technology">Technology</a>
+      <a href="#sizing">Sizing</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
@@ -621,6 +635,31 @@ footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255
     <div class="shop-all">
       <a href="#collection" class="btn btn-primary">Shop the Collection</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ SIZE GUIDE ============ -->
+<section class="sizing" id="sizing">
+  <div class="container">
+    <div class="kicker">Find Your Fit</div>
+    <h2 class="title">BreathEZs <span class="accent">Size Guide.</span></h2>
+    <p class="sub">Sizing runs true to your everyday waist measurement. If you are between sizes, size up for a more relaxed feel.</p>
+    <div class="size-wrap">
+      <table class="size-table">
+        <thead>
+          <tr><th>Size</th><th>Waist (in)</th><th>Waist (cm)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>S</td><td>28&ndash;30</td><td>70&ndash;75</td></tr>
+          <tr><td>M</td><td>32&ndash;34</td><td>80&ndash;85</td></tr>
+          <tr><td>L</td><td>36&ndash;38</td><td>90&ndash;95</td></tr>
+          <tr><td>XL</td><td>40&ndash;42</td><td>100&ndash;105</td></tr>
+          <tr><td>2XL</td><td>44&ndash;46</td><td>110&ndash;115</td></tr>
+          <tr><td>3XL</td><td>48&ndash;50</td><td>120&ndash;125</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="size-note">Measure around your natural waistline, keeping the tape comfortably snug.</p>
   </div>
 </section>
 
