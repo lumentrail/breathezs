@@ -111,8 +111,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,247,242,.92);backdro
 .anatomy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:52px}
 .anat{background:var(--cream);border:1px solid rgba(201,162,39,.28);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s}
 .anat:hover{transform:translateY(-4px);border-color:var(--gold)}
-.anat .shot{height:230px;overflow:hidden}
-.anat .shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s}
+.anat .shot{aspect-ratio:4/5;overflow:hidden}
+.anat .shot img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:transform .5s}
 .anat:hover .shot img{transform:scale(1.06)}
 .anat .body{padding:24px 26px 30px}
 .anat .num{font-size:.7rem;font-weight:800;letter-spacing:.22em;color:var(--gold);text-transform:uppercase}
@@ -375,7 +375,7 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
     <p class="sub">Take a closer look at the construction. This isn't a gimmick cut into a cheap pair of shorts — it's a purpose-built ventilation system stitched into premium 100% cotton.</p>
     <div class="anatomy-grid">
       <div class="anat">
-        <div class="shot"><img src="images/detail-vent.jpg" alt="Close-up of the mesh-trimmed rear vent on the Classic White"></div>
+        <div class="shot"><img src="images/classic-white-rear.jpg" alt="Full rear view of the Classic White showing the open airflow vent"></div>
         <div class="body">
           <span class="num">01 — The Vent</span>
           <h3>Open-Rear Ventilation</h3>
@@ -383,7 +383,7 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
         </div>
       </div>
       <div class="anat">
-        <div class="shot"><img src="images/detail-fly.jpg" alt="Close-up of the contoured front pouch and fly on the Black Edition"></div>
+        <div class="shot"><img src="images/detail-support.jpg" alt="Classic White worn on a mannequin, showing the supportive front pouch and fly"></div>
         <div class="body">
           <span class="num">02 — The Support</span>
           <h3>Full-Pouch Front</h3>
@@ -391,7 +391,7 @@ footer{background:linear-gradient(180deg,#1a1523,#120d1a);color:rgba(255,255,255
         </div>
       </div>
       <div class="anat">
-        <div class="shot"><img src="images/detail-label.jpg" alt="Close-up of the woven BEZ label on the Black Edition waistband"></div>
+        <div class="shot"><img src="images/detail-finish.jpg" alt="Full view of the Black Edition with the woven BEZ label on the waistband"></div>
         <div class="body">
           <span class="num">03 — The Finish</span>
           <h3>Premium Construction</h3>
