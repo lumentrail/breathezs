@@ -220,8 +220,8 @@ h2.title .accent{color:var(--purple)}
 .product .visual.flip .face{position:absolute;inset:0;transition:opacity .5s ease}
 .product .visual.flip .face.back{opacity:0}
 @media(hover:hover){
-  .product:hover .visual.flip .face.front{opacity:0}
-  .product:hover .visual.flip .face.back{opacity:1}
+  .product .visual.flip:hover .face.front{opacity:0}
+  .product .visual.flip:hover .face.back{opacity:1}
 }
 .product.flipped .visual.flip .face.front{opacity:0}
 .product.flipped .visual.flip .face.back{opacity:1}
@@ -844,6 +844,7 @@ document.querySelectorAll('.product .swatches').forEach(function(group){
       var cap = c.charAt(0).toUpperCase() + c.slice(1);
       front.src = visual.dataset['front' + cap];
       back.src  = visual.dataset['back' + cap];
+      product.classList.remove('flipped');
       product.setAttribute('data-color', c);
       if (nameEl) nameEl.textContent = sw.dataset.name;
       group.querySelectorAll('.swatch').forEach(function(s){
