@@ -84,24 +84,25 @@ h2.title .accent{color:var(--purple)}
 .sub{max-width:46rem;margin:20px auto 0;text-align:center;color:var(--ink-soft);font-size:1.05rem}
 
 /* ---------- hero ---------- */
-.hero{background:
-  radial-gradient(1100px 560px at 82% -5%,rgba(168,85,247,.28),transparent 60%),
-  radial-gradient(820px 460px at 2% 105%,rgba(124,58,237,.16),transparent 60%),
-  linear-gradient(180deg,var(--marble),var(--cream));
-  padding:96px 0 92px;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
-.hero h1{font-size:clamp(2.6rem,5.4vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em}
-.hero h1 .accent{color:var(--purple)}
-.hero p.lead{margin:24px 0 34px;font-size:1.2rem;color:var(--ink-soft);max-width:34rem}
+.hero{position:relative;color:#fff;overflow:hidden;padding:120px 0 116px;
+  background:#0a0810 url(images/hero-neon.jpg) center right/cover no-repeat}
+.hero::before{content:"";position:absolute;inset:0;z-index:0;background:
+  linear-gradient(90deg,rgba(9,7,14,.94) 0%,rgba(9,7,14,.78) 38%,rgba(9,7,14,.32) 68%,rgba(9,7,14,.05) 100%)}
+.hero .container{position:relative;z-index:1}
+.hero-inner{max-width:37rem}
+.hero h1{font-size:clamp(2.6rem,5.4vw,4rem);font-weight:900;text-transform:uppercase;letter-spacing:-.02em;text-shadow:0 2px 24px rgba(0,0,0,.55)}
+.hero h1 .accent{color:var(--purple-neon)}
+.hero p.lead{margin:24px 0 34px;font-size:1.2rem;color:rgba(255,255,255,.84);max-width:34rem}
 .hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
-.hero-badges{display:flex;gap:38px;margin-top:52px;flex-wrap:wrap}
-.badge{display:flex;align-items:center;gap:13px;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
-.badge small{display:block;font-weight:500;color:var(--ink-soft);text-transform:none;letter-spacing:0}
-.badge .ico{color:var(--purple);flex-shrink:0}
+.hero .btn-outline{border-color:rgba(255,255,255,.55);color:#fff}
+.hero .btn-outline:hover{background:#fff;color:var(--purple-deep)}
+.hero-badges{display:flex;gap:38px;margin-top:54px;flex-wrap:wrap}
+.badge{display:flex;align-items:center;gap:13px;font-size:.82rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+.badge small{display:block;font-weight:500;color:rgba(255,255,255,.6);text-transform:none;letter-spacing:0}
+.badge .ico{color:var(--gold-light);flex-shrink:0}
 .photo-frame{border-radius:var(--radius);overflow:hidden;box-shadow:0 22px 50px rgba(32,24,46,.26);border:1px solid var(--line);line-height:0}
 .photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
-.hero-photo{max-width:460px;justify-self:center;transform:rotate(1.5deg)}
-@media(max-width:940px){.hero-grid{grid-template-columns:1fr;gap:44px}.hero-photo{transform:none;max-width:420px}}
+@media(max-width:940px){.hero{background-position:center;padding:96px 0}.hero::before{background:linear-gradient(180deg,rgba(9,7,14,.86),rgba(9,7,14,.78))}.hero-inner{max-width:100%}}
 
 /* ---------- inclusivity band ---------- */
 .inclusive{background:linear-gradient(135deg,var(--purple-deep),var(--purple));color:#fff;padding:30px 0}
@@ -288,8 +289,8 @@ footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="container hero-grid">
-    <div>
+  <div class="container">
+    <div class="hero-inner">
       <h1>Luxury Underwear.<br><span class="accent">Designed to Breathe.</span></h1>
       <p class="lead">Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.</p>
       <div class="hero-ctas">
@@ -314,9 +315,6 @@ footer{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255,255,255
           <div>Fit For<small>Royalty</small></div>
         </div>
       </div>
-    </div>
-    <div class="photo-frame hero-photo">
-      <img src="images/black-edition-lifestyle.jpg" alt="BreathEZs boxer briefs with the BEZ waistband label">
     </div>
   </div>
 </section>
