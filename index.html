@@ -96,7 +96,7 @@ h2.title .accent{color:var(--purple)}
 
 /* ---------- hero ---------- */
 .hero{position:relative;color:#fff;overflow:hidden;padding:120px 0 116px;background:#0a0810}
-.hero::before{content:"";position:absolute;inset:0;z-index:0;
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:1560px;z-index:0;
   background:url(images/hero-neon.jpg) right center/auto 100% no-repeat}
 /* keep the sign inside the right half on narrower desktops */
 @media(min-width:821px) and (max-width:1560px){.hero::before{background-size:auto 76%}}
@@ -215,15 +215,15 @@ h2.title .accent{color:var(--purple)}
 .rv-wrap{max-width:680px;justify-self:center;position:relative;background:#0d0812;overflow:hidden}
 .rv-wrap video{width:100%;display:block}
 .rv-stage{position:relative;line-height:0}
-.rv-scrim{position:absolute;inset:0 0 auto 0;height:48%;background:linear-gradient(180deg,#0d0812 0%,#0d0812 62%,rgba(13,8,18,.94) 90%,rgba(13,8,18,0) 100%);pointer-events:none}
-.rv-cap{padding:14px 14px 4px;text-align:center;line-height:1.15}
-.rv-cap .a{display:block;font-family:'Great Vibes',cursive;font-size:clamp(2.3rem,5.5vw,3rem);font-weight:400;text-transform:none;
-  line-height:1.42;padding:0 .25em;
+.rv-scrim{position:absolute;inset:0 0 auto 0;height:40%;background:linear-gradient(180deg,#0d0812 0%,#0d0812 46%,rgba(13,8,18,.9) 66%,rgba(13,8,18,.58) 82%,rgba(13,8,18,.24) 93%,rgba(13,8,18,0) 100%);pointer-events:none}
+.rv-cap{padding:57px 14px 6px;text-align:center;line-height:1.15}
+.rv-cap .a{display:block;font-family:'Great Vibes',cursive;font-size:clamp(3.6rem,8.6vw,4.8rem);font-weight:700;text-transform:none;
+  line-height:1.28;padding:0 .25em;
   background:linear-gradient(94deg,#f6d987 5%,#e8c95c 38%,#c9a227 68%,#f2d377 95%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;
   filter:drop-shadow(0 0 12px rgba(201,162,39,.35))}
-.rv-cap .b{display:block;font-size:.62rem;font-weight:600;letter-spacing:.34em;color:rgba(255,255,255,.62);text-transform:uppercase;margin-top:4px}
-.rv-wrap .rv-logo{position:absolute;right:12px;bottom:10px;width:56px;height:auto;object-fit:contain;opacity:.72;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6));pointer-events:none}
+.rv-cap .b{display:block;font-size:.78rem;font-weight:600;letter-spacing:.38em;color:rgba(255,255,255,.68);text-transform:uppercase;margin-top:6px}
+.rv-wrap .rv-logo{position:absolute;right:12px;bottom:10px;width:72px;height:auto;object-fit:contain;opacity:.72;filter:drop-shadow(0 1px 4px rgba(0,0,0,.6));pointer-events:none}
 @media(max-width:940px){.night-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- collection ---------- */
