@@ -497,14 +497,6 @@
         <li><a href="mailto:customerservice@breathezs.com">Contact</a></li>
       </ul>
     </div>
-    <div>
-      <h4>Stay in the Know</h4>
-      <p style="font-size:.94rem;margin-bottom:14px;color:rgba(255,255,255,.7)">Be the first to know about new drops and exclusive offers.</p>
-      {% form 'customer', class: 'foot-form' %}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
-        <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
-        <button type="submit" aria-label="Subscribe">&rarr;</button>
-      {% if form.posted_successfully? %}<p class="form-success" role="status">Reservation confirmed. You're on the list, and we'll email you updates and first access as they become available.</p>{% endif %}{{ form.errors | default_errors }}{% endform %}
-    </div>
   </div>
   <div class="container foot-bottom">© 2026 BreathEZs®. All Rights Reserved. &middot; <a href="/pages/privacy-policy" style="color:inherit;text-decoration:underline">Privacy Policy</a></div>
 </footer>
