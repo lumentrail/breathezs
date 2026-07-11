@@ -314,8 +314,9 @@ h2.title .accent{color:var(--purple)}
 .wait-form input{flex:1;min-width:250px;padding:16px 20px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:var(--font);background:#fff;color:var(--ink)}
 .wait-form input:focus{outline:2px solid var(--purple);border-color:transparent}
 .form-note{font-size:.85rem;color:var(--ink-soft);margin-top:14px}
-.reserve-confirm,.form-success{margin-top:16px;padding:13px 18px;border-radius:12px;background:var(--purple);color:#fff!important;font-weight:600;font-size:.96rem;line-height:1.5;box-shadow:0 10px 28px rgba(124,58,237,.28)}
-.foot-form ~ .reserve-confirm,.foot-form .form-success{font-size:.9rem;padding:11px 14px;margin-top:12px}
+.form-success{flex:0 0 100%;width:100%;order:9;margin-top:16px;padding:13px 18px;border-radius:12px;background:var(--purple);color:#fff!important;font-weight:600;font-size:.96rem;line-height:1.5;box-shadow:0 10px 28px rgba(124,58,237,.28)}
+.wait-form .errors,.foot-form .errors{flex:0 0 100%;width:100%;order:9;list-style:none;margin:12px 0 0;padding:0;color:#dc2626;font-size:.9rem;font-weight:600}
+.foot-form .form-success{font-size:.9rem;padding:11px 14px;margin-top:12px}
 .wait-emblem{display:flex;justify-content:center}
 @media(max-width:940px){.wait-grid{grid-template-columns:1fr}.wait-emblem{display:none}}
 
@@ -351,8 +352,8 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 .foot-social a:hover{background:var(--purple);border-color:transparent;transform:translateY(-2px)}
 .foot-social svg{width:19px;height:19px}
 .faq-item .answer a{color:var(--purple);text-decoration:underline}
-.foot-form{display:flex;gap:0;margin-top:8px}
-.foot-form input{flex:1;padding:13px 15px;border:1px solid rgba(255,255,255,.22);border-right:none;border-radius:10px 0 0 10px;background:rgba(255,255,255,.06);color:#fff;font-size:.92rem;font-family:var(--font)}
+.foot-form{display:flex;flex-wrap:wrap;gap:0;margin-top:8px}
+.foot-form input{flex:1;min-width:0;padding:13px 15px;border:1px solid rgba(255,255,255,.22);border-right:none;border-radius:10px 0 0 10px;background:rgba(255,255,255,.06);color:#fff;font-size:.92rem;font-family:var(--font)}
 .foot-form input::placeholder{color:rgba(255,255,255,.42)}
 .foot-form button{padding:13px 19px;border:none;border-radius:0 10px 10px 0;background:var(--purple);color:#fff;font-size:1.1rem;cursor:pointer}
 .foot-form button:hover{background:var(--purple-neon)}
@@ -895,45 +896,11 @@ document.querySelectorAll('.product .swatches').forEach(function(group){
   });
 });
 
-// Reserve / newsletter capture: on the live Shopify store the forms post to
-// Shopify (/contact) and create an email subscriber. Submit it in the
-// background so the customer sees an instant confirmation instead of a full
-// page reload. Falls back to a normal submit if the request fails, and does
-// nothing here for the standalone static file (which uses joinWaitlist).
-document.querySelectorAll('form.wait-form, form.foot-form').forEach(function(form){
-  form.addEventListener('submit', function(e){
-    var action = form.action || '';
-    if(action.indexOf('/contact') === -1) return; // not the Shopify form
-    e.preventDefault();
-    var btn = form.querySelector('button');
-    var label = btn ? btn.innerHTML : '';
-    if(btn){ btn.disabled = true; }
-    fetch(action, {
-      method: 'POST',
-      headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'text/html' },
-      body: new URLSearchParams(new FormData(form))
-    }).then(function(res){
-      // Shopify returns 200 whether the email is new or already on the list;
-      // either way the reservation is captured.
-      if(!res.ok) throw new Error('bad status');
-      form.reset();
-      if(btn){ btn.disabled = false; btn.innerHTML = label; }
-      var note = form.parentNode.querySelector('.reserve-confirm');
-      if(!note){
-        note = document.createElement('p');
-        note.className = 'reserve-confirm';
-        note.setAttribute('role','status');
-        form.insertAdjacentElement('afterend', note);
-      }
-      note.textContent = "Reservation confirmed. You're on the list, and we'll email you updates and first access as they become available.";
-    }).catch(function(){
-      // Network problem: let the browser submit the form the normal way so
-      // the reservation is never lost.
-      if(btn){ btn.disabled = false; btn.innerHTML = label; }
-      form.submit();
-    });
-  });
-});
+// After a reservation is submitted, Shopify reloads the page and renders the
+// confirmation message. Scroll it into view so the customer clearly sees that
+// the reservation worked.
+var confirmMsg = document.querySelector('.form-success');
+if(confirmMsg){ confirmMsg.scrollIntoView({behavior:'smooth', block:'center'}); }
 
 function joinWaitlist(form){
   var email = form.email.value;
