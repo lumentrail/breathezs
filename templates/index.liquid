@@ -269,29 +269,6 @@
   </div>
 </section>
 
-<!-- ============ NIGHT BANNER ============ -->
-<section class="night">
-  <div class="container night-grid">
-    <div>
-      <h2>Made for Long Days.<br>Built for <span class="accent">Long Nights.</span></h2>
-      <p>BreathEZs delivers elevated comfort that moves with you, from everyday routines to after dark confidence.</p>
-      <p class="tagline">No Heat For Your Meat.<sup style="font-size:.55em">™</sup></p>
-      <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
-    </div>
-    <div class="photo-frame rv-wrap">
-      <div class="rv-cap"><span class="a">Special Edition</span><span class="b">Limited &middot; Bold &middot; Exclusive</span></div>
-      <div class="rv-stage">
-        <video autoplay muted loop playsinline poster="{{ 'coming-soon.jpg' | asset_url }}" aria-label="BreathEZs Special Edition promo, the black edition with its emblem and retail box">
-          <source src="{{ 'special-edition-promo.mp4' | asset_url }}" type="video/mp4">
-          <img src="{{ 'coming-soon.jpg' | asset_url }}" alt="BEZ BreathEZs Special Edition">
-        </video>
-        <div class="rv-scrim"></div>
-        <img class="rv-logo" src="{{ 'logo.png' | asset_url }}" loading="lazy" decoding="async" alt="">
-
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ============ COLLECTION ============ -->
 <section class="collection" id="collection">
@@ -393,10 +370,10 @@
     <div>
       <h2>Get In Before They're <span class="accent">Gone.</span></h2>
       <p>Only a limited few will be made. Reserve yours now for first access to the first release.</p>
-      <form class="wait-form" onsubmit="return joinWaitlist(this)">
-        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+      {% form 'customer', class: 'wait-form' %}{% if form.posted_successfully? %}<p class="form-success" role="status">You're in. Watch your inbox for first access.</p>{% endif %}{{ form.errors | default_errors }}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
+        <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
         <button type="submit" class="btn btn-primary">Reserve Yours</button>
-      </form>
+      {% endform %}
       <p class="form-note" id="waitlist-note">No spam. Just first access and first dibs on the limited run.</p>
     </div>
     <div class="wait-emblem">
@@ -414,7 +391,7 @@
     <div class="faq-list">
       <details class="faq-item">
         <summary>When do you launch? <span class="plus">＋</span></summary>
-        <div class="answer">We launch in August 2026 with a limited first run. Only a limited few will be made, so everyone who reserves gets first access before anyone else.</div>
+        <div class="answer">We open with a soft launch in late August 2026, a limited first run with only a limited few made. Reserve now and you will be among the first to get access before anyone else.</div>
       </details>
       <details class="faq-item">
         <summary>Where can I buy them? <span class="plus">＋</span></summary>
@@ -491,10 +468,10 @@
     <div>
       <h4>Stay in the Know</h4>
       <p style="font-size:.94rem;margin-bottom:14px;color:rgba(255,255,255,.7)">Be the first to know about new drops and exclusive offers.</p>
-      <form class="foot-form" onsubmit="return joinWaitlist(this)">
-        <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+      {% form 'customer', class: 'foot-form' %}{% if form.posted_successfully? %}<p class="form-success" role="status">You're in. Watch your inbox for first access.</p>{% endif %}{{ form.errors | default_errors }}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
+        <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
         <button type="submit" aria-label="Subscribe">&rarr;</button>
-      </form>
+      {% endform %}
     </div>
   </div>
   <div class="container foot-bottom">© 2026 BreathEZs®. All Rights Reserved.</div>
