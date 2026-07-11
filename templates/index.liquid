@@ -20,12 +20,12 @@
 <section class="hero" id="top">
   <div class="container">
     <div class="hero-inner">
-      <h1>Luxury Underwear.<br><span class="accent">Designed to Breathe.</span></h1>
+      <h1>Luxury<br>Underwear.<br><span class="accent">Designed to<br>Breathe.</span></h1>
       <p class="lead">Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.</p>
       <div class="hero-ctas">
         <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
       </div>
-      <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold-light);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">A limited first run. Get yours before they're gone.</p>
+      <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">A limited first run. Get yours before they're gone.</p>
       <div class="hero-badges">
         <div class="badge">
           <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
@@ -45,6 +45,7 @@
         </div>
       </div>
     </div>
+    <img class="hero-art" src="{{ 'hero-bez.webp' | asset_url }}" alt="BEZ BreathEZs emblem beside the Classic white boxer briefs" fetchpriority="high">
   </div>
 </section>
 
@@ -256,19 +257,24 @@
         </div>
       </div>
     </div>
-    <div class="built-strip" aria-label="Who BreathEZs are built for">
-      <span class="hot">Built For</span>
-      <span>Warehouse Crews</span>
-      <span>Construction</span>
-      <span>Mechanics</span>
-      <span>Truck Drivers</span>
-      <span>Athletes</span>
-      <span>Outdoor Workers</span>
-      <span>Anyone In The Heat</span>
-    </div>
   </div>
 </section>
 
+<!-- ============ BUILT FOR ============ -->
+<section class="built" aria-label="Who BreathEZs are built for">
+  <div class="container">
+    <div class="built-strip">
+      <span class="hot">Built For</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-4.5L3 8l9 4.5L21 8zM3 8v8l9 4.5 9-4.5V8"/><path d="M12 12.5V20.5"/></svg>Warehouse Crews</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15a7 7 0 0114 0"/><path d="M3 15h18v2.5H3z"/><path d="M12 8v-3"/></svg>Construction</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Mechanics</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="5" width="14" height="11" rx="1"/><path d="M15 9h4l3 3v4h-7V9z"/><circle cx="6" cy="18.5" r="2"/><circle cx="18" cy="18.5" r="2"/></svg>Truck Drivers</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg>Athletes</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>Outdoor Workers</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5c3.5 4 5.5 6.8 5.5 10a5.5 5.5 0 01-11 0c0-3.2 2-6 5.5-10z"/><path d="M12 21.5a3 3 0 003-3c0-1.6-1.2-3-3-4.5-1.8 1.5-3 2.9-3 4.5a3 3 0 003 3z"/></svg>Anyone In The Heat</span>
+    </div>
+  </div>
+</section>
 
 <!-- ============ COLLECTION ============ -->
 <section class="collection" id="collection">
