@@ -294,7 +294,7 @@
               <button type="button" class="swatch swatch-black" data-color="black" data-name="Black" aria-label="Black" aria-pressed="false"></button>
             </div>
           </div>
-          <a href="#waitlist" class="btn btn-outline">Reserve Yours</a>
+          <a href="#waitlist" class="btn btn-outline" data-reserve data-style="Classic">Reserve Yours</a>
         </div>
       </div>
       <div class="product">
@@ -306,7 +306,7 @@
         <div class="info">
           <h3>Special Edition Black</h3>
           <p>Black with the signature diamond emblem and exclusive branding. The same engineered airflow, elevated.</p>
-          <a href="#waitlist" class="btn btn-outline">Reserve Yours</a>
+          <a href="#waitlist" class="btn btn-outline" data-reserve data-style="Special Edition Black">Reserve Yours</a>
         </div>
       </div>
     </div>
@@ -370,11 +370,42 @@
     <div>
       <h2>Get In Before They're <span class="accent">Gone.</span></h2>
       <p>Only a limited few will be made. Reserve yours now for first access to the first release.</p>
-      {% form 'customer', class: 'wait-form' %}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
-        <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
+      {% form 'customer', class: 'reserve-form' %}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
+        <div class="reserve-fields">
+          <label class="rf">
+            <span>Style</span>
+            <select name="_style" required aria-label="Style">
+              <option value="Classic">Classic</option>
+              <option value="Special Edition Black">Special Edition Black</option>
+            </select>
+          </label>
+          <label class="rf">
+            <span>Color</span>
+            <select name="_color" aria-label="Color">
+              <option value="White">White</option>
+              <option value="Black">Black</option>
+            </select>
+          </label>
+          <label class="rf">
+            <span>Size</span>
+            <select name="_size" required aria-label="Size">
+              <option value="" disabled selected>Select</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+              <option value="3XL">3XL</option>
+            </select>
+          </label>
+        </div>
+        <div class="reserve-contact">
+          <input type="text" name="contact[first_name]" placeholder="Your name (optional)" aria-label="Your name">
+          <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
+        </div>
         <button type="submit" class="btn btn-primary">Reserve Yours</button>
-      {% if form.posted_successfully? %}<p class="form-success" role="status">Reservation confirmed. You're on the list, and we'll email you updates and first access as they become available.</p>{% endif %}{{ form.errors | default_errors }}{% endform %}
-      <p class="form-note" id="waitlist-note">No spam. Just first access and first dibs on the limited run.</p>
+      {% if form.posted_successfully? %}<p class="form-success" role="status">Reserved! Your pick is noted and you're on the list for first access at the August 2026 launch. We'll email you to confirm.</p>{% endif %}{{ form.errors | default_errors }}{% endform %}
+      <p class="form-note" id="waitlist-note">No charge and no spam &mdash; this reserves your size and style and gets you launch updates.</p>
     </div>
     <div class="wait-emblem">
       <div class="photo-frame" style="max-width:360px">
@@ -527,6 +558,49 @@ document.querySelectorAll('.product .swatches').forEach(function(group){
         s.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
     });
+  });
+});
+
+// ---- Reservation picker -----------------------------------------------------
+// The reserve form is a native Shopify {% raw %}{% form 'customer' %}{% endraw %},
+// so it only persists email / first name / tags to the customer record. To make
+// the style, color, and size land on the customer too (filterable in the
+// Customers tab), we fold the picks into contact[tags] right before submit.
+function bezSlug(s){ return String(s).toLowerCase().trim().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,''); }
+document.querySelectorAll('.reserve-form').forEach(function(form){
+  var styleSel = form.querySelector('[name="_style"]');
+  var colorSel = form.querySelector('[name="_color"]');
+  var sizeSel  = form.querySelector('[name="_size"]');
+  var tagsInput = form.querySelector('input[name="contact[tags]"]');
+  // Special Edition is black only: lock the color to match the style.
+  function syncColor(){
+    if(!styleSel || !colorSel) return;
+    if(styleSel.value === 'Special Edition Black'){ colorSel.value = 'Black'; colorSel.disabled = true; }
+    else { colorSel.disabled = false; }
+  }
+  if(styleSel){ styleSel.addEventListener('change', syncColor); syncColor(); }
+  form.addEventListener('submit', function(){
+    var picks = ['reserve','newsletter','prospect'];
+    if(styleSel && styleSel.value) picks.push('style-' + bezSlug(styleSel.value));
+    if(colorSel && colorSel.value) picks.push('color-' + bezSlug(colorSel.value));
+    if(sizeSel && sizeSel.value)   picks.push('size-' + bezSlug(sizeSel.value));
+    if(tagsInput) tagsInput.value = picks.join(', ');
+    // no preventDefault: the native Shopify customer form submits normally.
+  });
+});
+
+// "Reserve Yours" buttons on the product cards preselect that style/color and
+// jump to the form (the href="#waitlist" handles the scroll).
+document.querySelectorAll('[data-reserve]').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var form = document.querySelector('.reserve-form');
+    if(!form) return;
+    var styleSel = form.querySelector('[name="_style"]');
+    var colorSel = form.querySelector('[name="_color"]');
+    if(btn.dataset.style && styleSel){ styleSel.value = btn.dataset.style; styleSel.dispatchEvent(new Event('change')); }
+    var product = btn.closest('.product');
+    var color = btn.dataset.color || (product && product.getAttribute('data-color'));
+    if(color && colorSel && !colorSel.disabled){ colorSel.value = color.charAt(0).toUpperCase() + color.slice(1); }
   });
 });
 
