@@ -202,9 +202,10 @@ h2.title .accent{color:var(--purple)}
 @media(max-width:940px){.anatomy-grid{grid-template-columns:1fr}}
 
 /* ---------- built-for strip ---------- */
-.built-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:48px}
-.built-strip span{border:1.5px solid var(--line);color:var(--ink);font-size:.82rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:10px 20px;border-radius:99px;background:var(--cream)}
-.built-strip span.hot{background:linear-gradient(135deg,var(--purple-neon),var(--purple-deep));border-color:transparent;color:#fff;font-weight:700}
+.built-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:6px 26px;margin-top:40px;max-width:60rem;margin-left:auto;margin-right:auto}
+.built-strip span{color:var(--ink);font-size:1.12rem;font-weight:600;letter-spacing:.01em}
+.built-strip span.hot{flex-basis:100%;text-align:center;margin-bottom:10px;color:var(--purple);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+@media(max-width:560px){.built-strip span{font-size:1.02rem}}
 
 /* ---------- night banner ---------- */
 .night{background:
