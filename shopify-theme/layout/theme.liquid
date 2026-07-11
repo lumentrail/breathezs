@@ -153,7 +153,13 @@ h2.title .accent{color:var(--purple)}
 .card .frame svg{transform:rotate(-45deg)}
 .card h3{font-size:1rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
 .card p{font-size:.98rem;color:var(--ink-soft)}
-@media(max-width:940px){.cards{grid-template-columns:1fr}}
+@media(max-width:940px){
+  /* Mobile: swipe the feature cards horizontally instead of stacking them */
+  .cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin:0 -22px;padding:6px 22px 22px;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 auto;width:clamp(240px,78vw,320px);scroll-snap-align:center}
+}
 
 /* ---------- technology ---------- */
 .design{background:

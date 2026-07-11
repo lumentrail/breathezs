@@ -153,7 +153,13 @@ h2.title .accent{color:var(--purple)}
 .card .frame svg{transform:rotate(-45deg)}
 .card h3{font-size:1rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
 .card p{font-size:.98rem;color:var(--ink-soft)}
-@media(max-width:940px){.cards{grid-template-columns:1fr}}
+@media(max-width:940px){
+  /* Mobile: swipe the feature cards horizontally instead of stacking them */
+  .cards{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;
+    margin:0 -22px;padding:6px 22px 22px;scrollbar-width:none}
+  .cards::-webkit-scrollbar{display:none}
+  .card{flex:0 0 auto;width:clamp(240px,78vw,320px);scroll-snap-align:center}
+}
 
 /* ---------- technology ---------- */
 .design{background:
@@ -363,7 +369,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="#waitlist" class="btn btn-primary">Join the Waitlist</a>
+    <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
   </nav>
 </header>
 
@@ -374,9 +380,9 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <h1>Luxury Underwear.<br><span class="accent">Designed to Breathe.</span></h1>
       <p class="lead">Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.</p>
       <div class="hero-ctas">
-        <a href="#collection" class="btn btn-primary">Shop the Collection</a>
-        <a href="#waitlist" class="btn btn-outline">Join the Waitlist</a>
+        <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
       </div>
+      <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold-light);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">A limited first run. Get yours before they're gone.</p>
       <div class="hero-badges">
         <div class="badge">
           <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
@@ -627,7 +633,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       <h2>Made for Long Days.<br>Built for <span class="accent">Long Nights.</span></h2>
       <p>BreathEZs delivers elevated comfort that moves with you, from everyday routines to after dark confidence.</p>
       <p class="tagline">No Heat For Your Meat.<sup style="font-size:.55em">™</sup></p>
-      <a href="#collection" class="btn btn-primary">Discover More</a>
+      <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
     </div>
     <div class="photo-frame rv-wrap">
       <div class="rv-cap"><span class="a">Special Edition</span><span class="b">Limited &middot; Bold &middot; Exclusive</span></div>
@@ -648,7 +654,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 <section class="collection" id="collection">
   <div class="container">
     <h2 class="title">Two Ways to <span class="accent">Stay Cool.</span></h2>
-    <p class="sub">Launching August 2026 with preorders. Reserve your spot on the waitlist for first access and exclusive first release drops.</p>
+    <p class="sub">Launching August 2026 as a limited first run. Only a limited few will be made. Reserve yours before they're gone.</p>
     <div class="products">
       <div class="product" data-color="white">
         <div class="visual flip"
@@ -668,7 +674,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
               <button type="button" class="swatch swatch-black" data-color="black" data-name="Black" aria-label="Black" aria-pressed="false"></button>
             </div>
           </div>
-          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
+          <a href="#waitlist" class="btn btn-outline">Reserve Yours</a>
         </div>
       </div>
       <div class="product">
@@ -680,12 +686,12 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
         <div class="info">
           <h3>Special Edition Black</h3>
           <p>Black with the signature diamond emblem and exclusive branding. The same engineered airflow, elevated.</p>
-          <a href="#waitlist" class="btn btn-outline">Notify Me</a>
+          <a href="#waitlist" class="btn btn-outline">Reserve Yours</a>
         </div>
       </div>
     </div>
     <div class="shop-all">
-      <a href="#collection" class="btn btn-primary">Shop the Collection</a>
+      <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
     </div>
   </div>
 </section>
@@ -731,8 +737,8 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       </blockquote>
       <blockquote class="quote quote-invite">
         <span class="mark" aria-hidden="true">&#10022;</span>
-        <p>This spot is reserved for you. Join the waitlist, be one of the first to wear BreathEZs, and tell us how cool you stayed.</p>
-        <footer><a href="#waitlist" style="text-decoration:underline">Claim your pair &rarr;</a></footer>
+        <p>This spot is reserved for you. Reserve a pair from the limited first run, be one of the first to wear BreathEZs, and tell us how cool you stayed.</p>
+        <footer><a href="#waitlist" style="text-decoration:underline">Reserve yours &rarr;</a></footer>
       </blockquote>
     </div>
   </div>
@@ -742,13 +748,13 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 <section class="waitlist" id="waitlist">
   <div class="container wait-grid">
     <div>
-      <h2>Be First to Wear <span class="accent">BreathEZs.</span></h2>
-      <p>Join the waitlist for launch updates, early access, and exclusive first release drops.</p>
+      <h2>Get In Before They're <span class="accent">Gone.</span></h2>
+      <p>Only a limited few will be made. Reserve yours now for first access to the first release.</p>
       <form class="wait-form" onsubmit="return joinWaitlist(this)">
         <input type="email" name="email" placeholder="Enter your email" required aria-label="Email address">
-        <button type="submit" class="btn btn-primary">Reserve My Spot</button>
+        <button type="submit" class="btn btn-primary">Reserve Yours</button>
       </form>
-      <p class="form-note" id="waitlist-note">No spam. Just launch news and first dibs.</p>
+      <p class="form-note" id="waitlist-note">No spam. Just first access and first dibs on the limited run.</p>
     </div>
     <div class="wait-emblem">
       <div class="photo-frame" style="max-width:360px">
@@ -765,11 +771,11 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
     <div class="faq-list">
       <details class="faq-item">
         <summary>When do you launch? <span class="plus">＋</span></summary>
-        <div class="answer">We launch in August 2026 with a preorder soft launch, so production has time to meet demand. Waitlist members get first access before anyone else.</div>
+        <div class="answer">We launch in August 2026 with a limited first run. Only a limited few will be made, so everyone who reserves gets first access before anyone else.</div>
       </details>
       <details class="faq-item">
         <summary>Where can I buy them? <span class="plus">＋</span></summary>
-        <div class="answer">Right here. BreathEZs.com is our official home, and the Shop buttons take you straight to checkout once we go live in August 2026.</div>
+        <div class="answer">Right here. BreathEZs.com is our official home, and reserving now locks in your pair for checkout the moment we go live in August 2026.</div>
       </details>
       <details class="faq-item">
         <summary>How does sizing fit? <span class="plus">＋</span></summary>
@@ -814,11 +820,11 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
       </div>
     </div>
     <div>
-      <h4>Shop</h4>
+      <h4>Explore</h4>
       <ul>
-        <li><a href="#collection">Shop Now</a></li>
+        <li><a href="#waitlist">Reserve Yours</a></li>
         <li><a href="#collection">The Collection</a></li>
-        <li><a href="#waitlist">Preorder Waitlist</a></li>
+        <li><a href="#sizing">Sizing</a></li>
       </ul>
     </div>
     <div>
