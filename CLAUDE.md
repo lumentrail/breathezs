@@ -1,46 +1,105 @@
-# BreathEZs marketing site — working notes
+# BreathEZs — project handoff & working notes
 
-Single-file static marketing site (`index.html`) for BreathEZs® (BEZ), a premium
-100% cotton underwear brand with an open-rear airflow design. Lives at
-breathezs.com. No build step; assets in `images/`, `videos/`, `fonts/`
-(self-hosted Poppins + Great Vibes). Work on branch
-`claude/breathezs-website-analysis-1kgs8i`.
+BreathEZs® (BEZ) is a premium 100% cotton underwear brand with an open-rear
+airflow design. This repo is the marketing site, converted into a **Shopify
+Liquid theme**. Status: pre-launch, soft launch (preorders) targeted for
+**August 2026**. Live domain when connected: **breathezs.com**.
+Contact: customerservice@breathezs.com. Founder: **Rich White**.
 
-## Live preview artifact
-https://claude.ai/code/artifact/16d6272d-2a81-4ba9-9bc5-954e8493d9c2
-To refresh it: inline all assets (fonts, `url(images/...)`, `src="images/..."`,
-`data-*="images/..."`, `src="videos/..."`) as base64 data URIs into a single
-HTML file and publish it to that URL with the Artifact tool.
+> New session / new agent? Read this whole file first, then look at
+> `templates/index.liquid` (the homepage) and `layout/theme.liquid` (head + all
+> CSS). That is 90% of the site.
 
-## Brand rules (owner: Mike; founder: Rich White — never "Ricky")
-- Inclusive positioning: all genders/orientations; avoid "men's underwear" copy.
-- Field Tested testimonials must be real third parties — never quotes from Rich.
-- Tagline "No Heat For Your Meat.™" is wanted (gold, in the night section).
-- Avoid the word "invisible" in claims (use "discreet"); no em-dashes in copy.
-- Launch: August 2026 (preorder soft launch). Contact: customerservice@breathezs.com.
-- Palette purple-forward with gold accents; font Poppins everywhere; cursive
-  accents in Great Vibes. Hero background base color is #0a0810.
+## Branches — what is what
 
-## Layout facts
-- Hero: neon BEZ sign image `images/hero-neon.jpg` pinned right at
-  `auto 100%`; background must exactly match #0a0810 (no CSS filters on it —
-  filters caused a visible box seam). Mobile hero uses `images/bez-neon.jpg`.
-- Collection: one "Classic" card with white/black color selector (front/back
-  images swap; always reset to front on color change) + Special Edition card.
-  Cards flip front/back on hover (desktop, image-only hover) and tap (mobile).
-- Product photos are processed to 4:5, subject filling the frame, no hangers.
-- Night section: `videos/special-edition-promo.mp4` — cleaned AI clip
-  (boomerang sweep; source has a hard cut at frame ~326 and the box warps
-  edge-on, so a true 360 is impossible from this source). Caption strip above
-  the video hides nothing; the scrim over the video top hides a garbled
-  baked-in title. Small BEZ logo bug bottom-right.
-- Shop links scroll to #collection for now; `STORE_URL` constant + `store-link`
-  class exist for the future Shopify (Liquid) integration.
+- **`shopify-live`** — the real, deployed Shopify theme at repo root
+  (`layout/`, `templates/`, `assets/`, `config/`, `locales/`). **Edit here to
+  change the live site.** Commits here are titled `Deploy: …`.
+- **`claude/shopify-integration-aeihzx`** — the theme **source**. Same theme
+  but under `shopify-theme/`, plus `SHOPIFY-SETUP.md`. The theme files are
+  byte-identical to `shopify-live` aside from the path. **When you change the
+  theme, apply the same change to BOTH branches** so a deploy never regresses.
+- **`claude/breathezs-website-analysis-1kgs8i`** — **ARCHIVED.** The original
+  single-file static `index.html` marketing site. Superseded by the theme; do
+  not build features here.
+- **`backup/*`** (e.g. `backup/shopify-live-pre-reserve`) — rollback points.
+  Restore from these if a change misbehaves.
 
-## Open items
-1. Waitlist forms only save to localStorage — wire Mailchimp/Klaviyo before launch.
-2. Replace the Special Edition clip when Mike generates a better one (prompt
-   given: black brief + purple emblem + collector box, slow 360 turntable,
-   dark purple neon set, photoreal, no text, no people, no camera movement,
-   perfect loop). Clean/loop/integrate it.
-3. Shopify conversion when the storefront is finalized.
+## Theme structure
+
+- `layout/theme.liquid` — the `<head>`, **all** the CSS (one big `<style>`),
+  and Shopify's `content_for_header` / `content_for_layout` hooks.
+- `templates/index.liquid` — the entire homepage (hero → FAQ → footer) and the
+  page `<script>`.
+- `templates/page.privacy-policy.liquid` — Privacy Policy page (`/pages/privacy-policy`).
+- `assets/` — flat folder holding every image, video, and font. Reference with
+  `{{ 'file.ext' | asset_url }}` (assets are flattened — no subfolders).
+- Other `templates/*.liquid` are light stubs so storefront routes don't error
+  before launch.
+
+## Key behaviors
+
+- **Reservations:** the "Get In Before They're Gone" section is a native
+  Shopify `{% form 'customer' %}` with **Style / Color / Size** dropdowns. On
+  submit, JS folds the picks into `contact[tags]` (`style-*`, `color-*`,
+  `size-*`) so each reservation lands on the Shopify **customer record**,
+  filterable in the Customers tab. Name → `contact[first_name]`. The footer form
+  is an email-only newsletter. **No external backend.**
+- Product-card "Reserve Yours" buttons preselect that style (and Classic's
+  chosen swatch color) and jump to the form. Special Edition locks color to Black.
+- **TODO (deferred):** itemized confirmation emails to customerservice@ **and**
+  the customer. Native customer capture does not email you the details — wire a
+  parallel `{% form 'contact' %}` or a serverless/Zapier endpoint. The seam is
+  `RESERVE_ENDPOINT` in `templates/index.liquid`.
+
+## Brand rules (do not break)
+
+- Inclusive: all genders/orientations; avoid "men's underwear" copy.
+- Founder is **Rich White** — never "Ricky". No testimonials attributed to Rich.
+- Tagline **"No Heat For Your Meat.™"** is wanted (gold accent).
+- Avoid the word "invisible" (use "discreet"). No em-dashes in copy.
+- Palette purple-forward with gold accents. Poppins everywhere; Great Vibes for
+  cursive accents. Hero background base color `#0a0810`.
+
+## Local preview (important limitation)
+
+Shopify Liquid cannot be rendered by a plain static file server. To eyeball
+changes locally you must resolve the Liquid (rewrite `{{ '…' | asset_url }}` →
+`assets/…`, turn `{% form %}` into a plain `<form>`, strip remaining Liquid) and
+serve the result. The **authoritative** preview is Shopify's own theme editor
+preview after the theme is uploaded/connected.
+
+## Deploying to Shopify
+
+See `SHOPIFY-SETUP.md` on the source branch. Summary: create a store, then
+either upload the theme as a zip **or** connect this repo via Shopify's GitHub
+integration, unlock password protection (Online Store → Preferences), and point
+breathezs.com under Settings → Domains. Shopify auto-provisions SSL.
+
+## Secrets & access — NEVER commit these
+
+By design, **no credentials live in this repo.** Provide them out-of-band
+(environment variables, Shopify app settings) and never in tracked files:
+
+- **GitHub push access** — a personal access token, supplied at runtime.
+- **Shopify Storefront/Admin API tokens** — only needed later for products,
+  checkout, or a reservation-email backend. Keep them in a serverless env, not here.
+
+If you need a credential, ask the owner. Do not hardcode or commit tokens,
+passwords, or `*.myshopify.com` admin secrets.
+
+## Open items / next steps
+
+1. Create the Shopify store; add products (Classic White/Black, Special Edition
+   Black) with sizes S–3XL as variants.
+2. Connect breathezs.com and turn off password protection.
+3. Wire reservation confirmation emails (`RESERVE_ENDPOINT` → serverless /
+   Zapier / native `{% form 'contact' %}`).
+4. Add real prices, payments, and shipping for actual checkout.
+5. Replace the Special Edition promo video with a cleaner loop when available.
+
+## Windows git note
+
+Cloning/pushing on Windows may need `http.sslBackend=schannel` and
+`http.schannelCheckRevoke=false` (already set in this clone's config) to avoid
+SSL cert / revocation errors.
