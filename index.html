@@ -95,11 +95,12 @@ h2.title .accent{color:var(--purple)}
 .sub{max-width:46rem;margin:20px auto 0;text-align:center;color:var(--ink-soft);font-size:1.05rem}
 
 /* ---------- hero ---------- */
-.hero{position:relative;color:#fff;overflow:hidden;padding:120px 0 116px;background:#0a0810}
-.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:1560px;z-index:0;
+.hero{position:relative;color:#fff;overflow:hidden;padding:84px 0 80px;background:#0a0810}
+.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:2200px;z-index:0;
   background:url(images/hero-neon.jpg) right center/auto 100% no-repeat}
 /* keep the sign inside the right half on narrower desktops */
 @media(min-width:821px) and (max-width:1560px){.hero::before{background-size:auto 76%}}
+@media(min-width:1561px){.hero::before{background-size:auto 82%}}
 .hero::after{content:"";position:absolute;inset:0;z-index:0;background:
   linear-gradient(90deg,rgba(9,7,14,.95) 0%,rgba(9,7,14,.8) 34%,rgba(26,12,48,.3) 50%,rgba(9,7,14,0) 64%)}
 .hero .container{position:relative;z-index:1}
