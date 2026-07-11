@@ -13,8 +13,11 @@ Contact: customerservice@breathezs.com. Founder: **Rich White**.
 ## Branches — what is what
 
 - **`shopify-live`** — the real, deployed Shopify theme at repo root
-  (`layout/`, `templates/`, `assets/`, `config/`, `locales/`). **Edit here to
-  change the live site.** Commits here are titled `Deploy: …`.
+  (`layout/`, `templates/`, `assets/`, `config/`, `locales/`). **This branch is
+  connected to the Shopify store via Shopify's GitHub integration: pushing here
+  AUTO-DEPLOYS to the live theme.** Treat every push as production. Edit here to
+  change the live site; roll back with the `backup/*` branches. Commits here are
+  titled `Deploy: …`.
 - **`claude/shopify-integration-aeihzx`** — the theme **source**. Same theme
   but under `shopify-theme/`, plus `SHOPIFY-SETUP.md`. The theme files are
   byte-identical to `shopify-live` aside from the path. **When you change the
@@ -71,10 +74,12 @@ preview after the theme is uploaded/connected.
 
 ## Deploying to Shopify
 
-See `SHOPIFY-SETUP.md` on the source branch. Summary: create a store, then
-either upload the theme as a zip **or** connect this repo via Shopify's GitHub
-integration, unlock password protection (Online Store → Preferences), and point
-breathezs.com under Settings → Domains. Shopify auto-provisions SSL.
+The store is wired to this repo via **Shopify's GitHub integration on the
+`shopify-live` branch** — a push to `shopify-live` deploys automatically, no
+manual upload needed. (`SHOPIFY-SETUP.md` on the source branch documents the
+original zip-upload path as a fallback.) Remaining launch steps: unlock password
+protection (Online Store → Preferences) and point breathezs.com under
+Settings → Domains. Shopify auto-provisions SSL.
 
 ## Secrets & access — NEVER commit these
 
