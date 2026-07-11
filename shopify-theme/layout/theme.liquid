@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BreathEZs® | Luxury Underwear. Designed to Breathe.</title>
+{% if template == 'index' %}<title>BreathEZs® | Luxury Underwear. Designed to Breathe.</title>{% else %}<title>{{ page_title }} | BreathEZs®</title>{% endif %}
 <meta name="description" content="BreathEZs (BEZ) is premium 100% cotton underwear with an engineered airflow design. Comfort built for confidence, movement, and all day wear. Join the waitlist.">
 <link rel="icon" type="image/png" href="{{ 'favicon.png' | asset_url }}">
 <!-- Social sharing (Facebook/Twitter). This site lives at breathezs.com. -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="BreathEZs® | Luxury Underwear. Designed to Breathe.">
 <meta property="og:description" content="Premium 100% cotton boxer briefs with an engineered open rear for real airflow. Full support up front, free flowing air where you need it.">
-<meta property="og:url" content="https://breathezs.com/">
+<meta property="og:url" content="{{ canonical_url }}">
 <meta property="og:image" content="{{ 'og-image.jpg' | asset_url | prepend: 'https:' }}">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -18,14 +18,14 @@
 <meta name="twitter:title" content="BreathEZs® | Luxury Underwear. Designed to Breathe.">
 <meta name="twitter:description" content="Premium 100% cotton boxer briefs with an engineered open rear for real airflow.">
 <meta name="twitter:image" content="{{ 'og-image.jpg' | asset_url | prepend: 'https:' }}">
-<link rel="canonical" href="https://breathezs.com/">
+<link rel="canonical" href="{{ canonical_url }}">
 <meta name="robots" content="index,follow">
 <meta name="theme-color" content="#0a0810">
 <script type="application/ld+json">
 {
   "@context":"https://schema.org",
   "@graph":[
-    {"@type":"Organization","@id":"https://breathezs.com/#org","name":"BreathEZs","url":"https://breathezs.com/","logo":"{{ 'logo.png' | asset_url | prepend: 'https:' }}","email":"customerservice@breathezs.com","founder":{"@type":"Person","name":"Rich White"}},
+    {"@type":"Organization","@id":"https://breathezs.com/#org","name":"BreathEZs","url":"https://breathezs.com/","logo":"{{ 'logo.png' | asset_url | prepend: 'https:' }}","email":"customerservice@breathezs.com","founder":{"@type":"Person","name":"Rich White"},"sameAs":["https://www.instagram.com/breathezs_official/","https://www.facebook.com/BreathEZs","https://www.tiktok.com/@breathezs","https://www.youtube.com/@breathezs"]},
     {"@type":"WebSite","@id":"https://breathezs.com/#website","url":"https://breathezs.com/","name":"BreathEZs","publisher":{"@id":"https://breathezs.com/#org"}},
     {"@type":"Product","name":"BreathEZs Boxer Briefs","brand":{"@id":"https://breathezs.com/#org"},"description":"Premium 100% cotton boxer briefs with an engineered open-rear airflow design. Full support up front, free-flowing air where you need it.","image":"{{ 'og-image.jpg' | asset_url | prepend: 'https:' }}"}
   ]
