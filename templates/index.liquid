@@ -370,7 +370,7 @@
     <div>
       <h2>Get In Before They're <span class="accent">Gone.</span></h2>
       <p>Only a limited few will be made. Reserve yours now for first access to the first release.</p>
-      {% form 'customer', class: 'wait-form' %}{% if form.posted_successfully? %}<p class="form-success" role="status">You're in. Watch your inbox for first access.</p>{% endif %}{{ form.errors | default_errors }}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
+      {% form 'customer', class: 'wait-form' %}{% if form.posted_successfully? %}<p class="form-success" role="status">Reservation confirmed. You're on the list, and we'll email you updates and first access as they become available.</p>{% endif %}{{ form.errors | default_errors }}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
         <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
         <button type="submit" class="btn btn-primary">Reserve Yours</button>
       {% endform %}
@@ -469,7 +469,7 @@
     <div>
       <h4>Stay in the Know</h4>
       <p style="font-size:.94rem;margin-bottom:14px;color:rgba(255,255,255,.7)">Be the first to know about new drops and exclusive offers.</p>
-      {% form 'customer', class: 'foot-form' %}{% if form.posted_successfully? %}<p class="form-success" role="status">You're in. Watch your inbox for first access.</p>{% endif %}{{ form.errors | default_errors }}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
+      {% form 'customer', class: 'foot-form' %}{% if form.posted_successfully? %}<p class="form-success" role="status">Reservation confirmed. You're on the list, and we'll email you updates and first access as they become available.</p>{% endif %}{{ form.errors | default_errors }}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
         <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
         <button type="submit" aria-label="Subscribe">&rarr;</button>
       {% endform %}
@@ -526,6 +526,46 @@ document.querySelectorAll('.product .swatches').forEach(function(group){
         s.classList.toggle('is-active', on);
         s.setAttribute('aria-pressed', on ? 'true' : 'false');
       });
+    });
+  });
+});
+
+// Reserve / newsletter capture: on the live Shopify store the forms post to
+// Shopify (/contact) and create an email subscriber. Submit it in the
+// background so the customer sees an instant confirmation instead of a full
+// page reload. Falls back to a normal submit if the request fails, and does
+// nothing here for the standalone static file (which uses joinWaitlist).
+document.querySelectorAll('form.wait-form, form.foot-form').forEach(function(form){
+  form.addEventListener('submit', function(e){
+    var action = form.action || '';
+    if(action.indexOf('/contact') === -1) return; // not the Shopify form
+    e.preventDefault();
+    var btn = form.querySelector('button');
+    var label = btn ? btn.innerHTML : '';
+    if(btn){ btn.disabled = true; }
+    fetch(action, {
+      method: 'POST',
+      headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'text/html' },
+      body: new URLSearchParams(new FormData(form))
+    }).then(function(res){
+      // Shopify returns 200 whether the email is new or already on the list;
+      // either way the reservation is captured.
+      if(!res.ok) throw new Error('bad status');
+      form.reset();
+      if(btn){ btn.disabled = false; btn.innerHTML = label; }
+      var note = form.parentNode.querySelector('.reserve-confirm');
+      if(!note){
+        note = document.createElement('p');
+        note.className = 'reserve-confirm';
+        note.setAttribute('role','status');
+        form.insertAdjacentElement('afterend', note);
+      }
+      note.textContent = "Reservation confirmed. You're on the list, and we'll email you updates and first access as they become available.";
+    }).catch(function(){
+      // Network problem: let the browser submit the form the normal way so
+      // the reservation is never lost.
+      if(btn){ btn.disabled = false; btn.innerHTML = label; }
+      form.submit();
     });
   });
 });
