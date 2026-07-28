@@ -1,4 +1,25 @@
-<div style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;background:#0a0810;color:#fff;font-family:sans-serif">
-  <h1 style="font-size:1.6rem;margin-bottom:12px">Account</h1>
-  <a href="/" style="color:#c9a227">&larr; Back to BreathEZs</a>
+<div class="auth">
+  <a href="/" class="auth-logo" aria-label="BreathEZs home">
+    <img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs">
+  </a>
+
+  <div class="auth-card">
+    <h1>Activate your account</h1>
+    <p class="auth-sub">Set a password to finish setting up your BreathEZs account.</p>
+    {% form 'activate_customer_password' %}
+      {% if form.errors %}
+        <div class="auth-errors">{{ form.errors | default_errors }}</div>
+      {% endif %}
+      <div class="auth-field">
+        <label for="ac-pass">Password</label>
+        <input type="password" name="customer[password]" id="ac-pass" autocomplete="new-password" required>
+      </div>
+      <div class="auth-field">
+        <label for="ac-confirm">Confirm password</label>
+        <input type="password" name="customer[password_confirmation]" id="ac-confirm" autocomplete="new-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Activate account</button>
+    {% endform %}
+    <p class="auth-back"><a href="/">&larr; Back to store</a></p>
+  </div>
 </div>

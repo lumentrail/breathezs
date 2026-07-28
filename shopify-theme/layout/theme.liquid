@@ -84,10 +84,14 @@ header{position:sticky;top:0;z-index:50;background:rgba(250,248,253,.9);backdrop
 .nav-links{display:flex;gap:34px;font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft)}
 .nav-links a:hover{color:var(--purple)}
 .nav .btn{padding:11px 22px;font-size:.74rem}
+.nav-cta{display:flex;align-items:center;gap:22px}
+.nav-account{font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap}
+.nav-account:hover{color:var(--purple)}
 .nav-logo{display:block;width:110px;transition:transform .25s}
 .nav-logo:hover{transform:scale(1.05)}
 .nav-logo img{display:block;width:100%;height:auto;filter:drop-shadow(0 1px 3px rgba(32,24,46,.18))}
 @media(max-width:940px){.nav-links{display:none}}
+@media(max-width:560px){.nav-account{display:none}}
 
 /* ---------- section headings ---------- */
 h2.title{font-size:clamp(2rem,3.8vw,2.9rem);font-weight:700;text-align:center;text-wrap:balance}
@@ -378,6 +382,40 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 .foot-bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:52px;padding-top:26px;text-align:center;font-size:.82rem;color:rgba(255,255,255,.45)}
 @media(max-width:940px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:560px){.foot-grid{grid-template-columns:1fr}}
+
+/* ---------- customer account / auth pages ---------- */
+.auth{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px 22px;
+  background:radial-gradient(120% 90% at 50% -10%,rgba(124,58,237,.10),transparent 60%),linear-gradient(180deg,var(--cream),var(--marble))}
+.auth-logo{display:block;width:150px;margin:0 auto 30px}
+.auth-logo img{width:100%;height:auto;filter:drop-shadow(0 1px 3px rgba(32,24,46,.18))}
+.auth-card{width:100%;max-width:440px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:38px 34px;text-align:center}
+.auth-card h1{font-size:1.55rem;font-weight:700;margin-bottom:6px}
+.auth-sub{color:var(--ink-soft);margin-bottom:24px;font-size:.95rem}
+.auth-field{margin-bottom:16px;text-align:left}
+.auth-field label{display:block;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:6px}
+.auth-field input{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:var(--font);background:#fff;color:var(--ink)}
+.auth-field input:focus{outline:2px solid var(--purple);border-color:transparent}
+.auth .btn{width:100%;justify-content:center;margin-top:6px}
+.auth-alt{margin-top:18px;font-size:.9rem;color:var(--ink-soft)}
+.auth-alt a{color:var(--purple);font-weight:600}
+.auth-back{margin-top:24px;font-size:.85rem}
+.auth-back a{color:var(--ink-soft)}
+.auth-back a:hover{color:var(--purple)}
+.auth-errors{background:rgba(200,40,40,.07);border:1.5px solid rgba(200,40,40,.45);color:#b3261e;border-radius:10px;padding:12px 14px;margin-bottom:18px;font-size:.9rem;text-align:left}
+.auth-errors ul{margin:0;padding-left:18px}
+.auth-note{background:rgba(124,58,237,.09);border:1.5px solid var(--purple);color:var(--ink);border-radius:10px;padding:12px 14px;margin-bottom:18px;font-size:.92rem;text-align:left}
+/* account dashboard */
+.account{max-width:920px;margin:0 auto;width:100%}
+.account-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.account-head h1{font-size:1.7rem;font-weight:700}
+.account-links{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;font-weight:600}
+.account-links a{color:var(--purple)}
+.account-panel{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:26px 28px;margin-top:22px;text-align:left}
+.account-panel h2{font-size:1.05rem;font-weight:700;margin-bottom:14px}
+.order-table{width:100%;border-collapse:collapse;font-size:.92rem}
+.order-table th,.order-table td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:left}
+.order-table th{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.account-empty{color:var(--ink-soft);font-size:.95rem}
 </style>
 {{ content_for_header }}
 </head>
