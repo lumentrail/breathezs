@@ -1,4 +1,51 @@
-<div style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;background:#0a0810;color:#fff;font-family:sans-serif">
-  <h1 style="font-size:1.6rem;margin-bottom:12px">Account</h1>
-  <a href="/" style="color:#c9a227">&larr; Back to BreathEZs</a>
+<div class="auth" style="justify-content:flex-start">
+  <a href="/" class="auth-logo" aria-label="BreathEZs home">
+    <img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs">
+  </a>
+
+  <div class="account">
+    <div class="account-head">
+      <h1>Hi{% if customer.first_name %}, {{ customer.first_name }}{% endif %}</h1>
+      <div class="account-links">
+        <a href="/account/addresses">Addresses</a>
+        <a href="/account/logout">Log out</a>
+        <a href="/">Store &rarr;</a>
+      </div>
+    </div>
+
+    <div class="account-panel">
+      <h2>Order history</h2>
+      {% paginate customer.orders by 20 %}
+        {% if customer.orders.size > 0 %}
+          <table class="order-table">
+            <thead>
+              <tr><th>Order</th><th>Date</th><th>Status</th><th>Total</th></tr>
+            </thead>
+            <tbody>
+              {% for order in customer.orders %}
+                <tr>
+                  <td><a href="{{ order.customer_url }}" style="color:var(--purple);font-weight:600">{{ order.name }}</a></td>
+                  <td>{{ order.created_at | date: "%b %d, %Y" }}</td>
+                  <td>{{ order.financial_status_label }}{% if order.fulfillment_status_label %} &middot; {{ order.fulfillment_status_label }}{% endif %}</td>
+                  <td>{{ order.total_price | money }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% if paginate.pages > 1 %}<p class="auth-alt">{{ paginate | default_pagination }}</p>{% endif %}
+        {% else %}
+          <p class="account-empty">You haven't placed any orders yet. The first release lands August 2026 &mdash; <a href="/#waitlist" style="color:var(--purple);font-weight:600">reserve your pick</a>.</p>
+        {% endif %}
+      {% endpaginate %}
+    </div>
+
+    <div class="account-panel">
+      <h2>Default address</h2>
+      {% if customer.default_address %}
+        <p style="color:var(--ink-soft);line-height:1.7">{{ customer.default_address | format_address }}</p>
+      {% else %}
+        <p class="account-empty">No address on file. <a href="/account/addresses" style="color:var(--purple);font-weight:600">Add one</a>.</p>
+      {% endif %}
+    </div>
+  </div>
 </div>

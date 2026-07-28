@@ -12,7 +12,10 @@
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
     </div>
-    <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
+    <div class="nav-cta">
+      <a href="/account" class="nav-account" aria-label="Account">{% if customer %}Account{% else %}Log in{% endif %}</a>
+      <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
+    </div>
   </nav>
 </header>
 
@@ -568,6 +571,8 @@ document.querySelectorAll('.reserve-form').forEach(function(form){
   var colorSel = form.querySelector('[name="_color"]');
   var sizeSel  = form.querySelector('[name="_size"]');
   var tagsInput = form.querySelector('input[name="contact[tags]"]');
+  var nameInput = form.querySelector('input[name="contact[first_name]"]');
+  var emailInput = form.querySelector('input[name="contact[email]"]');
   // Special Edition is black only: lock the color to match the style.
   function syncColor(){
     if(!styleSel || !colorSel) return;
@@ -581,9 +586,22 @@ document.querySelectorAll('.reserve-form').forEach(function(form){
     if(colorSel && colorSel.value) picks.push('color-' + bezSlug(colorSel.value));
     if(sizeSel && sizeSel.value)   picks.push('size-' + bezSlug(sizeSel.value));
     if(tagsInput) tagsInput.value = picks.join(', ');
+    // Name is optional: if left blank, derive a friendly first name from the
+    // email so a missing name can never block the reservation.
+    if(nameInput && !nameInput.value.trim() && emailInput && emailInput.value){
+      var local = emailInput.value.split('@')[0].split(/[._+-]+/)[0];
+      nameInput.value = local ? local.charAt(0).toUpperCase() + local.slice(1) : 'Friend';
+    }
     // no preventDefault: the native Shopify customer form submits normally.
   });
 });
+
+// After a successful reservation, Shopify reloads with the confirmation shown.
+// Scroll it into view so it's obvious the reservation went through.
+(function(){
+  var ok = document.querySelector('.reserve-form .form-success');
+  if(ok){ try{ ok.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){ ok.scrollIntoView(); } }
+})();
 
 // "Reserve Yours" buttons on the product cards preselect that style/color and
 // jump to the form (the href="#waitlist" handles the scroll).

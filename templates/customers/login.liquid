@@ -1,4 +1,64 @@
-<div style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;background:#0a0810;color:#fff;font-family:sans-serif">
-  <h1 style="font-size:1.6rem;margin-bottom:12px">Account</h1>
-  <a href="/" style="color:#c9a227">&larr; Back to BreathEZs</a>
+<div class="auth">
+  <a href="/" class="auth-logo" aria-label="BreathEZs home">
+    <img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs">
+  </a>
+
+  <div class="auth-card" id="login">
+    <h1>Welcome back</h1>
+    <p class="auth-sub">Log in to your BreathEZs account.</p>
+    {% form 'customer_login' %}
+      {% if form.errors %}
+        <div class="auth-errors">{{ form.errors | default_errors }}</div>
+      {% endif %}
+      <div class="auth-field">
+        <label for="cl-email">Email</label>
+        <input type="email" name="customer[email]" id="cl-email" autocomplete="email" required>
+      </div>
+      <div class="auth-field">
+        <label for="cl-pass">Password</label>
+        <input type="password" name="customer[password]" id="cl-pass" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Log in</button>
+    {% endform %}
+    <p class="auth-alt"><a href="#recover" id="recover-toggle">Forgot your password?</a></p>
+    <p class="auth-alt">New here? <a href="/account/register">Create an account</a></p>
+    <p class="auth-back"><a href="/">&larr; Back to store</a></p>
+  </div>
+
+  <div class="auth-card" id="recover" style="display:none">
+    <h1>Reset password</h1>
+    <p class="auth-sub">Enter your email and we'll send a reset link.</p>
+    {% form 'recover_customer_password' %}
+      {% if form.errors %}
+        <div class="auth-errors">{{ form.errors | default_errors }}</div>
+      {% endif %}
+      {% if form.posted_successfully? %}
+        <div class="auth-note">Reset link sent. Check your email for the next step.</div>
+      {% endif %}
+      <div class="auth-field">
+        <label for="rec-email">Email</label>
+        <input type="email" name="email" id="rec-email" autocomplete="email" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Send reset link</button>
+    {% endform %}
+    <p class="auth-alt"><a href="#login" id="login-toggle">&larr; Back to login</a></p>
+  </div>
 </div>
+
+<script>
+(function(){
+  var login = document.getElementById('login');
+  var recover = document.getElementById('recover');
+  function show(which){
+    login.style.display = which === 'recover' ? 'none' : 'block';
+    recover.style.display = which === 'recover' ? 'block' : 'none';
+  }
+  var rt = document.getElementById('recover-toggle');
+  var lt = document.getElementById('login-toggle');
+  if(rt) rt.addEventListener('click', function(e){ e.preventDefault(); show('recover'); });
+  if(lt) lt.addEventListener('click', function(e){ e.preventDefault(); show('login'); });
+  // Shopify links to #recover after a failed reset, and appends
+  // ?customer_posted=true after a successful send.
+  if(location.hash === '#recover' || /customer_posted=true/.test(location.search)) show('recover');
+})();
+</script>
