@@ -26,7 +26,6 @@
       <h1>{{ product.title }}</h1>
       <div class="pdp-price">{{ product.price | money }}</div>
 
-      {% if settings.store_mode == 'buy' %}
         <form action="/cart/add" method="post" class="pdp-form">
           {% if product.variants.size > 1 %}
             <label class="pdp-field">
@@ -46,9 +45,6 @@
             {% if product.available %}Add to Cart{% else %}Sold Out{% endif %}
           </button>
         </form>
-      {% else %}
-        <a href="/#waitlist" class="btn btn-primary pdp-add">Reserve Yours</a>
-      {% endif %}
 
       {% if product.description != blank %}
         <div class="pdp-desc rte">{{ product.description }}</div>

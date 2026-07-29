@@ -5,7 +5,7 @@
       <img class="hero-art-m" src="{% if section.settings.hero_image %}{{ section.settings.hero_image | image_url: width: 900 }}{% else %}{{ 'hero-bez.webp' | asset_url }}{% endif %}" alt="BEZ BreathEZs boxer briefs" fetchpriority="high">
       <p class="lead">{{ section.settings.lead | default: 'Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.' }}</p>
       <div class="hero-ctas">
-        {% if settings.store_mode == 'buy' %}<a href="#collection" class="btn btn-primary">{{ section.settings.cta_buy | default: 'Shop Now' }}</a>{% else %}<a href="#waitlist" class="btn btn-primary">{{ section.settings.cta_reserve | default: 'Reserve Yours' }}</a>{% endif %}
+        <a href="#collection" class="btn btn-primary">{{ section.settings.cta_buy | default: 'Shop Now' }}</a>
       </div>
       <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">{{ section.settings.scarcity | default: "A limited first run. Get yours before they're gone." }}</p>
     </div>
@@ -45,8 +45,7 @@
     { "type": "text", "id": "scarcity", "label": "Scarcity line (gold)", "default": "A limited first run. Get yours before they're gone." },
     { "type": "image_picker", "id": "hero_image", "label": "Hero image", "info": "Leave empty to use the built-in graphic." },
     { "type": "header", "content": "Button labels" },
-    { "type": "text", "id": "cta_reserve", "label": "Button (Reserve mode)", "default": "Reserve Yours" },
-    { "type": "text", "id": "cta_buy", "label": "Button (Buy mode)", "default": "Shop Now" },
+    { "type": "text", "id": "cta_buy", "label": "Shop button label", "default": "Shop Now" },
     { "type": "header", "content": "Badges" },
     { "type": "text", "id": "badge1_top", "label": "Badge 1 top", "default": "Engineered" },
     { "type": "text", "id": "badge1_bot", "label": "Badge 1 bottom", "default": "Airflow" },

@@ -1,1 +1,15 @@
 breathezs-shopify-theme.zip
+
+# Local working folders (source art, mockups) — NOT part of the Shopify theme
+/Classic Black/
+/Classic_White/
+/Logos/
+*.zip
+
+# Local preview artifacts
+_preview.html
+_buypreview.html
+/index.html
+
+# Stray asset not used by the theme
+/assets/bez-logo.svg

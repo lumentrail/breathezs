@@ -23,11 +23,11 @@
               <button type="button" class="swatch swatch-black" data-color="black" data-name="Black" aria-label="Black" aria-pressed="false"></button>
             </div>
           </div>
-          {% if settings.store_mode == 'buy' %}{%- assign p_classic = all_products['classic'] -%}<div class="buy-controls" data-handle="classic" data-options='{{ p_classic.options | json }}' data-variants='{{ p_classic.variants | json }}'>
+          {%- assign p_classic = all_products['classic'] -%}<div class="buy-controls" data-handle="classic" data-options='{{ p_classic.options | json }}' data-variants='{{ p_classic.variants | json }}'>
             <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
             <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
             <p class="buy-msg" role="status"></p>
-          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Classic">Reserve Yours</a>{% endif %}
+          </div>
         </div>
       </div>
       <div class="product">
@@ -45,11 +45,11 @@
             <p class="color-avail">Available in: <b class="color-name">Black</b></p>
             <div class="swatches-lock" aria-label="Color: Black"><span class="swatch swatch-black is-active" aria-hidden="true"></span></div>
           </div>
-          {% if settings.store_mode == 'buy' %}{%- assign p_se = all_products['special-edition-black'] -%}<div class="buy-controls" data-handle="special-edition-black" data-options='{{ p_se.options | json }}' data-variants='{{ p_se.variants | json }}'>
+          {%- assign p_se = all_products['special-edition-black'] -%}<div class="buy-controls" data-handle="special-edition-black" data-options='{{ p_se.options | json }}' data-variants='{{ p_se.variants | json }}'>
             <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
             <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
             <p class="buy-msg" role="status"></p>
-          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Special Edition Black">Reserve Yours</a>{% endif %}
+          </div>
         </div>
       </div>
     </div>

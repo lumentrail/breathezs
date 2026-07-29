@@ -14,7 +14,7 @@
     </div>
     <div class="nav-cta">
       <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav-account" aria-label="Account">{% if customer %}Account{% else %}Log in{% endif %}</a>
-      {% if settings.store_mode == 'buy' %}<button type="button" class="btn btn-primary nav-cart" id="cart-toggle" aria-label="Open cart">Cart <span class="cart-count" id="cart-count">0</span></button>{% else %}<a href="#waitlist" class="btn btn-primary">Reserve Yours</a>{% endif %}
+      <button type="button" class="btn btn-primary nav-cart" id="cart-toggle" aria-label="Open cart">Cart <span class="cart-count" id="cart-count">0</span></button>
     </div>
   </nav>
 </header>
@@ -49,14 +49,10 @@
 <!-- ============ FIELD TESTED (editable) ============ -->
 {% section 'field' %}
 
-<!-- ============ WAITLIST (Reserve mode only, editable) ============ -->
-{% unless settings.store_mode == 'buy' %}{% section 'waitlist' %}{% endunless %}
-
 <!-- ============ FAQ (editable) ============ -->
 {% section 'faq' %}
 
-<!-- ============ FOOTER (editable) ============ -->
-{% if settings.store_mode == 'buy' %}
+<!-- ============ CART DRAWER ============ -->
 <div class="cart-overlay" id="cart-overlay"></div>
 <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
   <div class="cart-head">
@@ -70,7 +66,6 @@
     <p class="cart-note">Shipping &amp; taxes calculated at checkout.</p>
   </div>
 </aside>
-{% endif %}
 
 {% section 'footer' %}
 
