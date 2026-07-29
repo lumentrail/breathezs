@@ -1,0 +1,49 @@
+<header style="background:var(--cream);border-bottom:1px solid var(--line)">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px">
+    <a href="/" aria-label="BreathEZs home"><img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs logo" style="height:42px;width:auto;display:block"></a>
+    <a href="/" style="color:var(--purple);font-weight:600;text-decoration:none">&larr; Back to BreathEZs</a>
+  </div>
+</header>
+
+<section class="privacy" id="shipping" style="padding:52px 0 72px">
+  <div class="container">
+    <h2 class="title">Shipping <span class="accent">Policy.</span></h2>
+    <div class="legal">{% if page.content != blank %}{{ page.content }}{% else %}
+      <p class="updated">Last updated July 2026.</p>
+      <p>This policy explains how and when we ship your BreathEZs® order. If your order is a preorder, please also read our <a href="/pages/preorder-policy" style="color:var(--purple);font-weight:600">Preorder Policy</a>, which covers launch timing and delays for our first release.</p>
+
+      <h3>Order Processing</h3>
+      <p>In stock orders are processed within 1 to 3 business days after they are placed. Business days are Monday through Friday, excluding U.S. holidays. Preorders ship according to the timing described in our Preorder Policy, not the standard processing window.</p>
+
+      <h3>Shipping Methods and Timing</h3>
+      <p>We ship within the United States using trusted carriers. Once your order ships, standard delivery typically takes 3 to 7 business days depending on your location and the carrier. Delivery estimates are provided by the carrier and are not guaranteed.</p>
+
+      <h3>Shipping Costs</h3>
+      <p>Shipping costs, if any, are calculated and shown at checkout before you pay, based on your order and destination. Any promotional shipping offers will be described at checkout.</p>
+
+      <h3>Tracking</h3>
+      <p>When your order ships, we will email you a confirmation with tracking information so you can follow it to your door. If you have an account, you can also view your orders at <a href="/account" style="color:var(--purple);font-weight:600">your account page</a>.</p>
+
+      <h3>Delays</h3>
+      <p>Once a package leaves us, delivery is in the hands of the carrier, and events outside our control such as weather or carrier delays can affect timing. If your tracking has not updated or your order has not arrived within a reasonable time, email us and we will help track it down.</p>
+
+      <h3>Wrong or Undeliverable Addresses</h3>
+      <p>Please double check your shipping address at checkout. We are not responsible for orders sent to an address entered incorrectly. If a package is returned to us as undeliverable, we will contact you to arrange reshipment, which may require additional shipping costs.</p>
+
+      <h3>Lost or Damaged Packages</h3>
+      <p>If your order arrives damaged, or tracking shows delivered but you cannot find it, contact us within 7 days of the delivery date and we will work with you to make it right.</p>
+
+      <h3>International Shipping</h3>
+      <p>At launch we ship within the United States. If we expand shipping to other countries, this policy will be updated. Any duties or taxes for international orders would be the responsibility of the recipient.</p>
+
+      <h3>Contact Us</h3>
+      <p>Questions about shipping? Email <a href="mailto:customerservice@breathezs.com">customerservice@breathezs.com</a> and we will help.</p>
+    {% endif %}</div>
+  </div>
+</section>
+
+<footer style="background:var(--ink);color:#fff;padding:26px 0">
+  <div class="container" style="text-align:center;font-size:.92rem;color:rgba(255,255,255,.75)">
+    © 2026 BreathEZs®. All Rights Reserved. &middot; <a href="mailto:customerservice@breathezs.com" style="color:var(--purple-neon);text-decoration:underline">customerservice@breathezs.com</a>
+  </div>
+</footer>
