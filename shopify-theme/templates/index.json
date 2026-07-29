@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "header": { "type": "header" },
+    "hero": { "type": "hero" },
+    "inclusive": { "type": "inclusive" },
+    "about": { "type": "about" },
+    "features": { "type": "features" },
+    "design": { "type": "design" },
+    "anatomy": { "type": "anatomy" },
+    "built": { "type": "built" },
+    "collection": { "type": "collection" },
+    "sizing": { "type": "sizing" },
+    "field": { "type": "field" },
+    "faq": { "type": "faq" },
+    "cart-drawer": { "type": "cart-drawer" },
+    "footer": { "type": "footer" }
+  },
+  "order": [
+    "header",
+    "hero",
+    "inclusive",
+    "about",
+    "features",
+    "design",
+    "anatomy",
+    "built",
+    "collection",
+    "sizing",
+    "field",
+    "faq",
+    "cart-drawer",
+    "footer"
+  ]
+}

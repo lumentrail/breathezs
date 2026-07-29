@@ -3,8 +3,17 @@ breathezs-shopify-theme.zip
 # Local working folders (source art, mockups) — NOT part of the Shopify theme
 /Classic Black/
 /Classic_White/
+/Special Edition Black/
 /Logos/
+/_Defunct/
 *.zip
+
+# Loose media dropped at the repo root (theme images live in /assets only)
+/*.jpg
+/*.jpeg
+/*.png
+/*.webp
+/*.svg
 
 # Local preview artifacts
 _preview.html
