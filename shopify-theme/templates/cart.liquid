@@ -1,5 +1,52 @@
-<div style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:80px 24px;background:#0a0810;color:#fff;font-family:sans-serif">
-  <h1 style="font-size:2rem;margin-bottom:12px">Coming soon</h1>
-  <p style="opacity:.8;margin-bottom:24px">BreathEZs launches August 2026. Join the waitlist for first access.</p>
-  <a href="/#waitlist" style="color:#c9a227">Join the waitlist &rarr;</a>
-</div>
+<header style="background:var(--cream);border-bottom:1px solid var(--line)">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px">
+    <a href="/" aria-label="BreathEZs home"><img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs logo" style="height:42px;width:auto;display:block"></a>
+    <a href="/#collection" style="color:var(--purple);font-weight:600;text-decoration:none">&larr; Continue shopping</a>
+  </div>
+</header>
+
+<section class="cartpage">
+  <div class="container">
+    <h1 class="cartpage-title">Your Cart</h1>
+
+    {% if cart.item_count > 0 %}
+      <form action="/cart" method="post" novalidate>
+        <div class="cartpage-lines">
+          {% for item in cart.items %}
+            <div class="cartpage-line">
+              <a href="{{ item.url }}" class="cartpage-img">
+                {% if item.image %}<img src="{{ item.image | image_url: width: 160 }}" alt="{{ item.title | escape }}">{% endif %}
+              </a>
+              <div class="cartpage-line-info">
+                <a href="{{ item.url }}" class="cartpage-line-title">{{ item.product_title }}</a>
+                {% unless item.variant_title == blank %}<div class="cartpage-line-variant">{{ item.variant_title }}</div>{% endunless %}
+                <div class="cartpage-line-price">{{ item.final_price | money }} each</div>
+                <a href="/cart/change?line={{ forloop.index }}&quantity=0" class="cartpage-remove">Remove</a>
+              </div>
+              <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" class="cartpage-qty" aria-label="Quantity">
+              <div class="cartpage-line-total">{{ item.final_line_price | money }}</div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <div class="cartpage-foot">
+          <button type="submit" name="update" class="btn btn-outline">Update</button>
+          <div class="cartpage-summary">
+            <div class="cartpage-subtotal"><span>Subtotal</span><span>{{ cart.total_price | money }}</span></div>
+            <p class="cartpage-note">Shipping &amp; taxes calculated at checkout.</p>
+            <button type="submit" name="checkout" class="btn btn-primary cartpage-checkout">Checkout</button>
+          </div>
+        </div>
+      </form>
+    {% else %}
+      <p class="cartpage-empty">Your cart is empty.</p>
+      <a href="/#collection" class="btn btn-primary">Shop the collection</a>
+    {% endif %}
+  </div>
+</section>
+
+<footer style="background:var(--ink);color:#fff;padding:26px 0">
+  <div class="container" style="text-align:center;font-size:.92rem;color:rgba(255,255,255,.75)">
+    © 2026 BreathEZs®. All Rights Reserved. &middot; <a href="mailto:customerservice@breathezs.com" style="color:var(--purple-neon);text-decoration:underline">customerservice@breathezs.com</a>
+  </div>
+</footer>
