@@ -1,0 +1,164 @@
+<section class="anatomy" id="anatomy">
+  <div class="container">
+    <h2 class="title">{{ section.settings.heading | default: 'Every Detail Pulls' }} <span class="accent">{{ section.settings.heading_accent | default: 'Its Weight.' }}</span></h2>
+    <p class="sub">{{ section.settings.sub | default: 'Take a closer look at the construction. This is not a gimmick cut into a cheap pair of shorts. It is a purpose built ventilation system stitched into premium 100% cotton.' }}</p>
+    <div class="anatomy-grid">
+      <div class="anat">
+        <div class="diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the open rear ventilation, with cool air flowing in through the opening while body heat escapes upward">
+          <defs>
+            <marker id="arrowP" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 Z" fill="#a855f7"/>
+            </marker>
+          </defs>
+          <text x="200" y="40" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#c9a227" font-family="Poppins,Arial">REAR VIEW</text>
+          <g stroke="#f0a86b" stroke-width="3" fill="none" stroke-linecap="round">
+            <path class="heatwave" d="M168 100 q5 -9 0 -18 q-5 -9 0 -18"/>
+            <path class="heatwave d2" d="M200 96 q5 -9 0 -18 q-5 -9 0 -18"/>
+            <path class="heatwave d3" d="M232 100 q5 -9 0 -18 q-5 -9 0 -18"/>
+          </g>
+          <g>
+            <rect x="72" y="122" width="256" height="34" rx="9" fill="#33224f" stroke="#a855f7" stroke-width="3"/>
+            <path d="M74 156 L64 304 C62 348 108 376 148 379 L172 379 L180 322 C186 304 214 304 220 322 L228 379 L252 379 C292 376 338 348 336 304 L326 156 Z" fill="#33224f" stroke="#a855f7" stroke-width="3" stroke-linejoin="round"/>
+            <!-- simply open vent -->
+            <path d="M138 172 L262 172 C252 244 218 276 200 283 C182 276 148 244 138 172 Z" fill="#181026" stroke="#c9a227" stroke-width="3.5" stroke-linejoin="round"/>
+          </g>
+          <g stroke="#a855f7" stroke-width="3.5" fill="none" stroke-linecap="round">
+            <path class="airline" marker-end="url(#arrowP)" d="M96 434 C120 384 150 334 178 249"/>
+            <path class="airline slow" marker-end="url(#arrowP)" d="M200 449 C200 394 200 324 200 244"/>
+            <path class="airline" marker-end="url(#arrowP)" d="M304 434 C280 384 250 334 222 249"/>
+          </g>
+          <g font-family="Poppins,Arial" font-weight="700" letter-spacing="1.5">
+            <line x1="262" y1="182" x2="330" y2="206" stroke="rgba(201,162,39,.7)" stroke-width="1.5"/>
+            <text x="336" y="204" fill="#e8c95c" font-size="11">OPEN</text>
+            <text x="336" y="218" fill="#e8c95c" font-size="11">VENT</text>
+            <text x="200" y="56" text-anchor="middle" fill="#f0a86b" font-size="11">HEAT OUT</text>
+            <text x="200" y="486" text-anchor="middle" fill="#c084fc" font-size="11">COOL AIR IN, EVERY STEP</text>
+          </g>
+        </svg></div>
+        <div class="body">
+          <h3>{{ section.settings.b1_title | default: 'Open-Rear Ventilation' }}</h3>
+          <p>{{ section.settings.b1_body | default: 'The rear is simply open, so heat escapes the moment it builds. Every step you take pumps fresh air through. No batteries, no tech fabric hype, just physics.' }}</p>
+        </div>
+      </div>
+      <div class="anat">
+        <div class="diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of the full pouch front, with a contoured pouch that cradles and supports, a working fly, and no straps">
+          <defs>
+            <radialGradient id="pouchG" cx="50%" cy="42%" r="65%">
+              <stop offset="0" stop-color="rgba(168,85,247,.9)"/>
+              <stop offset=".55" stop-color="rgba(124,58,237,.35)"/>
+              <stop offset="1" stop-color="rgba(124,58,237,0)"/>
+            </radialGradient>
+            <marker id="arrowG" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <path d="M0 0 L8 4 L0 8 Z" fill="#c9a227"/>
+            </marker>
+          </defs>
+          <text x="200" y="40" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#c9a227" font-family="Poppins,Arial">FRONT VIEW</text>
+          <rect x="72" y="90" width="256" height="34" rx="9" fill="#33224f" stroke="#a855f7" stroke-width="3"/>
+          <rect x="172" y="96" width="56" height="22" rx="4" fill="#181026" stroke="#c9a227" stroke-width="1.5"/>
+          <text x="200" y="112" text-anchor="middle" font-size="13" font-weight="900" font-style="italic" fill="#e8c95c" font-family="Poppins,Arial">BEZ</text>
+          <path d="M74 124 L64 272 C62 316 108 344 148 347 L172 347 L180 290 C186 272 214 272 220 290 L228 347 L252 347 C292 344 338 316 336 272 L326 124 Z" fill="#33224f" stroke="#a855f7" stroke-width="3" stroke-linejoin="round"/>
+          <ellipse class="pouchglow" cx="200" cy="207" rx="72" ry="78" fill="url(#pouchG)"/>
+          <path d="M200 144 C160 150 142 182 145 216 C148 252 172 276 200 279 C228 276 252 252 255 216 C258 182 240 150 200 144 Z" fill="none" stroke="#c9a227" stroke-width="3.5"/>
+          <path d="M164 162 C150 192 152 238 170 264" fill="none" stroke="#c084fc" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+          <g stroke="#c9a227" stroke-width="3" fill="none" stroke-linecap="round">
+            <path marker-end="url(#arrowG)" d="M140 322 C150 298 158 282 170 266"/>
+            <path marker-end="url(#arrowG)" d="M260 322 C250 298 242 282 230 266"/>
+          </g>
+          <g>
+            <circle cx="200" cy="418" r="30" fill="none" stroke="#a855f7" stroke-width="3"/>
+            <path d="M186 428 C192 411 208 411 214 408" stroke="#a855f7" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <line x1="179" y1="439" x2="221" y2="397" stroke="#a855f7" stroke-width="4" stroke-linecap="round"/>
+          </g>
+          <g font-family="Poppins,Arial" font-weight="700" letter-spacing="1.5">
+            <line x1="255" y1="202" x2="310" y2="188" stroke="rgba(201,162,39,.7)" stroke-width="1.5"/>
+            <text x="396" y="184" text-anchor="end" fill="#e8c95c" font-size="11">CONTOURED</text>
+            <text x="396" y="198" text-anchor="end" fill="#e8c95c" font-size="11">POUCH</text>
+            <line x1="158" y1="212" x2="86" y2="198" stroke="rgba(192,132,252,.7)" stroke-width="1.5"/>
+            <text x="30" y="184" fill="#c084fc" font-size="11">WORKING</text>
+            <text x="30" y="198" fill="#c084fc" font-size="11">FLY</text>
+            <text x="200" y="374" text-anchor="middle" fill="#e8c95c" font-size="11">LIFT &amp; SUPPORT</text>
+            <text x="200" y="478" text-anchor="middle" fill="#c084fc" font-size="11">NO STRAPS. NO SQUEEZE.</text>
+          </g>
+        </svg></div>
+        <div class="body">
+          <h3>{{ section.settings.b2_title | default: 'Full-Pouch Front' }}</h3>
+          <p>{{ section.settings.b2_body | default: 'A contoured pouch keeps everything supported and exactly where it belongs, with a working fly. No elastic strap digging in like a jockstrap. Support without the squeeze.' }}</p>
+        </div>
+      </div>
+      <div class="anat">
+        <div class="diagram"><svg viewBox="0 0 400 500" role="img" aria-label="Diagram of premium 100% cotton quality, with a cotton boll, a tight weave, and ratings for softness, breathability and durability">
+          <defs>
+            <radialGradient id="cottonHalo" cx="50%" cy="50%" r="55%">
+              <stop offset="0" stop-color="rgba(168,85,247,.3)"/>
+              <stop offset="1" stop-color="rgba(168,85,247,0)"/>
+            </radialGradient>
+          </defs>
+          <text x="200" y="40" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="4" fill="#c9a227" font-family="Poppins,Arial">THE FABRIC</text>
+          <g transform="translate(200 180)">
+            <circle r="118" fill="url(#cottonHalo)"/>
+            <circle r="96" fill="none" stroke="#a855f7" stroke-width="2.5"/>
+            <circle r="104" fill="none" stroke="rgba(168,85,247,.4)" stroke-width="1.5" stroke-dasharray="4 6"/>
+            <path d="M0 62 C-4 44 -2 30 0 16" stroke="#8f6d12" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <path d="M0 26 L-16 44 M0 26 L16 44 M0 30 L0 50" stroke="#8f6d12" stroke-width="4" fill="none" stroke-linecap="round"/>
+            <g fill="#faf7f2">
+              <circle cx="-26" cy="-8" r="24"/><circle cx="26" cy="-8" r="24"/><circle cx="0" cy="-30" r="26"/><circle cx="0" cy="2" r="24"/>
+            </g>
+            <g fill="none" stroke="rgba(32,24,46,.18)" stroke-width="2">
+              <path d="M-14 -14 C-8 -6 -8 4 -12 12"/><path d="M14 -14 C8 -6 8 4 12 12"/><path d="M0 -44 C2 -36 2 -26 0 -18"/>
+            </g>
+            <text y="52" text-anchor="middle" font-size="26" font-weight="900" fill="#e8c95c" font-family="Poppins,Arial">100%</text>
+            <text y="74" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="5" fill="#faf7f2" font-family="Poppins,Arial">COTTON</text>
+          </g>
+          <g transform="translate(58 322)">
+            <rect x="0" y="0" width="284" height="36" rx="6" fill="#33224f" stroke="rgba(168,85,247,.5)" stroke-width="1.5"/>
+            <g stroke="rgba(201,162,39,.55)" stroke-width="2">
+              <path d="M10 6 L10 30 M26 6 L26 30 M42 6 L42 30 M58 6 L58 30 M74 6 L74 30 M90 6 L90 30 M106 6 L106 30 M122 6 L122 30 M138 6 L138 30 M154 6 L154 30 M170 6 L170 30 M186 6 L186 30 M202 6 L202 30 M218 6 L218 30 M234 6 L234 30 M250 6 L250 30 M266 6 L266 30"/>
+            </g>
+            <g stroke="rgba(192,132,252,.6)" stroke-width="2">
+              <path d="M4 12 L280 12 M4 24 L280 24"/>
+            </g>
+            <text x="142" y="52" text-anchor="middle" font-size="10.5" font-weight="700" letter-spacing="2" fill="rgba(250,247,242,.7)" font-family="Poppins,Arial">TIGHT COMBED WEAVE, SOFT AND BREATHABLE</text>
+          </g>
+          <g font-family="Poppins,Arial" font-size="11" font-weight="700" letter-spacing="1.5" fill="#faf7f2">
+            <text x="58" y="418">SOFTNESS</text>
+            <g transform="translate(210 410)" fill="#a855f7">
+              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5"/>
+            </g>
+            <text x="58" y="448">BREATHABILITY</text>
+            <g transform="translate(210 440)" fill="#c9a227">
+              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5"/>
+            </g>
+            <text x="58" y="478">DURABILITY</text>
+            <g transform="translate(210 470)" fill="#a855f7">
+              <rect width="22" height="9" rx="4.5"/><rect x="27" width="22" height="9" rx="4.5"/><rect x="54" width="22" height="9" rx="4.5"/><rect x="81" width="22" height="9" rx="4.5"/><rect x="108" width="22" height="9" rx="4.5" fill="rgba(168,85,247,.25)"/>
+            </g>
+          </g>
+        </svg></div>
+        <div class="body">
+          <h3>{{ section.settings.b3_title | default: 'Premium Construction' }}</h3>
+          <p>{{ section.settings.b3_body | default: 'A plush no roll waistband, flat seams that disappear under jeans, and the woven BEZ label on every pair. Prototyped by hand, refined until it earned the name.' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Anatomy of Airflow",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Every Detail Pulls" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent (purple)", "default": "Its Weight." },
+    { "type": "textarea", "id": "sub", "label": "Subtext", "default": "Take a closer look at the construction. This is not a gimmick cut into a cheap pair of shorts. It is a purpose built ventilation system stitched into premium 100% cotton." },
+    { "type": "header", "content": "Diagram 1" },
+    { "type": "text", "id": "b1_title", "label": "Title", "default": "Open-Rear Ventilation" },
+    { "type": "textarea", "id": "b1_body", "label": "Body", "default": "The rear is simply open, so heat escapes the moment it builds. Every step you take pumps fresh air through. No batteries, no tech fabric hype, just physics." },
+    { "type": "header", "content": "Diagram 2" },
+    { "type": "text", "id": "b2_title", "label": "Title", "default": "Full-Pouch Front" },
+    { "type": "textarea", "id": "b2_body", "label": "Body", "default": "A contoured pouch keeps everything supported and exactly where it belongs, with a working fly. No elastic strap digging in like a jockstrap. Support without the squeeze." },
+    { "type": "header", "content": "Diagram 3" },
+    { "type": "text", "id": "b3_title", "label": "Title", "default": "Premium Construction" },
+    { "type": "textarea", "id": "b3_body", "label": "Body", "default": "A plush no roll waistband, flat seams that disappear under jeans, and the woven BEZ label on every pair. Prototyped by hand, refined until it earned the name." }
+  ]
+}
+{% endschema %}
