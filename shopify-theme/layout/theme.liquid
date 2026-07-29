@@ -430,7 +430,8 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 .buy-size{width:100%;padding:14px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:var(--font);background:#fff;color:var(--ink);cursor:pointer}
 .buy-size:focus{outline:2px solid var(--purple);border-color:transparent}
 .buy-add{width:100%;justify-content:center}
-.buy-msg{font-size:.82rem;color:#b3261e;min-height:1em;margin:0}
+.product .buy-msg{font-size:.82rem;color:#b3261e;min-height:0;margin:0}
+.product .buy-msg:empty{display:none}
 .cart-overlay{position:fixed;inset:0;background:rgba(20,14,30,.5);opacity:0;visibility:hidden;transition:.25s;z-index:60}
 .cart-overlay.open{opacity:1;visibility:visible}
 .cart-drawer{position:fixed;top:0;right:0;height:100%;width:min(420px,92vw);background:var(--cream);box-shadow:-16px 0 44px rgba(32,24,46,.22);transform:translateX(100%);transition:transform .28s ease;z-index:61;display:flex;flex-direction:column}
