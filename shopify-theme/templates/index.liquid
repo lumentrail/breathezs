@@ -192,99 +192,11 @@
 <!-- ============ FIELD TESTED (editable) ============ -->
 {% section 'field' %}
 
-<!-- ============ WAITLIST (Reserve mode only) ============ -->
-{% unless settings.store_mode == 'buy' %}
-<section class="waitlist" id="waitlist">
-  <div class="container wait-grid">
-    <div>
-      <h2>Get In Before They're <span class="accent">Gone.</span></h2>
-      <p>Only a limited few will be made. Reserve yours now for first access to the first release.</p>
-      {% form 'customer', class: 'reserve-form' %}<input type="hidden" name="contact[tags]" value="reserve, newsletter, prospect">
-        <div class="reserve-fields">
-          <label class="rf">
-            <span>Style</span>
-            <select name="_style" required aria-label="Style">
-              <option value="Classic">Classic</option>
-              <option value="Special Edition Black">Special Edition Black</option>
-            </select>
-          </label>
-          <label class="rf">
-            <span>Color</span>
-            <select name="_color" aria-label="Color">
-              <option value="White">White</option>
-              <option value="Black">Black</option>
-            </select>
-          </label>
-          <label class="rf">
-            <span>Size</span>
-            <select name="_size" required aria-label="Size">
-              <option value="" disabled selected>Select</option>
-              <option value="S">S</option>
-              <option value="M">M</option>
-              <option value="L">L</option>
-              <option value="XL">XL</option>
-              <option value="2XL">2XL</option>
-              <option value="3XL">3XL</option>
-            </select>
-          </label>
-        </div>
-        <div class="reserve-contact">
-          <input type="text" name="contact[first_name]" placeholder="Your name (optional)" aria-label="Your name">
-          <input type="email" name="contact[email]" placeholder="Enter your email" required aria-label="Email address">
-        </div>
-        <button type="submit" class="btn btn-primary">Reserve Yours</button>
-      {% if form.posted_successfully? %}<p class="form-success" role="status">Reserved! Your pick is noted and you're on the list for first access at the August 2026 launch. We'll email you to confirm.</p>{% endif %}{{ form.errors | default_errors }}{% endform %}
-      <p class="form-note" id="waitlist-note">No charge and no spam &mdash; this reserves your size and style and gets you launch updates.</p>
-    </div>
-    <div class="wait-emblem">
-      <div class="photo-frame" style="max-width:360px">
-        <img src="{{ 'comingsoon.webp' | asset_url }}" loading="lazy" decoding="async" alt="BEZ BreathEZs, the new standard of comfort, coming soon">
-      </div>
-    </div>
-  </div>
-</section>
-{% endunless %}
+<!-- ============ WAITLIST (Reserve mode only, editable) ============ -->
+{% unless settings.store_mode == 'buy' %}{% section 'waitlist' %}{% endunless %}
 
-<!-- ============ FAQ ============ -->
-<section class="faq" id="faq">
-  <div class="container">
-    <h2 class="title">Frequently Asked <span class="accent">Questions.</span></h2>
-    <div class="faq-list">
-      <details class="faq-item">
-        <summary>When do you launch? <span class="plus">＋</span></summary>
-        <div class="answer">We open with a soft launch in late August 2026, a limited first run with only a limited few made. Reserve now and you will be among the first to get access before anyone else.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Where can I buy them? <span class="plus">＋</span></summary>
-        <div class="answer">Right here. BreathEZs.com is our official home, and reserving now locks in your pair for checkout the moment we go live in August 2026.</div>
-      </details>
-      <details class="faq-item">
-        <summary>How does sizing fit? <span class="plus">＋</span></summary>
-        <div class="answer">BreathEZs fit like your favorite boxer briefs, true to size. A full size guide, including extended sizes, is available on this website above.</div>
-      </details>
-      <details class="faq-item">
-        <summary>How is this different from a jockstrap? <span class="plus">＋</span></summary>
-        <div class="answer">Completely different. There are no elastic straps pressing against you. BreathEZs are real boxer briefs with an open rear for airflow. Full coverage and support in front, free airflow behind, zero restriction.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Does the hemming around the opening cause irritation? <span class="plus">＋</span></summary>
-        <div class="answer">Not at all, and this is one of our most asked questions. The hemming around the opening is kept very minimal, so it stays soft against your skin, does not stick out, and will not bother you.</div>
-      </details>
-      <details class="faq-item">
-        <summary>What fabrics are used? <span class="plus">＋</span></summary>
-        <div class="answer">BreathEZs are 100% cotton. Soft, breathable, and durable, chosen for all day comfort against your skin.</div>
-      </details>
-      <details class="faq-item">
-        <summary>Is BreathEZs for everyone? <span class="plus">＋</span></summary>
-        <div class="answer">Yes. BreathEZs welcomes all genders, orientations, and identities. We are launching with two boxer brief styles, and more is on the way.</div>
-      </details>
-      <details class="faq-item">
-        <summary>How do I get in touch? <span class="plus">＋</span></summary>
-        <div class="answer">Email our team anytime at <a href="mailto:customerservice@breathezs.com">customerservice@breathezs.com</a> and we will get back to you.</div>
-      </details>
-    </div>
-  </div>
-</section>
+<!-- ============ FAQ (editable) ============ -->
+{% section 'faq' %}
 
 <!-- ============ FOOTER ============ -->
 {% if settings.store_mode == 'buy' %}
