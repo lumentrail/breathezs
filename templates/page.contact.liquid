@@ -1,0 +1,49 @@
+<header style="background:var(--cream);border-bottom:1px solid var(--line)">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px">
+    <a href="/" aria-label="BreathEZs home"><img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs logo" style="height:42px;width:auto;display:block"></a>
+    <a href="/" style="color:var(--purple);font-weight:600;text-decoration:none">&larr; Back to BreathEZs</a>
+  </div>
+</header>
+
+<section class="contact-page">
+  <div class="container">
+    <h2 class="title">Get in <span class="accent">Touch.</span></h2>
+    <p class="contact-sub">Questions about sizing, your order, or anything else? Send us a message and we'll get back to you by email.</p>
+
+    <div class="contact-card">
+      {% form 'contact', id: 'contact-form' %}
+        {% if form.posted_successfully? %}
+          <p class="form-success" role="status" style="margin-bottom:22px">Thanks for reaching out! Your message has been sent and we'll reply by email soon.</p>
+        {% endif %}
+        {{ form.errors | default_errors }}
+        <div class="auth-field">
+          <label for="c-name">Name</label>
+          <input type="text" name="contact[name]" id="c-name" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" autocomplete="name">
+        </div>
+        <div class="auth-field">
+          <label for="c-email">Email</label>
+          <input type="email" name="contact[email]" id="c-email" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" autocomplete="email" required>
+        </div>
+        <div class="auth-field">
+          <label for="c-body">Message</label>
+          <textarea name="contact[body]" id="c-body" rows="6" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <p class="contact-note">Or email us directly at <a href="mailto:customerservice@breathezs.com">customerservice@breathezs.com</a>.</p>
+      {% endform %}
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink);color:#fff;padding:26px 0">
+  <div class="container" style="text-align:center;font-size:.92rem;color:rgba(255,255,255,.75)">
+    © 2026 BreathEZs®. All Rights Reserved. &middot; <a href="mailto:customerservice@breathezs.com" style="color:var(--purple-neon);text-decoration:underline">customerservice@breathezs.com</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ok = document.querySelector('.contact-page .form-success');
+  if(ok){ try{ ok.scrollIntoView({behavior:'smooth', block:'center'}); }catch(e){} }
+})();
+</script>
