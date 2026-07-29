@@ -1,0 +1,99 @@
+{
+  "sections": {
+    "main": {
+      "type": "policy",
+      "settings": {
+        "title": "Returns &",
+        "title_accent": "Refunds.",
+        "updated": "Last updated July 2026."
+      },
+      "blocks": {
+        "b1": {
+          "type": "clause",
+          "settings": {
+            "heading": "",
+            "body": "<p>We want you to love your BreathEZs®. Because our products are intimate apparel, we follow strict hygiene standards, so please read this policy carefully before requesting a return.</p>"
+          }
+        },
+        "b2": {
+          "type": "clause",
+          "settings": {
+            "heading": "Hygiene Notice",
+            "body": "<p>For health and hygiene reasons, underwear can only be returned if it is unworn, unwashed, and still in its original packaging with all tags and any included items, such as the Special Edition collector pin, intact. We cannot accept returns of items that have been worn, washed, or removed from their sealed packaging, except where the item is defective or we sent the wrong product.</p>"
+          }
+        },
+        "b3": {
+          "type": "clause",
+          "settings": {
+            "heading": "Return Window",
+            "body": "<p>You may request a return within 30 days of the delivery date. Requests made after 30 days may not be accepted.</p>"
+          }
+        },
+        "b4": {
+          "type": "clause",
+          "settings": {
+            "heading": "How to Start a Return",
+            "body": "<p>Email <a href=\"mailto:customerservice@breathezs.com\">customerservice@breathezs.com</a> with your order number and the reason for your return. We will review your request and, if it qualifies, send instructions for returning the item. Please do not send items back before you have heard from us.</p>"
+          }
+        },
+        "b5": {
+          "type": "clause",
+          "settings": {
+            "heading": "Refunds",
+            "body": "<p>Once we receive and inspect your return, we will email you to confirm whether your refund is approved. Approved refunds are issued to your original payment method within 5 to 10 business days. Depending on your bank or card issuer, it may take additional time for the refund to appear.</p>"
+          }
+        },
+        "b6": {
+          "type": "clause",
+          "settings": {
+            "heading": "Exchanges",
+            "body": "<p>The fastest way to get a different size is to return the qualifying unworn item for a refund and place a new order. If you need help choosing a size, email us before ordering and we will guide you.</p>"
+          }
+        },
+        "b7": {
+          "type": "clause",
+          "settings": {
+            "heading": "Defective or Incorrect Items",
+            "body": "<p>If your order arrives defective, damaged, or incorrect, contact us within 7 days of delivery with your order number and a photo. We will replace it or refund you at no additional cost, including any return shipping.</p>"
+          }
+        },
+        "b8": {
+          "type": "clause",
+          "settings": {
+            "heading": "Return Shipping Costs",
+            "body": "<p>Unless your item was defective or incorrect, return shipping costs are your responsibility. Original shipping charges, if any, are non refundable.</p>"
+          }
+        },
+        "b9": {
+          "type": "clause",
+          "settings": {
+            "heading": "Preorders",
+            "body": "<p>You can cancel a preorder for a full refund any time before it ships. See our <a href=\"/pages/preorder-policy\" style=\"color:var(--purple);font-weight:600\">Preorder Policy</a> for details. Once a preorder has shipped, this Return &amp; Refund Policy applies.</p>"
+          }
+        },
+        "b10": {
+          "type": "clause",
+          "settings": {
+            "heading": "Contact Us",
+            "body": "<p>Questions about a return or refund? Email <a href=\"mailto:customerservice@breathezs.com\">customerservice@breathezs.com</a> and we will take care of you.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7",
+        "b8",
+        "b9",
+        "b10"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

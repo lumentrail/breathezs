@@ -1,0 +1,75 @@
+{
+  "sections": {
+    "main": {
+      "type": "policy",
+      "settings": {
+        "title": "Privacy",
+        "title_accent": "Policy.",
+        "updated": "Last updated July 2026."
+      },
+      "blocks": {
+        "b1": {
+          "type": "clause",
+          "settings": {
+            "heading": "",
+            "body": "<p>Your privacy matters to us. This policy explains what information BreathEZs® collects, why we collect it, and how we protect it. In short: we only use your information to serve you, and we never sell it or use it for advertising.</p>"
+          }
+        },
+        "b2": {
+          "type": "clause",
+          "settings": {
+            "heading": "What We Collect",
+            "body": "<p>We collect only what we need to run our store and keep you informed. When you reserve a pair or sign up for updates, we collect your email address. When you place an order, we collect the details required to fulfill it, such as your name, shipping address, and payment confirmation (payments are processed securely by our payment provider, and we never see or store your full card details).</p>"
+          }
+        },
+        "b3": {
+          "type": "clause",
+          "settings": {
+            "heading": "Why We Collect It",
+            "body": "<p>We use your information for one purpose only: to serve you. That means sending launch and reservation updates you asked for, processing and shipping your orders, and responding when you contact us. Nothing more.</p>"
+          }
+        },
+        "b4": {
+          "type": "clause",
+          "settings": {
+            "heading": "We Do Not Use Your Information For Ads",
+            "body": "<p>We do not use your personal information to target you with advertising, and we do not hand it to advertising networks or data brokers. You will not be profiled or tracked across the web because you shared your email with us.</p>"
+          }
+        },
+        "b5": {
+          "type": "clause",
+          "settings": {
+            "heading": "We Do Not Sell or Share Your Information",
+            "body": "<p>We never sell, rent, or trade your personal information to anyone. We do not share it for anyone else's marketing, and we do not use it anywhere beyond the purposes described above. The only parties who ever handle your data are the trusted service providers that help us operate the store, such as our ecommerce platform, email, and payment processor, and only so they can perform those services for us.</p>"
+          }
+        },
+        "b6": {
+          "type": "clause",
+          "settings": {
+            "heading": "Your Choices",
+            "body": "<p>You are always in control. You can unsubscribe from our emails at any time using the link in any message, and you can ask us to view or delete the personal information we hold about you.</p>"
+          }
+        },
+        "b7": {
+          "type": "clause",
+          "settings": {
+            "heading": "Contact Us",
+            "body": "<p>Questions about your privacy or your data? Email us anytime at <a href=\"mailto:customerservice@breathezs.com\">customerservice@breathezs.com</a> and we will help.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "b1",
+        "b2",
+        "b3",
+        "b4",
+        "b5",
+        "b6",
+        "b7"
+      ]
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
