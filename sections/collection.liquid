@@ -1,0 +1,69 @@
+<section class="collection" id="collection">
+  <div class="container">
+    <h2 class="title">{{ section.settings.heading | default: 'Two Ways to' }} <span class="accent">{{ section.settings.heading_accent | default: 'Stay Cool.' }}</span></h2>
+    <p class="sub">{{ section.settings.sub | default: "Launching August 2026 as a limited first run. Only a limited few will be made. Reserve yours before they're gone." }}</p>
+    <div class="products">
+      <div class="product" data-color="white">
+        <div class="visual flip"
+             data-front-white="{{ 'product-white-v2.jpg' | asset_url }}" data-back-white="{{ 'product-white-back-v2.jpg' | asset_url }}"
+             data-front-black="{{ 'product-black-v2.jpg' | asset_url }}" data-back-black="{{ 'product-special-back-v2.jpg' | asset_url }}">
+          <span class="tag soft">Classic</span>
+          <img class="face front" src="{{ 'product-white-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Classic boxer briefs, front">
+          <img class="face back" src="{{ 'product-white-back-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Classic boxer briefs, open rear airflow">
+        </div>
+        <div class="info">
+          <h3>Classic</h3>
+          <div class="price">$34.99 <span class="price-unit">per pair</span></div>
+          <p>The clean original in breathable 100% cotton, with the open airflow design in its purest form.</p>
+          <div class="includes">One pair, delivered in a reusable BreathEZs zip pouch.</div>
+          <div class="color-pick">
+            <p class="color-avail">Available in two colors: <b class="color-name">White</b></p>
+            <div class="swatches" role="group" aria-label="Choose a color">
+              <button type="button" class="swatch swatch-white is-active" data-color="white" data-name="White" aria-label="White" aria-pressed="true"></button>
+              <button type="button" class="swatch swatch-black" data-color="black" data-name="Black" aria-label="Black" aria-pressed="false"></button>
+            </div>
+          </div>
+          {% if settings.store_mode == 'buy' %}{%- assign p_classic = all_products['classic'] -%}<div class="buy-controls" data-handle="classic" data-options='{{ p_classic.options | json }}' data-variants='{{ p_classic.variants | json }}'>
+            <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
+            <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
+            <p class="buy-msg" role="status"></p>
+          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Classic">Reserve Yours</a>{% endif %}
+        </div>
+      </div>
+      <div class="product">
+        <div class="visual flip">
+          <span class="tag">Special Edition</span>
+          <img class="face front" src="{{ 'product-special-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Special Edition black boxer briefs with the diamond emblem, front">
+          <img class="face back" src="{{ 'product-special-back-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Special Edition boxer briefs, open rear airflow">
+        </div>
+        <div class="info">
+          <h3>Special Edition Black</h3>
+          <div class="price">$44.99 <span class="price-unit">per pair</span></div>
+          <p>Black with the signature diamond emblem and exclusive branding. The same engineered airflow, elevated.</p>
+          <div class="includes">One pair, presented in a gift box with a collector&rsquo;s enamel pin of the diamond emblem.</div>
+          <div class="color-pick">
+            <p class="color-avail">Available in: <b class="color-name">Black</b></p>
+            <div class="swatches-lock" aria-label="Color: Black"><span class="swatch swatch-black is-active" aria-hidden="true"></span></div>
+          </div>
+          {% if settings.store_mode == 'buy' %}{%- assign p_se = all_products['special-edition-black'] -%}<div class="buy-controls" data-handle="special-edition-black" data-options='{{ p_se.options | json }}' data-variants='{{ p_se.variants | json }}'>
+            <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
+            <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
+            <p class="buy-msg" role="status"></p>
+          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Special Edition Black">Reserve Yours</a>{% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection (products)",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Two Ways to" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent (purple)", "default": "Stay Cool." },
+    { "type": "textarea", "id": "sub", "label": "Subtext", "default": "Launching August 2026 as a limited first run. Only a limited few will be made. Reserve yours before they're gone." },
+    { "type": "paragraph", "content": "The product cards (images, prices, sizes) are managed in the theme/product setup, not here." }
+  ]
+}
+{% endschema %}

@@ -22,13 +22,8 @@
 <!-- ============ HERO (editable section) ============ -->
 {% section 'hero' %}
 
-<!-- ============ INCLUSIVITY BAND ============ -->
-<section class="inclusive" aria-label="Inclusivity statement">
-  <div class="container">
-    <span class="pride" aria-hidden="true"></span>
-    <p><strong>BreathEZs is for every body.</strong> All genders, all orientations, all identities are welcome here. Comfort has no labels, and neither do we.</p>
-  </div>
-</section>
+<!-- ============ INCLUSIVITY BAND (editable) ============ -->
+{% section 'inclusive' %}
 
 <!-- ============ ABOUT (editable) ============ -->
 {% section 'about' %}
@@ -188,112 +183,14 @@
 <!-- ============ BUILT FOR (editable) ============ -->
 {% section 'built' %}
 
-<!-- ============ COLLECTION ============ -->
-<section class="collection" id="collection">
-  <div class="container">
-    <h2 class="title">Two Ways to <span class="accent">Stay Cool.</span></h2>
-    <p class="sub">Launching August 2026 as a limited first run. Only a limited few will be made. Reserve yours before they're gone.</p>
-    <div class="products">
-      <div class="product" data-color="white">
-        <div class="visual flip"
-             data-front-white="{{ 'product-white-v2.jpg' | asset_url }}" data-back-white="{{ 'product-white-back-v2.jpg' | asset_url }}"
-             data-front-black="{{ 'product-black-v2.jpg' | asset_url }}" data-back-black="{{ 'product-special-back-v2.jpg' | asset_url }}">
-          <span class="tag soft">Classic</span>
-          <img class="face front" src="{{ 'product-white-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Classic boxer briefs, front">
-          <img class="face back" src="{{ 'product-white-back-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Classic boxer briefs, open rear airflow">
-        </div>
-        <div class="info">
-          <h3>Classic</h3>
-          <div class="price">$34.99 <span class="price-unit">per pair</span></div>
-          <p>The clean original in breathable 100% cotton, with the open airflow design in its purest form.</p>
-          <div class="includes">One pair, delivered in a reusable BreathEZs zip pouch.</div>
-          <div class="color-pick">
-            <p class="color-avail">Available in two colors: <b class="color-name">White</b></p>
-            <div class="swatches" role="group" aria-label="Choose a color">
-              <button type="button" class="swatch swatch-white is-active" data-color="white" data-name="White" aria-label="White" aria-pressed="true"></button>
-              <button type="button" class="swatch swatch-black" data-color="black" data-name="Black" aria-label="Black" aria-pressed="false"></button>
-            </div>
-          </div>
-          {% if settings.store_mode == 'buy' %}{%- assign p_classic = all_products['classic'] -%}<div class="buy-controls" data-handle="classic" data-options='{{ p_classic.options | json }}' data-variants='{{ p_classic.variants | json }}'>
-            <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
-            <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
-            <p class="buy-msg" role="status"></p>
-          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Classic">Reserve Yours</a>{% endif %}
-        </div>
-      </div>
-      <div class="product">
-        <div class="visual flip">
-          <span class="tag">Special Edition</span>
-          <img class="face front" src="{{ 'product-special-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Special Edition black boxer briefs with the diamond emblem, front">
-          <img class="face back" src="{{ 'product-special-back-v2.jpg' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs Special Edition boxer briefs, open rear airflow">
-        </div>
-        <div class="info">
-          <h3>Special Edition Black</h3>
-          <div class="price">$44.99 <span class="price-unit">per pair</span></div>
-          <p>Black with the signature diamond emblem and exclusive branding. The same engineered airflow, elevated.</p>
-          <div class="includes">One pair, presented in a gift box with a collector&rsquo;s enamel pin of the diamond emblem.</div>
-          <div class="color-pick">
-            <p class="color-avail">Available in: <b class="color-name">Black</b></p>
-            <div class="swatches-lock" aria-label="Color: Black"><span class="swatch swatch-black is-active" aria-hidden="true"></span></div>
-          </div>
-          {% if settings.store_mode == 'buy' %}{%- assign p_se = all_products['special-edition-black'] -%}<div class="buy-controls" data-handle="special-edition-black" data-options='{{ p_se.options | json }}' data-variants='{{ p_se.variants | json }}'>
-            <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
-            <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
-            <p class="buy-msg" role="status"></p>
-          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Special Edition Black">Reserve Yours</a>{% endif %}
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============ COLLECTION (editable headings) ============ -->
+{% section 'collection' %}
 
-<!-- ============ SIZE GUIDE ============ -->
-<section class="sizing" id="sizing">
-  <div class="container">
-    <h2 class="title">BreathEZs <span class="accent">Size Guide.</span></h2>
-    <p class="sub">Sizing runs true to your everyday waist measurement. If you are between sizes, size up for a more relaxed feel.</p>
-    <div class="size-wrap">
-      <table class="size-table">
-        <thead>
-          <tr><th>Size</th><th>Waist (in)</th><th>Waist (cm)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>S</td><td>28&ndash;30</td><td>70&ndash;75</td></tr>
-          <tr><td>M</td><td>32&ndash;34</td><td>80&ndash;85</td></tr>
-          <tr><td>L</td><td>36&ndash;38</td><td>90&ndash;95</td></tr>
-          <tr><td>XL</td><td>40&ndash;42</td><td>100&ndash;105</td></tr>
-          <tr><td>2XL</td><td>44&ndash;46</td><td>110&ndash;115</td></tr>
-          <tr><td>3XL</td><td>48&ndash;50</td><td>120&ndash;125</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="size-note">Measure around your natural waistline, keeping the tape comfortably snug.</p>
-  </div>
-</section>
+<!-- ============ SIZE GUIDE (editable) ============ -->
+{% section 'sizing' %}
 
-<!-- ============ FIELD TESTED ============ -->
-<section class="field">
-  <div class="container">
-    <h2 class="title">Proven Where It's <span class="accent">Hot.</span></h2>
-    <div class="quotes">
-      <blockquote class="quote">
-        <span class="mark">&ldquo;</span>
-        <p>Wore them under a full costume for an entire convention weekend. Coolest I have ever been at a con. I forgot ventilation like this was even possible.</p>
-        <footer>Cosplay field tester</footer>
-      </blockquote>
-      <blockquote class="quote">
-        <span class="mark">&ldquo;</span>
-        <p>I tried a pair on the job and haven't stopped thinking about them since. I keep asking every week when the 3XL is dropping.</p>
-        <footer>Warehouse crew tester</footer>
-      </blockquote>
-      <blockquote class="quote quote-invite">
-        <span class="mark" aria-hidden="true">&#10022;</span>
-        <p>This spot is reserved for you. Reserve a pair from the limited first run, be one of the first to wear BreathEZs, and tell us how cool you stayed.</p>
-        <footer><a href="{% if settings.store_mode == 'buy' %}#collection{% else %}#waitlist{% endif %}" style="text-decoration:underline">{% if settings.store_mode == 'buy' %}Shop now{% else %}Reserve yours{% endif %} &rarr;</a></footer>
-      </blockquote>
-    </div>
-  </div>
-</section>
+<!-- ============ FIELD TESTED (editable) ============ -->
+{% section 'field' %}
 
 <!-- ============ WAITLIST (Reserve mode only) ============ -->
 {% unless settings.store_mode == 'buy' %}
