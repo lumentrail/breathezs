@@ -6,5 +6,21 @@
     "theme_author": "BreathEZs",
     "theme_documentation_url": "https://breathezs.com",
     "theme_support_url": "https://breathezs.com"
+  },
+  {
+    "name": "Store mode",
+    "settings": [
+      {
+        "type": "select",
+        "id": "store_mode",
+        "label": "Store mode",
+        "options": [
+          { "value": "reserve", "label": "Reserve (waitlist / preorder signups)" },
+          { "value": "buy", "label": "Buy (live cart & checkout)" }
+        ],
+        "default": "reserve",
+        "info": "Reserve shows the 'Reserve Yours' buttons and reservation form. Buy shows 'Add to Cart', the slide-out cart, and checkout. Buy requires the real products (handles 'classic' and 'special-edition-black') and Shopify Payments to be set up."
+      }
+    ]
   }
 ]

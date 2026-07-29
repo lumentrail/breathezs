@@ -14,7 +14,7 @@
     </div>
     <div class="nav-cta">
       <a href="/account" class="nav-account" aria-label="Account">{% if customer %}Account{% else %}Log in{% endif %}</a>
-      <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
+      {% if settings.store_mode == 'buy' %}<button type="button" class="btn btn-primary nav-cart" id="cart-toggle" aria-label="Open cart">Cart <span class="cart-count" id="cart-count">0</span></button>{% else %}<a href="#waitlist" class="btn btn-primary">Reserve Yours</a>{% endif %}
     </div>
   </nav>
 </header>
@@ -306,7 +306,11 @@
               <button type="button" class="swatch swatch-black" data-color="black" data-name="Black" aria-label="Black" aria-pressed="false"></button>
             </div>
           </div>
-          <a href="#waitlist" class="btn btn-outline" data-reserve data-style="Classic">Reserve Yours</a>
+          {% if settings.store_mode == 'buy' %}{%- assign p_classic = all_products['classic'] -%}<div class="buy-controls" data-handle="classic" data-options='{{ p_classic.options | json }}' data-variants='{{ p_classic.variants | json }}'>
+            <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
+            <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
+            <p class="buy-msg" role="status"></p>
+          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Classic">Reserve Yours</a>{% endif %}
         </div>
       </div>
       <div class="product">
@@ -320,7 +324,11 @@
           <div class="price">$44.99 <span class="price-unit">per pair</span></div>
           <p>Black with the signature diamond emblem and exclusive branding. The same engineered airflow, elevated.</p>
           <div class="includes">One pair, presented in a gift box with a collector&rsquo;s enamel pin of the diamond emblem.</div>
-          <a href="#waitlist" class="btn btn-outline" data-reserve data-style="Special Edition Black">Reserve Yours</a>
+          {% if settings.store_mode == 'buy' %}{%- assign p_se = all_products['special-edition-black'] -%}<div class="buy-controls" data-handle="special-edition-black" data-options='{{ p_se.options | json }}' data-variants='{{ p_se.variants | json }}'>
+            <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
+            <button type="button" class="btn btn-primary buy-add">Add to Cart</button>
+            <p class="buy-msg" role="status"></p>
+          </div>{% else %}<a href="#waitlist" class="btn btn-outline" data-reserve data-style="Special Edition Black">Reserve Yours</a>{% endif %}
         </div>
       </div>
     </div>
@@ -468,6 +476,22 @@
 </section>
 
 <!-- ============ FOOTER ============ -->
+{% if settings.store_mode == 'buy' %}
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-head">
+    <h2>Your Cart</h2>
+    <button type="button" class="cart-close" id="cart-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal-row"><span>Subtotal</span><span id="cart-subtotal"></span></div>
+    <a href="/checkout" class="btn btn-primary cart-checkout" id="cart-checkout">Checkout</a>
+    <p class="cart-note">Shipping &amp; taxes calculated at checkout.</p>
+  </div>
+</aside>
+{% endif %}
+
 <footer id="contact">
   <div class="container foot-grid">
     <div class="foot-brand">
@@ -655,4 +679,111 @@ function joinWaitlist(form){
   setTimeout(function(){btn.innerHTML = original; btn.disabled = false;}, 3500);
   return false;
 }
+
+// ---- Cart (Buy mode only) ---------------------------------------------------
+// Uses Shopify's AJAX Cart API. Only runs when the cart drawer exists, i.e.
+// when the theme "Store mode" setting is "Buy".
+(function(){
+  var drawer = document.getElementById('cart-drawer');
+  if(!drawer) return;
+  var overlay  = document.getElementById('cart-overlay');
+  var itemsEl  = document.getElementById('cart-items');
+  var subEl    = document.getElementById('cart-subtotal');
+  var toggle   = document.getElementById('cart-toggle');
+  var closeBtn = document.getElementById('cart-close');
+  var countEls = document.querySelectorAll('.cart-count');
+
+  function money(c){ return '$' + (c/100).toFixed(2); }
+  function esc(s){ var d=document.createElement('div'); d.textContent=s==null?'':s; return d.innerHTML; }
+  function openDrawer(){ drawer.classList.add('open'); overlay.classList.add('open'); drawer.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
+  function closeDrawer(){ drawer.classList.remove('open'); overlay.classList.remove('open'); drawer.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+
+  function render(cart){
+    countEls.forEach(function(el){ el.textContent = cart.item_count; el.style.display = cart.item_count>0 ? 'inline-flex' : 'none'; });
+    if(!cart.items || cart.item_count===0){
+      itemsEl.innerHTML = '<p class="cart-empty">Your cart is empty.</p>';
+      subEl.textContent = '';
+      return;
+    }
+    itemsEl.innerHTML = cart.items.map(function(it){
+      return '<div class="cart-line" data-key="'+esc(it.key)+'">'
+        + (it.image ? '<img class="cart-line-img" src="'+esc(it.image)+'" alt="" width="64" height="80">' : '<div class="cart-line-img"></div>')
+        + '<div class="cart-line-info">'
+        +   '<div class="cart-line-title">'+esc(it.product_title)+'</div>'
+        +   (it.variant_title ? '<div class="cart-line-variant">'+esc(it.variant_title)+'</div>' : '')
+        +   '<div class="cart-qty"><button type="button" class="qbtn qminus" data-key="'+esc(it.key)+'" aria-label="Decrease">&minus;</button>'
+        +     '<span class="qval">'+it.quantity+'</span>'
+        +     '<button type="button" class="qbtn qplus" data-key="'+esc(it.key)+'" aria-label="Increase">+</button>'
+        +     '<button type="button" class="qremove" data-key="'+esc(it.key)+'">Remove</button></div>'
+        + '</div>'
+        + '<div class="cart-line-price">'+money(it.final_line_price)+'</div>'
+        + '</div>';
+    }).join('');
+    subEl.textContent = money(cart.total_price);
+  }
+
+  function refresh(open){
+    fetch('/cart.js',{headers:{'Accept':'application/json'}})
+      .then(function(r){ return r.json(); })
+      .then(function(cart){ render(cart); if(open) openDrawer(); })
+      .catch(function(){});
+  }
+  function change(key, qty){
+    fetch('/cart/change.js',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({id:key,quantity:qty})})
+      .then(function(r){ return r.json(); }).then(render).catch(function(){});
+  }
+  function add(id, btn){
+    btn && (btn.disabled=true);
+    fetch('/cart/add.js',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify({items:[{id:id,quantity:1}]})})
+      .then(function(r){ return r.json().then(function(d){ return {ok:r.ok,d:d}; }); })
+      .then(function(res){ btn && (btn.disabled=false); if(res.ok){ refresh(true); } else { alert((res.d && res.d.description) || 'Could not add to cart.'); } })
+      .catch(function(){ btn && (btn.disabled=false); });
+  }
+
+  // Wire each product's Add to Cart: resolve the variant from selected size (+ color).
+  document.querySelectorAll('.buy-controls').forEach(function(box){
+    var addBtn  = box.querySelector('.buy-add');
+    var sizeSel = box.querySelector('.buy-size');
+    var msg     = box.querySelector('.buy-msg');
+    var product = box.closest('.product');
+    var variants = [], optNames = [];
+    try{ variants = JSON.parse(box.getAttribute('data-variants')||'[]') || []; }catch(e){}
+    try{ optNames = JSON.parse(box.getAttribute('data-options')||'[]') || []; }catch(e){}
+    if(!addBtn) return;
+    if(!variants.length){ addBtn.textContent = 'Coming soon'; addBtn.disabled = true; addBtn.classList.remove('btn-primary'); addBtn.classList.add('btn-outline'); return; }
+    addBtn.addEventListener('click', function(){
+      var size = sizeSel ? sizeSel.value : '';
+      if(sizeSel && !size){ if(msg) msg.textContent = 'Please choose a size.'; return; }
+      var activeSwatch = product && product.querySelector('.swatch.is-active');
+      var color = activeSwatch ? activeSwatch.getAttribute('data-name') : null;
+      var match = variants.filter(function(v){
+        return optNames.every(function(name, i){
+          var val = v['option'+(i+1)];
+          if(/size/i.test(name)) return val === size;
+          if(/colou?r/i.test(name)) return !color || val === color;
+          return true;
+        });
+      })[0];
+      if(!match){ if(msg) msg.textContent = 'That size is unavailable.'; return; }
+      if(match.available === false){ if(msg) msg.textContent = 'Sold out in that size.'; return; }
+      if(msg) msg.textContent = '';
+      add(match.id, addBtn);
+    });
+  });
+
+  if(toggle)   toggle.addEventListener('click', function(){ refresh(true); });
+  if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if(overlay)  overlay.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDrawer(); });
+  itemsEl.addEventListener('click', function(e){
+    var key = e.target.getAttribute('data-key'); if(!key) return;
+    var span = itemsEl.querySelector('.cart-line[data-key="'+key+'"] .qval');
+    var qty = span ? parseInt(span.textContent,10) : 0;
+    if(e.target.classList.contains('qplus'))       change(key, qty+1);
+    else if(e.target.classList.contains('qminus')) change(key, Math.max(0, qty-1));
+    else if(e.target.classList.contains('qremove'))change(key, 0);
+  });
+
+  refresh(false); // initialise the cart count on load
+})();
 </script>
