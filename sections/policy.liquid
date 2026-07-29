@@ -1,0 +1,47 @@
+<header style="background:var(--cream);border-bottom:1px solid var(--line)">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px">
+    <a href="/" aria-label="BreathEZs home"><img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs logo" style="height:42px;width:auto;display:block"></a>
+    <a href="/" style="color:var(--purple);font-weight:600;text-decoration:none">&larr; Back to BreathEZs</a>
+  </div>
+</header>
+
+<section class="privacy" style="padding:52px 0 72px">
+  <div class="container">
+    <h2 class="title">{{ section.settings.title | default: 'Policy' }} <span class="accent">{{ section.settings.title_accent | default: 'Title.' }}</span></h2>
+    <div class="legal">
+      {% if section.settings.updated != blank %}<p class="updated">{{ section.settings.updated }}</p>{% endif %}
+      {% for block in section.blocks %}
+        {% if block.settings.heading != blank %}<h3>{{ block.settings.heading }}</h3>{% endif %}
+        {{ block.settings.body }}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink);color:#fff;padding:26px 0">
+  <div class="container" style="text-align:center;font-size:.92rem;color:rgba(255,255,255,.75)">
+    © 2026 BreathEZs®. All Rights Reserved. &middot; <a href="mailto:customerservice@breathezs.com" style="color:var(--purple-neon);text-decoration:underline">customerservice@breathezs.com</a>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Policy",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Policy" },
+    { "type": "text", "id": "title_accent", "label": "Title accent (purple)", "default": "Title." },
+    { "type": "text", "id": "updated", "label": "Last-updated line", "default": "Last updated July 2026." }
+  ],
+  "blocks": [
+    {
+      "type": "clause",
+      "name": "Clause",
+      "settings": [
+        { "type": "text", "id": "heading", "label": "Heading (leave blank for an intro paragraph)" },
+        { "type": "richtext", "id": "body", "label": "Body", "default": "<p>Clause text.</p>" }
+      ]
+    }
+  ],
+  "presets": [ { "name": "Policy" } ]
+}
+{% endschema %}
