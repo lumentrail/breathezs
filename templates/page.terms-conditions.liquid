@@ -8,7 +8,7 @@
 <section class="privacy" id="terms" style="padding:52px 0 72px">
   <div class="container">
     <h2 class="title">Terms &amp; <span class="accent">Conditions.</span></h2>
-    <div class="legal">
+    <div class="legal">{% if page.content != blank %}{{ page.content }}{% else %}
       <p class="updated">Last updated July 2026.</p>
       <p>Welcome to BreathEZs®. These Terms and Conditions ("Terms") govern your use of breathezs.com (the "Site") and any purchase you make from us. By using the Site or placing an order, you agree to these Terms. Please read them carefully.</p>
 
@@ -47,7 +47,7 @@
 
       <h3>Contact Us</h3>
       <p>Questions about these Terms? Email us at <a href="mailto:customerservice@breathezs.com">customerservice@breathezs.com</a>.</p>
-    </div>
+    {% endif %}</div>
   </div>
 </section>
 

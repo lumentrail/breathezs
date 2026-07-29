@@ -8,7 +8,7 @@
 <section class="privacy" id="privacy" style="padding:52px 0 72px">
   <div class="container">
     <h2 class="title">Privacy <span class="accent">Policy.</span></h2>
-    <div class="legal">
+    <div class="legal">{% if page.content != blank %}{{ page.content }}{% else %}
       <p class="updated">Last updated July 2026.</p>
       <p>Your privacy matters to us. This policy explains what information BreathEZs® collects, why we collect it, and how we protect it. In short: we only use your information to serve you, and we never sell it or use it for advertising.</p>
 
@@ -29,7 +29,7 @@
 
       <h3>Contact Us</h3>
       <p>Questions about your privacy or your data? Email us anytime at <a href="mailto:customerservice@breathezs.com">customerservice@breathezs.com</a> and we will help.</p>
-    </div>
+    {% endif %}</div>
   </div>
 </section>
 
