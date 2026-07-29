@@ -1,0 +1,18 @@
+<section class="about" id="about">
+  <img class="emblem-bg" src="{{ 'emblem-bg.png' | asset_url }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
+  <div class="container">
+    <h2 class="title">{{ section.settings.heading | default: 'Crafted for Confidence.' }}<br><span class="accent">{{ section.settings.heading_accent | default: 'Designed to Breathe.' }}</span></h2>
+    <p class="sub">{{ section.settings.body | default: 'BreathEZs blends elevated design, breathable comfort, and quiet confidence into an everyday luxury essential. Founded by Rich White, who spent years working long shifts in the heat and knew standard underwear was never built for it, so he engineered something that was. The first prototypes were designed by Rich and hand sewn by his wife, an experienced seamstress, then refined and tested in the real world until they earned the name.' }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading line 1", "default": "Crafted for Confidence." },
+    { "type": "text", "id": "heading_accent", "label": "Heading line 2 (purple)", "default": "Designed to Breathe." },
+    { "type": "textarea", "id": "body", "label": "Body copy", "default": "BreathEZs blends elevated design, breathable comfort, and quiet confidence into an everyday luxury essential. Founded by Rich White, who spent years working long shifts in the heat and knew standard underwear was never built for it, so he engineered something that was. The first prototypes were designed by Rich and hand sewn by his wife, an experienced seamstress, then refined and tested in the real world until they earned the name." }
+  ]
+}
+{% endschema %}

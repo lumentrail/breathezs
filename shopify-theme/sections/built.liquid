@@ -1,0 +1,31 @@
+<section class="built" aria-label="Who BreathEZs are built for">
+  <div class="container">
+    <h2 class="title">{{ section.settings.heading | default: 'Built For' }} <span class="accent">{{ section.settings.heading_accent | default: 'Anyone.' }}</span></h2>
+    <div class="built-strip">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-4.5L3 8l9 4.5L21 8zM3 8v8l9 4.5 9-4.5V8"/><path d="M12 12.5V20.5"/></svg>{{ section.settings.label1 | default: 'Warehouse Crews' }}</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>{{ section.settings.label2 | default: 'Construction' }}</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>{{ section.settings.label3 | default: 'Mechanics' }}</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="5" width="14" height="11" rx="1"/><path d="M15 9h4l3 3v4h-7V9z"/><circle cx="6" cy="18.5" r="2"/><circle cx="18" cy="18.5" r="2"/></svg>{{ section.settings.label4 | default: 'Truck Drivers' }}</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg>{{ section.settings.label5 | default: 'Athletes' }}</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>{{ section.settings.label6 | default: 'Outdoor Workers' }}</span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5c3.5 4 5.5 6.8 5.5 10a5.5 5.5 0 01-11 0c0-3.2 2-6 5.5-10z"/><path d="M12 21.5a3 3 0 003-3c0-1.6-1.2-3-3-4.5-1.8 1.5-3 2.9-3 4.5a3 3 0 003 3z"/></svg>{{ section.settings.label7 | default: 'Anyone In The Heat' }}</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Built For",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built For" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent (purple)", "default": "Anyone." },
+    { "type": "text", "id": "label1", "label": "Pill 1", "default": "Warehouse Crews" },
+    { "type": "text", "id": "label2", "label": "Pill 2", "default": "Construction" },
+    { "type": "text", "id": "label3", "label": "Pill 3", "default": "Mechanics" },
+    { "type": "text", "id": "label4", "label": "Pill 4", "default": "Truck Drivers" },
+    { "type": "text", "id": "label5", "label": "Pill 5", "default": "Athletes" },
+    { "type": "text", "id": "label6", "label": "Pill 6", "default": "Outdoor Workers" },
+    { "type": "text", "id": "label7", "label": "Pill 7", "default": "Anyone In The Heat" }
+  ]
+}
+{% endschema %}
