@@ -324,6 +324,10 @@
           <div class="price">$44.99 <span class="price-unit">per pair</span></div>
           <p>Black with the signature diamond emblem and exclusive branding. The same engineered airflow, elevated.</p>
           <div class="includes">One pair, presented in a gift box with a collector&rsquo;s enamel pin of the diamond emblem.</div>
+          <div class="color-pick">
+            <p class="color-avail">Available in: <b class="color-name">Black</b></p>
+            <div class="swatches-lock" aria-label="Color: Black"><span class="swatch swatch-black is-active" aria-hidden="true"></span></div>
+          </div>
           {% if settings.store_mode == 'buy' %}{%- assign p_se = all_products['special-edition-black'] -%}<div class="buy-controls" data-handle="special-edition-black" data-options='{{ p_se.options | json }}' data-variants='{{ p_se.variants | json }}'>
             <select class="buy-size" aria-label="Choose a size"><option value="" disabled selected>Select size</option><option value="S">S</option><option value="M">M</option><option value="L">L</option><option value="XL">XL</option><option value="2XL">2XL</option><option value="3XL">3XL</option></select>
             <button type="button" class="btn btn-primary buy-add">Add to Cart</button>

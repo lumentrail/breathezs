@@ -244,7 +244,7 @@ h2.title .accent{color:var(--purple)}
 
 /* ---------- collection ---------- */
 .collection{background:var(--white)}
-.products{display:grid;grid-template-columns:repeat(2,minmax(0,400px));gap:34px;margin-top:56px;justify-content:center}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,400px));gap:34px;margin-top:56px;justify-content:center;align-items:stretch}
 .product{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--cream);display:flex;flex-direction:column;transition:.25s}
 .product:hover{transform:translateY(-5px);border-color:var(--purple-neon)}
 .product .visual{aspect-ratio:4/5;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center}
@@ -267,7 +267,8 @@ h2.title .accent{color:var(--purple)}
 .product .visual.special img{width:70%;height:auto;filter:drop-shadow(0 10px 30px rgba(168,85,247,.5))}
 .product .tag{position:absolute;top:14px;left:14px;z-index:2;font-size:.64rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,var(--purple-neon),var(--purple-deep));border-radius:99px;padding:6px 14px}
 .product .tag.soft{background:var(--white);color:var(--purple);border:1px solid var(--purple)}
-.product .info{padding:26px 28px 32px;text-align:center}
+.product .info{padding:26px 28px 32px;text-align:center;flex:1;display:flex;flex-direction:column}
+.product .info>.buy-controls,.product .info>.btn{margin-top:auto}
 .product h3{font-size:1.3rem;font-weight:700}
 .product .price{font-size:1.3rem;font-weight:700;color:var(--purple);margin-top:4px}
 .product .price-unit{font-size:.82rem;font-weight:600;color:var(--ink-soft);letter-spacing:.02em}
@@ -277,7 +278,9 @@ h2.title .accent{color:var(--purple)}
 .color-pick{margin:6px 0 22px}
 .color-avail{font-size:.9rem;color:var(--ink-soft);margin-bottom:12px}
 .color-avail .color-name{color:var(--purple);font-weight:700}
-.swatches{display:flex;gap:12px;justify-content:center}
+.swatches,.swatches-lock{display:flex;gap:12px;justify-content:center}
+.swatches-lock .swatch{cursor:default}
+.swatches-lock .swatch:hover{transform:none}
 .swatch{width:30px;height:30px;border-radius:50%;border:2px solid var(--line);cursor:pointer;padding:0;transition:transform .18s,box-shadow .18s,border-color .18s}
 .swatch-white{background:#fff;border-color:#cdc2ec}
 .swatch-black{background:#1b1b1f}
