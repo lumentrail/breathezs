@@ -383,7 +383,8 @@
   </div>
 </section>
 
-<!-- ============ WAITLIST ============ -->
+<!-- ============ WAITLIST (Reserve mode only) ============ -->
+{% unless settings.store_mode == 'buy' %}
 <section class="waitlist" id="waitlist">
   <div class="container wait-grid">
     <div>
@@ -433,6 +434,7 @@
     </div>
   </div>
 </section>
+{% endunless %}
 
 <!-- ============ FAQ ============ -->
 <section class="faq" id="faq">
