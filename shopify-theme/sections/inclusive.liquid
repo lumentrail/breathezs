@@ -1,0 +1,16 @@
+<section class="inclusive" aria-label="Inclusivity statement">
+  <div class="container">
+    <span class="pride" aria-hidden="true"></span>
+    <p><strong>{{ section.settings.lead | default: 'BreathEZs is for every body.' }}</strong> {{ section.settings.body | default: 'All genders, all orientations, all identities are welcome here. Comfort has no labels, and neither do we.' }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Inclusivity band",
+  "settings": [
+    { "type": "text", "id": "lead", "label": "Lead (bold)", "default": "BreathEZs is for every body." },
+    { "type": "textarea", "id": "body", "label": "Rest of sentence", "default": "All genders, all orientations, all identities are welcome here. Comfort has no labels, and neither do we." }
+  ]
+}
+{% endschema %}

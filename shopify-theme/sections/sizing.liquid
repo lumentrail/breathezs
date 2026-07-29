@@ -1,0 +1,34 @@
+<section class="sizing" id="sizing">
+  <div class="container">
+    <h2 class="title">{{ section.settings.heading | default: 'BreathEZs' }} <span class="accent">{{ section.settings.heading_accent | default: 'Size Guide.' }}</span></h2>
+    <p class="sub">{{ section.settings.sub | default: 'Sizing runs true to your everyday waist measurement. If you are between sizes, size up for a more relaxed feel.' }}</p>
+    <div class="size-wrap">
+      <table class="size-table">
+        <thead>
+          <tr><th>Size</th><th>Waist (in)</th><th>Waist (cm)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>S</td><td>28&ndash;30</td><td>70&ndash;75</td></tr>
+          <tr><td>M</td><td>32&ndash;34</td><td>80&ndash;85</td></tr>
+          <tr><td>L</td><td>36&ndash;38</td><td>90&ndash;95</td></tr>
+          <tr><td>XL</td><td>40&ndash;42</td><td>100&ndash;105</td></tr>
+          <tr><td>2XL</td><td>44&ndash;46</td><td>110&ndash;115</td></tr>
+          <tr><td>3XL</td><td>48&ndash;50</td><td>120&ndash;125</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="size-note">{{ section.settings.note | default: 'Measure around your natural waistline, keeping the tape comfortably snug.' }}</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Size Guide",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "BreathEZs" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent (purple)", "default": "Size Guide." },
+    { "type": "textarea", "id": "sub", "label": "Subtext", "default": "Sizing runs true to your everyday waist measurement. If you are between sizes, size up for a more relaxed feel." },
+    { "type": "text", "id": "note", "label": "Note below table", "default": "Measure around your natural waistline, keeping the tape comfortably snug." }
+  ]
+}
+{% endschema %}
