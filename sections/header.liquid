@@ -1,0 +1,28 @@
+<header>
+  <nav class="nav">
+    <a href="#top" class="nav-logo" aria-label="BreathEZs home">
+      <img src="{% if section.settings.logo %}{{ section.settings.logo | image_url: width: 300 }}{% else %}{{ 'logo.png' | asset_url }}{% endif %}" alt="BEZ BreathEZs logo">
+    </a>
+    <div class="nav-links">
+      <a href="#collection">Collection</a>
+      <a href="#technology">Technology</a>
+      <a href="#sizing">Sizing</a>
+      <a href="#about">About</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav-account" aria-label="Account">{% if customer %}Account{% else %}Log in{% endif %}</a>
+      <button type="button" class="btn btn-primary nav-cart" id="cart-toggle" aria-label="Open cart">Cart <span class="cart-count" id="cart-count">0</span></button>
+    </div>
+  </nav>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    { "type": "image_picker", "id": "logo", "label": "Logo", "info": "Leave empty to use the built-in logo." }
+  ]
+}
+{% endschema %}

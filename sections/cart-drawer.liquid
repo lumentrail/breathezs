@@ -1,0 +1,24 @@
+<div class="cart-overlay" id="cart-overlay"></div>
+<aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+  <div class="cart-head">
+    <h2>{{ section.settings.title | default: 'Your Cart' }}</h2>
+    <button type="button" class="cart-close" id="cart-close" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-items" id="cart-items"></div>
+  <div class="cart-foot">
+    <div class="cart-subtotal-row"><span>Subtotal</span><span id="cart-subtotal"></span></div>
+    <a href="/checkout" class="btn btn-primary cart-checkout" id="cart-checkout">{{ section.settings.checkout_label | default: 'Checkout' }}</a>
+    <p class="cart-note">{{ section.settings.note | default: 'Shipping & taxes calculated at checkout.' }}</p>
+  </div>
+</aside>
+
+{% schema %}
+{
+  "name": "Cart drawer",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Title", "default": "Your Cart" },
+    { "type": "text", "id": "checkout_label", "label": "Checkout button", "default": "Checkout" },
+    { "type": "text", "id": "note", "label": "Note", "default": "Shipping & taxes calculated at checkout." }
+  ]
+}
+{% endschema %}
