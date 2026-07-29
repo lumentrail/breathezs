@@ -10,8 +10,28 @@
     "built": { "type": "built" },
     "collection": { "type": "collection" },
     "sizing": { "type": "sizing" },
-    "field": { "type": "field" },
-    "faq": { "type": "faq" },
+    "field": {
+      "type": "field",
+      "blocks": {
+        "t1": { "type": "quote", "settings": { "text": "Wore them under a full costume for an entire convention weekend. Coolest I have ever been at a con. I forgot ventilation like this was even possible.", "author": "Cosplay field tester" } },
+        "t2": { "type": "quote", "settings": { "text": "I tried a pair on the job and haven't stopped thinking about them since. I keep asking every week when the 3XL is dropping.", "author": "Warehouse crew tester" } }
+      },
+      "block_order": ["t1", "t2"]
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "q1": { "type": "item", "settings": { "question": "When do you launch?", "answer": "<p>We open with a soft launch in late August 2026, a limited first run with only a limited few made. Reserve now and you will be among the first to get access before anyone else.</p>" } },
+        "q2": { "type": "item", "settings": { "question": "Where can I buy them?", "answer": "<p>Right here. BreathEZs.com is our official home, and reserving now locks in your pair for checkout the moment we go live in August 2026.</p>" } },
+        "q3": { "type": "item", "settings": { "question": "How does sizing fit?", "answer": "<p>BreathEZs fit like your favorite boxer briefs, true to size. A full size guide, including extended sizes, is available on this website above.</p>" } },
+        "q4": { "type": "item", "settings": { "question": "How is this different from a jockstrap?", "answer": "<p>Completely different. There are no elastic straps pressing against you. BreathEZs are real boxer briefs with an open rear for airflow. Full coverage and support in front, free airflow behind, zero restriction.</p>" } },
+        "q5": { "type": "item", "settings": { "question": "Does the hemming around the opening cause irritation?", "answer": "<p>Not at all, and this is one of our most asked questions. The hemming around the opening is kept very minimal, so it stays soft against your skin, does not stick out, and will not bother you.</p>" } },
+        "q6": { "type": "item", "settings": { "question": "What fabrics are used?", "answer": "<p>BreathEZs are 100% cotton. Soft, breathable, and durable, chosen for all day comfort against your skin.</p>" } },
+        "q7": { "type": "item", "settings": { "question": "Is BreathEZs for everyone?", "answer": "<p>Yes. BreathEZs welcomes all genders, orientations, and identities. We are launching with two boxer brief styles, and more is on the way.</p>" } },
+        "q8": { "type": "item", "settings": { "question": "How do I get in touch?", "answer": "<p>Email our team anytime at <a href=\"mailto:customerservice@breathezs.com\">customerservice@breathezs.com</a> and we will get back to you.</p>" } }
+      },
+      "block_order": ["q1", "q2", "q3", "q4", "q5", "q6", "q7", "q8"]
+    },
     "cart-drawer": { "type": "cart-drawer" },
     "footer": { "type": "footer" }
   },
