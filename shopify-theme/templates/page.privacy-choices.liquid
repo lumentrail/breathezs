@@ -1,0 +1,21 @@
+<header style="background:var(--cream);border-bottom:1px solid var(--line)">
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;padding-top:16px;padding-bottom:16px">
+    <a href="/" aria-label="BreathEZs home"><img src="{{ 'logo.png' | asset_url }}" alt="BEZ BreathEZs logo" style="height:42px;width:auto;display:block"></a>
+    <a href="/pages/privacy-policy" style="color:var(--purple);font-weight:600;text-decoration:none">&larr; Privacy Policy</a>
+  </div>
+</header>
+
+<section class="privacy" style="padding:52px 0 72px">
+  <div class="container">
+    <h2 class="title">{{ page.title }}</h2>
+    <div class="legal rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+<footer style="background:var(--ink);color:#fff;padding:26px 0">
+  <div class="container" style="text-align:center;font-size:.92rem;color:rgba(255,255,255,.75)">
+    © 2026 BreathEZs®. All Rights Reserved. &middot; <a href="mailto:customerservice@breathezs.com" style="color:var(--purple-neon);text-decoration:underline">customerservice@breathezs.com</a>
+  </div>
+</footer>
