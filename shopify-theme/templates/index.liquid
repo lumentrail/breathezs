@@ -19,39 +19,8 @@
   </nav>
 </header>
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="top">
-  <div class="container">
-    <div class="hero-inner">
-      <h1>Luxury<br>Underwear.<br><span class="accent">Designed to<br>Breathe.</span></h1>
-      <img class="hero-art-m" src="{{ 'hero-bez.webp' | asset_url }}" alt="BEZ BreathEZs emblem beside the Classic white boxer briefs" fetchpriority="high">
-      <p class="lead">Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.</p>
-      <div class="hero-ctas">
-        {% if settings.store_mode == 'buy' %}<a href="#collection" class="btn btn-primary">Shop Now</a>{% else %}<a href="#waitlist" class="btn btn-primary">Reserve Yours</a>{% endif %}
-      </div>
-      <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">A limited first run. Get yours before they're gone.</p>
-    </div>
-    <img class="hero-art" src="{{ 'hero-bez.webp' | asset_url }}" alt="BEZ BreathEZs emblem beside the Classic white boxer briefs" fetchpriority="high">
-    <div class="hero-badges">
-        <div class="badge">
-          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
-          <div>Engineered<small>Airflow</small></div>
-        </div>
-        <div class="badge">
-          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
-          <div>Premium<small>Materials</small></div>
-        </div>
-        <div class="badge">
-          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          <div>All Day<small>Comfort</small></div>
-        </div>
-        <div class="badge">
-          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8l4 4 5-7 5 7 4-4v9H3z"/></svg>
-          <div>Fit For<small>Royalty</small></div>
-        </div>
-      </div>
-  </div>
-</section>
+<!-- ============ HERO (editable section) ============ -->
+{% section 'hero' %}
 
 <!-- ============ INCLUSIVITY BAND ============ -->
 <section class="inclusive" aria-label="Inclusivity statement">

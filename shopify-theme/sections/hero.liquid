@@ -1,0 +1,61 @@
+<section class="hero" id="top">
+  <div class="container">
+    <div class="hero-inner">
+      <h1>{{ section.settings.line1 | default: 'Luxury' }}<br>{{ section.settings.line2 | default: 'Underwear.' }}<br><span class="accent">{{ section.settings.accent_line1 | default: 'Designed to' }}<br>{{ section.settings.accent_line2 | default: 'Breathe.' }}</span></h1>
+      <img class="hero-art-m" src="{% if section.settings.hero_image %}{{ section.settings.hero_image | image_url: width: 900 }}{% else %}{{ 'hero-bez.webp' | asset_url }}{% endif %}" alt="BEZ BreathEZs boxer briefs" fetchpriority="high">
+      <p class="lead">{{ section.settings.lead | default: 'Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.' }}</p>
+      <div class="hero-ctas">
+        {% if settings.store_mode == 'buy' %}<a href="#collection" class="btn btn-primary">{{ section.settings.cta_buy | default: 'Shop Now' }}</a>{% else %}<a href="#waitlist" class="btn btn-primary">{{ section.settings.cta_reserve | default: 'Reserve Yours' }}</a>{% endif %}
+      </div>
+      <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">{{ section.settings.scarcity | default: "A limited first run. Get yours before they're gone." }}</p>
+    </div>
+    <img class="hero-art" src="{% if section.settings.hero_image %}{{ section.settings.hero_image | image_url: width: 1000 }}{% else %}{{ 'hero-bez.webp' | asset_url }}{% endif %}" alt="BEZ BreathEZs boxer briefs" fetchpriority="high">
+    <div class="hero-badges">
+        <div class="badge">
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
+          <div>{{ section.settings.badge1_top | default: 'Engineered' }}<small>{{ section.settings.badge1_bot | default: 'Airflow' }}</small></div>
+        </div>
+        <div class="badge">
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l8 3v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/></svg>
+          <div>{{ section.settings.badge2_top | default: 'Premium' }}<small>{{ section.settings.badge2_bot | default: 'Materials' }}</small></div>
+        </div>
+        <div class="badge">
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          <div>{{ section.settings.badge3_top | default: 'All Day' }}<small>{{ section.settings.badge3_bot | default: 'Comfort' }}</small></div>
+        </div>
+        <div class="badge">
+          <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 8l4 4 5-7 5 7 4-4v9H3z"/></svg>
+          <div>{{ section.settings.badge4_top | default: 'Fit For' }}<small>{{ section.settings.badge4_bot | default: 'Royalty' }}</small></div>
+        </div>
+      </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "header", "content": "Headline" },
+    { "type": "text", "id": "line1", "label": "Line 1", "default": "Luxury" },
+    { "type": "text", "id": "line2", "label": "Line 2", "default": "Underwear." },
+    { "type": "text", "id": "accent_line1", "label": "Accent line 1 (purple)", "default": "Designed to" },
+    { "type": "text", "id": "accent_line2", "label": "Accent line 2 (purple)", "default": "Breathe." },
+    { "type": "header", "content": "Body" },
+    { "type": "textarea", "id": "lead", "label": "Subtext", "default": "Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts." },
+    { "type": "text", "id": "scarcity", "label": "Scarcity line (gold)", "default": "A limited first run. Get yours before they're gone." },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image", "info": "Leave empty to use the built-in graphic." },
+    { "type": "header", "content": "Button labels" },
+    { "type": "text", "id": "cta_reserve", "label": "Button (Reserve mode)", "default": "Reserve Yours" },
+    { "type": "text", "id": "cta_buy", "label": "Button (Buy mode)", "default": "Shop Now" },
+    { "type": "header", "content": "Badges" },
+    { "type": "text", "id": "badge1_top", "label": "Badge 1 top", "default": "Engineered" },
+    { "type": "text", "id": "badge1_bot", "label": "Badge 1 bottom", "default": "Airflow" },
+    { "type": "text", "id": "badge2_top", "label": "Badge 2 top", "default": "Premium" },
+    { "type": "text", "id": "badge2_bot", "label": "Badge 2 bottom", "default": "Materials" },
+    { "type": "text", "id": "badge3_top", "label": "Badge 3 top", "default": "All Day" },
+    { "type": "text", "id": "badge3_bot", "label": "Badge 3 bottom", "default": "Comfort" },
+    { "type": "text", "id": "badge4_top", "label": "Badge 4 top", "default": "Fit For" },
+    { "type": "text", "id": "badge4_bot", "label": "Badge 4 bottom", "default": "Royalty" }
+  ]
+}
+{% endschema %}
