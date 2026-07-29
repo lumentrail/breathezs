@@ -30,62 +30,14 @@
   </div>
 </section>
 
-<!-- ============ ABOUT ============ -->
-<section class="about" id="about">
-  <img class="emblem-bg" src="{{ 'emblem-bg.png' | asset_url }}" alt="" aria-hidden="true" loading="lazy" decoding="async">
-  <div class="container">
-    <h2 class="title">Crafted for Confidence.<br><span class="accent">Designed to Breathe.</span></h2>
-    <p class="sub">BreathEZs blends elevated design, breathable comfort, and quiet confidence into an everyday luxury essential. Founded by Rich White, who spent years working long shifts in the heat and knew standard underwear was never built for it, so he engineered something that was. The first prototypes were designed by Rich and hand sewn by his wife, an experienced seamstress, then refined and tested in the real world until they earned the name.</p>
-  </div>
-</section>
+<!-- ============ ABOUT (editable) ============ -->
+{% section 'about' %}
 
-<!-- ============ FEATURE CARDS ============ -->
-<section class="features">
-  <div class="container">
-    <div class="cards">
-      <div class="card">
-        <div class="frame">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" aria-hidden="true"><path d="M5 9l3-5h8l3 5-7 11z M5 9h14 M9 4l3 5 3-5 M12 9v11"/></svg>
-        </div>
-        <h3>Elevated Comfort</h3>
-        <p>Soft, breathable 100% cotton made for all day wear. Under jeans, work gear, or nothing at all.</p>
-      </div>
-      <div class="card">
-        <div class="frame">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h10a2.5 2.5 0 100-5M4 12h14a2.5 2.5 0 110 5M4 16h7a2.5 2.5 0 11-2.5 4"/></svg>
-        </div>
-        <h3>Breathable Confidence</h3>
-        <p>Engineered for airflow, cooling, and movement. Every step creates natural ventilation.</p>
-      </div>
-      <div class="card">
-        <div class="frame">
-          <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21c-4.2-1-6.7-4.8-6.2-9.3.2-2.3 1-4.1 2.2-5.7"/><path d="M12 21c4.2-1 6.7-4.8 6.2-9.3-.2-2.3-1-4.1-2.2-5.7"/><path d="M8.2 8.6C6.8 8.5 5.9 7.8 5.5 6.4"/><path d="M6.7 12C5.3 12.1 4.3 11.5 3.7 10.2"/><path d="M6.9 15.4C5.6 15.9 4.4 15.6 3.5 14.5"/><path d="M15.8 8.6C17.2 8.5 18.1 7.8 18.5 6.4"/><path d="M17.3 12C18.7 12.1 19.7 11.5 20.3 10.2"/><path d="M17.1 15.4C18.4 15.9 19.6 15.6 20.5 14.5"/><circle cx="12" cy="5.4" r=".9"/></svg>
-        </div>
-        <h3>Italian-Inspired Luxury</h3>
-        <p>Refined styling and premium materials, built for everyday confidence and modern performance.</p>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ============ FEATURE CARDS (editable) ============ -->
+{% section 'features' %}
 
-<!-- ============ TECHNOLOGY ============ -->
-<section class="design" id="technology">
-  <div class="container design-grid">
-    <div>
-      <h2 class="title">Airflow, <span class="accent">Engineered.</span></h2>
-      <p class="intro">BreathEZs are medium length boxer briefs with a signature open rear for real ventilation. Full support up front. Free flowing air where you need it most. No elastic straps, no restriction, nothing like a jockstrap. Everything like relief.</p>
-      <ul>
-        <li><span class="dot">◆</span><div><strong>Natural Ventilation</strong><span>The open rear turns every step into airflow, keeping you cooler through the longest, hottest days.</span></div></li>
-        <li><span class="dot">◆</span><div><strong>Full Support, Zero Restriction</strong><span>Classic boxer brief support and coverage in front, without straps or elastic pressing where it shouldn't.</span></div></li>
-        <li><span class="dot">◆</span><div><strong>Discreet Under Anything</strong><span>Tested under jeans and work pants. A smooth, low profile fit you'll barely notice.</span></div></li>
-        <li><span class="dot">◆</span><div><strong>Built for Real Work</strong><span>Made for warehouse crews, construction, mechanics, drivers, and athletes. Anyone who works up a sweat.</span></div></li>
-      </ul>
-    </div>
-    <div class="photo-frame infographic-frame">
-      <img src="{{ 'bez-diagram.webp' | asset_url }}" loading="lazy" decoding="async" alt="BreathEZs infographic: engineered open-back airflow design, airflow opening, 100% premium cotton, tag-free waistband, reinforced stitching, breathable, soft, machine washable">
-    </div>
-  </div>
-</section>
+<!-- ============ TECHNOLOGY (editable) ============ -->
+{% section 'design' %}
 
 <!-- ============ ANATOMY OF AIRFLOW ============ -->
 <section class="anatomy" id="anatomy">
@@ -233,21 +185,8 @@
   </div>
 </section>
 
-<!-- ============ BUILT FOR ============ -->
-<section class="built" aria-label="Who BreathEZs are built for">
-  <div class="container">
-    <h2 class="title">Built For <span class="accent">Anyone.</span></h2>
-    <div class="built-strip">
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 8l-9-4.5L3 8l9 4.5L21 8zM3 8v8l9 4.5 9-4.5V8"/><path d="M12 12.5V20.5"/></svg>Warehouse Crews</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>Construction</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>Mechanics</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="5" width="14" height="11" rx="1"/><path d="M15 9h4l3 3v4h-7V9z"/><circle cx="6" cy="18.5" r="2"/><circle cx="18" cy="18.5" r="2"/></svg>Truck Drivers</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5v11M17.5 6.5v11M3.5 9.5v5M20.5 9.5v5M6.5 12h11"/></svg>Athletes</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M2 12h2.5M19.5 12H22M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></svg>Outdoor Workers</span>
-      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.5c3.5 4 5.5 6.8 5.5 10a5.5 5.5 0 01-11 0c0-3.2 2-6 5.5-10z"/><path d="M12 21.5a3 3 0 003-3c0-1.6-1.2-3-3-4.5-1.8 1.5-3 2.9-3 4.5a3 3 0 003 3z"/></svg>Anyone In The Heat</span>
-    </div>
-  </div>
-</section>
+<!-- ============ BUILT FOR (editable) ============ -->
+{% section 'built' %}
 
 <!-- ============ COLLECTION ============ -->
 <section class="collection" id="collection">
