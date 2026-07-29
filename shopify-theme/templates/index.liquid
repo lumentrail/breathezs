@@ -13,7 +13,7 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="nav-cta">
-      <a href="/account" class="nav-account" aria-label="Account">{% if customer %}Account{% else %}Log in{% endif %}</a>
+      <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav-account" aria-label="Account">{% if customer %}Account{% else %}Log in{% endif %}</a>
       {% if settings.store_mode == 'buy' %}<button type="button" class="btn btn-primary nav-cart" id="cart-toggle" aria-label="Open cart">Cart <span class="cart-count" id="cart-count">0</span></button>{% else %}<a href="#waitlist" class="btn btn-primary">Reserve Yours</a>{% endif %}
     </div>
   </nav>
@@ -528,7 +528,7 @@
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="/account">Account</a></li>
+        <li><a href="{{ routes.account_url }}">Account</a></li>
         <li><a href="mailto:customerservice@breathezs.com">Contact</a></li>
       </ul>
     </div>
