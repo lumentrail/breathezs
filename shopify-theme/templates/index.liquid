@@ -27,7 +27,7 @@
       <img class="hero-art-m" src="{{ 'hero-bez.webp' | asset_url }}" alt="BEZ BreathEZs emblem beside the Classic white boxer briefs" fetchpriority="high">
       <p class="lead">Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.</p>
       <div class="hero-ctas">
-        <a href="#waitlist" class="btn btn-primary">Reserve Yours</a>
+        {% if settings.store_mode == 'buy' %}<a href="#collection" class="btn btn-primary">Shop Now</a>{% else %}<a href="#waitlist" class="btn btn-primary">Reserve Yours</a>{% endif %}
       </div>
       <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">A limited first run. Get yours before they're gone.</p>
     </div>
@@ -377,7 +377,7 @@
       <blockquote class="quote quote-invite">
         <span class="mark" aria-hidden="true">&#10022;</span>
         <p>This spot is reserved for you. Reserve a pair from the limited first run, be one of the first to wear BreathEZs, and tell us how cool you stayed.</p>
-        <footer><a href="#waitlist" style="text-decoration:underline">Reserve yours &rarr;</a></footer>
+        <footer><a href="{% if settings.store_mode == 'buy' %}#collection{% else %}#waitlist{% endif %}" style="text-decoration:underline">{% if settings.store_mode == 'buy' %}Shop now{% else %}Reserve yours{% endif %} &rarr;</a></footer>
       </blockquote>
     </div>
   </div>
@@ -520,7 +520,7 @@
     <div>
       <h4>Explore</h4>
       <ul>
-        <li><a href="#waitlist">Reserve Yours</a></li>
+        <li><a href="{% if settings.store_mode == 'buy' %}#collection{% else %}#waitlist{% endif %}">{% if settings.store_mode == 'buy' %}Shop{% else %}Reserve Yours{% endif %}</a></li>
         <li><a href="#collection">The Collection</a></li>
         <li><a href="#sizing">Sizing</a></li>
       </ul>
