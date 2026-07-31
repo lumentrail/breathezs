@@ -9,7 +9,7 @@
       <a href="#sizing">Sizing</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
+      <a href="/pages/contact">Contact</a>
     </div>
     <div class="nav-cta">
       <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="nav-account" aria-label="Account">{% if customer %}Account{% else %}Log in{% endif %}</a>
