@@ -14,17 +14,13 @@
       <img src="{% if section.settings.image %}{{ section.settings.image | image_url: width: 1100 }}{% else %}{{ 'bez-diagram.webp' | asset_url }}{% endif %}" loading="lazy" decoding="async" alt="BreathEZs infographic: engineered open-back airflow design">
     </div>
   </div>
-  {% if section.settings.show_comparison %}
   <div class="container comparison-embed">
     <img class="comparison-img"
          src="{% if section.settings.comparison_image %}{{ section.settings.comparison_image | image_url: width: 1049 }}{% else %}{{ 'jockstrap-vs.webp' | asset_url }}{% endif %}"
          alt="{{ section.settings.comparison_alt | default: 'How BreathEZs is different from a jockstrap: no elastic straps, an open rear for airflow, full coverage and support up front, and free airflow behind with zero restriction.' }}"
          loading="lazy" decoding="async" width="1049" height="1499">
-    {% if section.settings.comparison_cta %}
     <div class="comparison-cta"><a href="{{ section.settings.comparison_cta_link | default: '#collection' }}" class="btn btn-primary">{{ section.settings.comparison_cta_label | default: 'Shop BreathEZs' }}</a></div>
-    {% endif %}
   </div>
-  {% endif %}
 </section>
 
 {% schema %}
@@ -48,10 +44,8 @@
     { "type": "text", "id": "item4_title", "label": "Title", "default": "Built for Real Work" },
     { "type": "textarea", "id": "item4_body", "label": "Body", "default": "Made for warehouse crews, construction, mechanics, drivers, and athletes. Anyone who works up a sweat." },
     { "type": "header", "content": "vs Jockstrap comparison graphic" },
-    { "type": "checkbox", "id": "show_comparison", "label": "Show comparison graphic", "default": true },
     { "type": "image_picker", "id": "comparison_image", "label": "Comparison image", "info": "Leave empty to use the built-in vs-jockstrap graphic." },
     { "type": "text", "id": "comparison_alt", "label": "Comparison image alt text", "default": "How BreathEZs is different from a jockstrap: no elastic straps, an open rear for airflow, full coverage and support up front, and free airflow behind with zero restriction." },
-    { "type": "checkbox", "id": "comparison_cta", "label": "Show shop button under graphic", "default": true },
     { "type": "text", "id": "comparison_cta_label", "label": "Button label", "default": "Shop BreathEZs" },
     { "type": "url", "id": "comparison_cta_link", "label": "Button link", "default": "/#collection" }
   ]
