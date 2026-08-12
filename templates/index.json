@@ -18,6 +18,9 @@
     "design": {
       "type": "design"
     },
+    "comparison": {
+      "type": "comparison"
+    },
     "anatomy": {
       "type": "anatomy"
     },
@@ -138,6 +141,7 @@
     "about",
     "features",
     "design",
+    "comparison",
     "anatomy",
     "built",
     "collection",
