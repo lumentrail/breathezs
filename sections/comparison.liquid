@@ -1,5 +1,6 @@
 <section class="comparison" id="not-a-jockstrap">
   <div class="container comparison-grid">
+    <h2 class="title comparison-head">{{ section.settings.heading | default: 'Not a' }} <span class="accent">{{ section.settings.heading_accent | default: 'Jockstrap.' }}</span></h2>
     <div class="comparison-media">
       <img class="comparison-img"
            src="{% if section.settings.image %}{{ section.settings.image | image_url: width: 1049 }}{% else %}{{ 'jockstrap-vs.webp' | asset_url }}{% endif %}"
@@ -7,7 +8,6 @@
            loading="lazy" decoding="async" width="1049" height="1499">
     </div>
     <div class="comparison-copy">
-      <h2 class="title">{{ section.settings.heading | default: 'Not a' }} <span class="accent">{{ section.settings.heading_accent | default: 'Jockstrap.' }}</span></h2>
       <p class="intro">{{ section.settings.intro | default: 'People hear open rear and picture a jockstrap. BreathEZs are the exact opposite. Here is the difference.' }}</p>
       <ul>
         <li><span class="dot">&#9670;</span><div><strong>{{ section.settings.item1_title | default: 'Real Boxer Brief, Not a Strap' }}</strong><span>{{ section.settings.item1_body | default: 'Full coverage and a secure, supportive fit up front. No thin straps and no exposure, none of the compromise a jockstrap forces on you.' }}</span></div></li>
