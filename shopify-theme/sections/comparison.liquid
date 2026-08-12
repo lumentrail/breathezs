@@ -1,0 +1,35 @@
+<section class="comparison" id="not-a-jockstrap">
+  <div class="container comparison-grid">
+    <div class="comparison-media">
+      <img class="comparison-img"
+           src="{% if section.settings.image %}{{ section.settings.image | image_url: width: 1049 }}{% else %}{{ 'jockstrap-vs.webp' | asset_url }}{% endif %}"
+           alt="{{ section.settings.image_alt | default: 'BreathEZs versus a jockstrap: no elastic straps, open rear for airflow, full coverage and support up front, and free airflow behind with zero restriction, compared to a jockstrap that is exposed, restrictive, and offers limited support.' }}"
+           loading="lazy" decoding="async" width="1049" height="1499">
+    </div>
+    <div class="comparison-copy">
+      <h2 class="title">{{ section.settings.heading | default: 'Not a' }} <span class="accent">{{ section.settings.heading_accent | default: 'Jockstrap.' }}</span></h2>
+      <p class="intro">{{ section.settings.intro | default: 'People hear open rear and picture a jockstrap. BreathEZs are the opposite.' }}</p>
+      <p class="intro">{{ section.settings.intro2 | default: 'You get full boxer brief coverage and support up front, with an engineered open back for airflow where it matters most. No straps digging in, no exposure, no restriction. Just cool, comfortable relief all day.' }}</p>
+      <a href="{{ section.settings.cta_link | default: '#collection' }}" class="btn btn-primary">{{ section.settings.cta_label | default: 'Shop BreathEZs' }}</a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Not a Jockstrap",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Not a" },
+    { "type": "text", "id": "heading_accent", "label": "Heading accent (purple)", "default": "Jockstrap." },
+    { "type": "textarea", "id": "intro", "label": "Intro paragraph", "default": "People hear open rear and picture a jockstrap. BreathEZs are the opposite." },
+    { "type": "textarea", "id": "intro2", "label": "Second paragraph", "default": "You get full boxer brief coverage and support up front, with an engineered open back for airflow where it matters most. No straps digging in, no exposure, no restriction. Just cool, comfortable relief all day." },
+    { "type": "image_picker", "id": "image", "label": "Comparison graphic", "info": "Leave empty to use the built-in vs-jockstrap graphic." },
+    { "type": "text", "id": "image_alt", "label": "Graphic alt text", "default": "BreathEZs versus a jockstrap: no elastic straps, open rear for airflow, full coverage and support up front, and free airflow behind with zero restriction, compared to a jockstrap that is exposed, restrictive, and offers limited support." },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop BreathEZs" },
+    { "type": "url", "id": "cta_link", "label": "Button link" }
+  ],
+  "presets": [
+    { "name": "Not a Jockstrap" }
+  ]
+}
+{% endschema %}

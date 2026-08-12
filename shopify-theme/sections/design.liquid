@@ -1,5 +1,5 @@
 <section class="design" id="technology">
-  <div class="container design-grid design-trio">
+  <div class="container design-grid">
     <div>
       <h2 class="title">{{ section.settings.heading | default: 'Airflow,' }} <span class="accent">{{ section.settings.heading_accent | default: 'Engineered.' }}</span></h2>
       <p class="intro">{{ section.settings.intro | default: 'BreathEZs are medium length boxer briefs with a signature open rear for real ventilation. Full support up front. Free flowing air where you need it most. No elastic straps, no restriction, nothing like a jockstrap. Everything like relief.' }}</p>
@@ -13,15 +13,6 @@
     <div class="photo-frame infographic-frame">
       <img src="{% if section.settings.image %}{{ section.settings.image | image_url: width: 1100 }}{% else %}{{ 'bez-diagram.webp' | asset_url }}{% endif %}" loading="lazy" decoding="async" alt="BreathEZs infographic: engineered open-back airflow design">
     </div>
-    <div class="comparison-frame">
-      <img class="comparison-img"
-           src="{% if section.settings.comparison_image %}{{ section.settings.comparison_image | image_url: width: 1049 }}{% else %}{{ 'jockstrap-vs.webp' | asset_url }}{% endif %}"
-           alt="{{ section.settings.comparison_alt | default: 'How BreathEZs is different from a jockstrap: no elastic straps, an open rear for airflow, full coverage and support up front, and free airflow behind with zero restriction.' }}"
-           loading="lazy" decoding="async" width="1049" height="1499">
-    </div>
-  </div>
-  <div class="container design-cta">
-    <a href="{{ section.settings.comparison_cta_link | default: '#collection' }}" class="btn btn-primary">{{ section.settings.comparison_cta_label | default: 'Shop BreathEZs' }}</a>
   </div>
 </section>
 
@@ -44,12 +35,7 @@
     { "type": "textarea", "id": "item3_body", "label": "Body", "default": "Tested under jeans and work pants. A smooth, low profile fit you'll barely notice." },
     { "type": "header", "content": "Point 4" },
     { "type": "text", "id": "item4_title", "label": "Title", "default": "Built for Real Work" },
-    { "type": "textarea", "id": "item4_body", "label": "Body", "default": "Made for warehouse crews, construction, mechanics, drivers, and athletes. Anyone who works up a sweat." },
-    { "type": "header", "content": "vs Jockstrap comparison graphic" },
-    { "type": "image_picker", "id": "comparison_image", "label": "Comparison image", "info": "Leave empty to use the built-in vs-jockstrap graphic." },
-    { "type": "text", "id": "comparison_alt", "label": "Comparison image alt text", "default": "How BreathEZs is different from a jockstrap: no elastic straps, an open rear for airflow, full coverage and support up front, and free airflow behind with zero restriction." },
-    { "type": "text", "id": "comparison_cta_label", "label": "Button label", "default": "Shop BreathEZs" },
-    { "type": "url", "id": "comparison_cta_link", "label": "Button link" }
+    { "type": "textarea", "id": "item4_body", "label": "Body", "default": "Made for warehouse crews, construction, mechanics, drivers, and athletes. Anyone who works up a sweat." }
   ]
 }
 {% endschema %}
