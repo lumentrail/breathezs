@@ -2,14 +2,14 @@
   <div class="container">
     <div class="hero-inner">
       <h1>{{ section.settings.line1 | default: 'Luxury' }}<br>{{ section.settings.line2 | default: 'Underwear.' }}<br><span class="accent">{{ section.settings.accent_line1 | default: 'Designed to' }}<br>{{ section.settings.accent_line2 | default: 'Breathe.' }}</span></h1>
-      <img class="hero-art-m" src="{% if section.settings.hero_image %}{{ section.settings.hero_image | image_url: width: 900 }}{% else %}{{ 'hero-bez.webp' | asset_url }}{% endif %}" alt="BEZ BreathEZs boxer briefs" fetchpriority="high">
+      <img class="hero-art-m" src="{% if section.settings.hero_image %}{{ section.settings.hero_image | image_url: width: 900 }}{% else %}{{ 'hero-lineup.webp' | asset_url }}{% endif %}" alt="BEZ BreathEZs boxer briefs" fetchpriority="high">
       <p class="lead">{{ section.settings.lead | default: 'Premium 100% cotton comfort engineered for confidence, movement, and all day wear. An open airflow design keeps you cool exactly where it counts.' }}</p>
       <div class="hero-ctas">
         <a href="#collection" class="btn btn-primary">{{ section.settings.cta_buy | default: 'Shop Now' }}</a>
       </div>
       <p class="hero-scarcity" style="margin:16px 0 0;color:var(--gold);font-weight:700;font-size:.98rem;letter-spacing:.02em;text-transform:uppercase">{{ section.settings.scarcity | default: "A limited first run. Get yours before they're gone." }}</p>
     </div>
-    <img class="hero-art" src="{% if section.settings.hero_image %}{{ section.settings.hero_image | image_url: width: 1000 }}{% else %}{{ 'hero-bez.webp' | asset_url }}{% endif %}" alt="BEZ BreathEZs boxer briefs" fetchpriority="high">
+    <img class="hero-art" src="{% if section.settings.hero_image %}{{ section.settings.hero_image | image_url: width: 1000 }}{% else %}{{ 'hero-lineup.webp' | asset_url }}{% endif %}" alt="BEZ BreathEZs boxer briefs" fetchpriority="high">
     <div class="hero-badges">
         <div class="badge">
           <svg class="ico" width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 8h12a3 3 0 100-6M3 12h16a3 3 0 110 6M3 16h8a3 3 0 11-3 5"/></svg>
