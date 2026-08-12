@@ -58,6 +58,7 @@
   --shadow:0 14px 40px rgba(32,24,46,.10);
   --font:'Poppins',system-ui,-apple-system,Segoe UI,Arial,sans-serif;
   --maxw:1240px;
+  --tint-bg:radial-gradient(1000px 520px at 12% 18%,rgba(168,85,247,.16),transparent 60%),linear-gradient(180deg,var(--cream),var(--marble));
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;font-size:17px}
@@ -167,9 +168,7 @@ h2.title .accent{color:var(--purple)}
 }
 
 /* ---------- technology ---------- */
-.design{background:
-  radial-gradient(1000px 520px at 12% 18%,rgba(168,85,247,.16),transparent 60%),
-  linear-gradient(180deg,var(--cream),var(--marble))}
+.design{background:var(--tint-bg)}
 .design-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-top:14px}
 .design h2{text-align:left}
 .design p.intro{color:var(--ink-soft);margin:20px 0;font-size:1.08rem}
@@ -182,7 +181,7 @@ h2.title .accent{color:var(--purple)}
 @media(max-width:940px){.design-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- anatomy ---------- */
-.anatomy{background:var(--white)}
+.anatomy{background:var(--tint-bg)}
 .anatomy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
 .anat{background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:.25s}
 .anat:hover{transform:translateY(-5px);border-color:var(--purple-neon)}
@@ -207,9 +206,7 @@ h2.title .accent{color:var(--purple)}
 @media(max-width:940px){.anatomy-grid{grid-template-columns:1fr}}
 
 /* ---------- built-for strip ---------- */
-.built{background:
-  radial-gradient(1000px 520px at 12% 18%,rgba(168,85,247,.16),transparent 60%),
-  linear-gradient(180deg,var(--cream),var(--marble));padding:72px 0}
+.built{background:var(--white);padding:72px 0}
 .built-strip{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px 28px;max-width:64rem;margin:44px auto 0}
 .built-strip span{display:inline-flex;align-items:center;gap:9px;color:var(--ink);font-size:1.12rem;font-weight:600;letter-spacing:.01em}
 .built-strip svg{width:20px;height:20px;color:var(--purple);flex-shrink:0}
@@ -243,7 +240,7 @@ h2.title .accent{color:var(--purple)}
 @media(max-width:940px){.night-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- collection ---------- */
-.collection{background:var(--white)}
+.collection{background:var(--tint-bg)}
 .products{display:grid;grid-template-columns:repeat(2,minmax(0,400px));gap:34px;margin-top:56px;justify-content:center;align-items:stretch}
 .product{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--cream);display:flex;flex-direction:column;transition:.25s}
 .product:hover{transform:translateY(-5px);border-color:var(--purple-neon)}
@@ -288,7 +285,7 @@ h2.title .accent{color:var(--purple)}
 .swatch.is-active{border-color:var(--purple);box-shadow:0 0 0 3px rgba(124,58,237,.22)}
 
 /* ---------- size guide ---------- */
-.sizing{background:var(--marble)}
+.sizing{background:var(--white)}
 .size-wrap{max-width:760px;margin:56px auto 0;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
 .size-table{width:100%;border-collapse:collapse;font-size:1rem}
 .size-table th,.size-table td{padding:16px 22px;text-align:left}
@@ -423,7 +420,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 .order-table th{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .account-empty{color:var(--ink-soft);font-size:.95rem}
 /* ---------- not-a-jockstrap comparison ---------- */
-.comparison{padding:96px 0;background:linear-gradient(180deg,var(--marble),var(--white))}
+.comparison{padding:96px 0;background:var(--white)}
 .comparison-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:start}
 .comparison-media{line-height:0}
 .comparison-img{width:100%;max-width:520px;height:auto;border-radius:var(--radius);box-shadow:0 18px 50px rgba(32,24,46,.24);display:block;margin:0 auto}
