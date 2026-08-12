@@ -172,12 +172,12 @@ h2.title .accent{color:var(--purple)}
 .design-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;margin-top:14px}
 .design h2{text-align:left}
 .design p.intro{color:var(--ink-soft);margin:20px 0;font-size:1.08rem}
-.design ul{list-style:none;margin-top:10px}
-.design li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
-.design li:last-child{border-bottom:none}
-.design li .dot{color:var(--purple-neon);font-weight:900;flex-shrink:0;font-size:1.1rem;line-height:1.3}
-.design li strong{display:block;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
-.design li span{font-size:.98rem;color:var(--ink-soft)}
+.design ul,.comparison-copy ul{list-style:none;margin-top:10px}
+.design li,.comparison-copy li{display:flex;gap:16px;align-items:flex-start;padding:16px 0;border-bottom:1px solid var(--line)}
+.design li:last-child,.comparison-copy li:last-child{border-bottom:none}
+.design li .dot,.comparison-copy li .dot{color:var(--purple-neon);font-weight:900;flex-shrink:0;font-size:1.1rem;line-height:1.3}
+.design li strong,.comparison-copy li strong{display:block;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;margin-bottom:2px}
+.design li span,.comparison-copy li span{font-size:.98rem;color:var(--ink-soft)}
 @media(max-width:940px){.design-grid{grid-template-columns:1fr;gap:44px}}
 
 /* ---------- anatomy ---------- */
@@ -427,7 +427,7 @@ footer#contact{background:linear-gradient(180deg,#20182e,#140d1f);color:rgba(255
 .comparison-copy h2{text-align:left}
 .comparison-copy .intro{color:var(--ink-soft);margin:18px 0;font-size:1.08rem}
 .comparison-cta{text-align:center;margin-top:52px}
-@media(max-width:940px){.comparison-grid{grid-template-columns:1fr;gap:36px}.comparison-copy,.comparison-copy h2{text-align:center}}
+@media(max-width:940px){.comparison-grid{grid-template-columns:1fr;gap:36px}}
 /* contact page */
 .contact-page{padding:52px 0 72px}
 .contact-sub{text-align:center;color:var(--ink-soft);max-width:46ch;margin:14px auto 34px}
