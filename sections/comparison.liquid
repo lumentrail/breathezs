@@ -8,10 +8,16 @@
     </div>
     <div class="comparison-copy">
       <h2 class="title">{{ section.settings.heading | default: 'Not a' }} <span class="accent">{{ section.settings.heading_accent | default: 'Jockstrap.' }}</span></h2>
-      <p class="intro">{{ section.settings.intro | default: 'People hear open rear and picture a jockstrap. BreathEZs are the opposite.' }}</p>
-      <p class="intro">{{ section.settings.intro2 | default: 'You get full boxer brief coverage and support up front, with an engineered open back for airflow where it matters most. No straps digging in, no exposure, no restriction. Just cool, comfortable relief all day.' }}</p>
-      <a href="{{ section.settings.cta_link | default: '#collection' }}" class="btn btn-primary">{{ section.settings.cta_label | default: 'Shop BreathEZs' }}</a>
+      <p class="intro">{{ section.settings.intro | default: 'People hear open rear and immediately picture a jockstrap. BreathEZs are the exact opposite of that.' }}</p>
+      <p class="intro">{{ section.settings.intro2 | default: 'A jockstrap leaves you exposed. Thin elastic straps, almost no coverage, and a waistband that digs in the moment you sit down. It was built for a quick workout, not a twelve hour shift on your feet.' }}</p>
+      <p class="intro">{{ section.settings.intro3 | default: 'BreathEZs are real boxer briefs first. You get full coverage and a secure, supportive fit up front, soft 100% premium cotton against your skin, and a tag-free waistband that stays exactly where you put it.' }}</p>
+      <p class="intro">{{ section.settings.intro4 | default: 'The difference is behind you. An engineered open back lets built-up heat escape and keeps fresh air moving, with no straps pressing in and nothing riding up. You feel the airflow, not the underwear.' }}</p>
+      <p class="intro">{{ section.settings.intro5 | default: 'So you keep the everyday support you already trust, plus ventilation you have never felt before. Cool, comfortable, and completely covered, from the first hour to the last.' }}</p>
+      <p class="intro">{{ section.settings.intro6 | default: 'This is not a gimmick or a novelty. It is the pair you reach for first, rebuilt around one simple idea: you should never have to choose between real support and staying cool.' }}</p>
     </div>
+  </div>
+  <div class="container comparison-cta">
+    <a href="{{ section.settings.cta_link | default: '#collection' }}" class="btn btn-primary">{{ section.settings.cta_label | default: 'Shop BreathEZs' }}</a>
   </div>
 </section>
 
@@ -21,8 +27,12 @@
   "settings": [
     { "type": "text", "id": "heading", "label": "Heading", "default": "Not a" },
     { "type": "text", "id": "heading_accent", "label": "Heading accent (purple)", "default": "Jockstrap." },
-    { "type": "textarea", "id": "intro", "label": "Intro paragraph", "default": "People hear open rear and picture a jockstrap. BreathEZs are the opposite." },
-    { "type": "textarea", "id": "intro2", "label": "Second paragraph", "default": "You get full boxer brief coverage and support up front, with an engineered open back for airflow where it matters most. No straps digging in, no exposure, no restriction. Just cool, comfortable relief all day." },
+    { "type": "textarea", "id": "intro", "label": "Paragraph 1", "default": "People hear open rear and immediately picture a jockstrap. BreathEZs are the exact opposite of that." },
+    { "type": "textarea", "id": "intro2", "label": "Paragraph 2", "default": "A jockstrap leaves you exposed. Thin elastic straps, almost no coverage, and a waistband that digs in the moment you sit down. It was built for a quick workout, not a twelve hour shift on your feet." },
+    { "type": "textarea", "id": "intro3", "label": "Paragraph 3", "default": "BreathEZs are real boxer briefs first. You get full coverage and a secure, supportive fit up front, soft 100% premium cotton against your skin, and a tag-free waistband that stays exactly where you put it." },
+    { "type": "textarea", "id": "intro4", "label": "Paragraph 4", "default": "The difference is behind you. An engineered open back lets built-up heat escape and keeps fresh air moving, with no straps pressing in and nothing riding up. You feel the airflow, not the underwear." },
+    { "type": "textarea", "id": "intro5", "label": "Paragraph 5", "default": "So you keep the everyday support you already trust, plus ventilation you have never felt before. Cool, comfortable, and completely covered, from the first hour to the last." },
+    { "type": "textarea", "id": "intro6", "label": "Paragraph 6", "default": "This is not a gimmick or a novelty. It is the pair you reach for first, rebuilt around one simple idea: you should never have to choose between real support and staying cool." },
     { "type": "image_picker", "id": "image", "label": "Comparison graphic", "info": "Leave empty to use the built-in vs-jockstrap graphic." },
     { "type": "text", "id": "image_alt", "label": "Graphic alt text", "default": "BreathEZs versus a jockstrap: no elastic straps, open rear for airflow, full coverage and support up front, and free airflow behind with zero restriction, compared to a jockstrap that is exposed, restrictive, and offers limited support." },
     { "type": "text", "id": "cta_label", "label": "Button label", "default": "Shop BreathEZs" },
